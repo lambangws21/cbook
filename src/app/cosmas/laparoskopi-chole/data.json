@@ -1,0 +1,58 @@
+{
+    "laporanOperasi": {
+        "judul": "LAPARASKOPI CHOLESYSTECTOMIE dr.Cosmas",
+        "tanggalOperasi": "05 September 2023",
+        "timOperasi": {
+            "operator": "dr. Cosmas",
+            "asisten": "dr.James",
+            "instrument": "Lambang",
+            "mentor": "Sr. Titin"
+        },
+        "alatKesehatanHabisPakai": [
+            "Lina Cleaner",
+            "Trocas tanpa Pisau (ukuran : 11-5-5 mm)",
+            "Vicryl 2-0 VCP602",
+            "Endoclips",
+            "Vicryl 4-0 W9386",
+            "Plastik 2 meter",
+            "Plester steril",
+            "Opsite 6.5 X 5 (3)",
+            "Tegaderm 1624 6 cm x 7 cm",
+            "Steril Stip R1542 k/p",
+            "Surgical Connecting",
+            "Bisturi no.11",
+            "Aqua 1.000 ml (4)",
+            "Transofix",
+            "NGT 12/14/16 dan 18",  
+            "Maricain 20 ml dan spuit 10 cc"
+        ],
+        "persiapanOperasi": [
+            "Pastikan Monitor Laparoskopi sudah tersedia dan siap digunakan.",
+            "Meja Operasi dalam kondisi baik, bisa headdown, lateral kiri dan kanan.",
+            "Rendaman instrumen sudah disiapkan 30 menit sebelum operasi dimulai.",
+            "Harmonic atau Inolcon Standby"
+        ],
+        "persiapanInstrument": [
+            "Set Jas",
+            "Monitor Laparascopi",
+            "Mesin Harmonic/Inolcon Standby",
+            "Pelana",
+            "Basic Lapraskopi atau BSA",
+            "Harmonic",
+            "Kom Stenlis",
+            "Selamg air + CO2",
+            "Gunting Kakatua",
+            "Lensa 0 derajat",
+            "Lightsource",
+            "Laparoskopi Digestive"
+        ],
+        
+        "langkahOperasi": [
+            "Posisikan pasien supine, meja operasi harus dapat melakukan head up dan lateral sinistra. Letak Instrumen nantinya akan bagian light source (lampu), Gas dan Kamera di bagian bawah dan bagian irigasi, suction dan kabel monopolar berada di atas.",
+            "Desinfeksi lapangan operasi dari pusar memutar searah jarum jam, batas atas berada pada 3 jari diatas xiphoid process dan bawah pasien 4 jari dibawah paha. Kemudian drapping bagian bawah dan atas, pada bagian kiri pasien pasien batas doek pasien berada di mid clavicle dan bagian kanan pasien sedikit ke mid axila",
+            "Persiapan insisi pertama, bantu operator untuk membersihkan lapangan operasi terutama pada pusar, karena biasanya daerah pusar tergenang betadine dan kotor. Jika semua sudah bersih, berikan suntikan marcain yang sudah disiapkan pada spuit 10cc, setelah dilakukan penyuntikan berikan bisturi 11 dan trocar dengan pisau pertama 11mm, bantu berikan kamera dan sambungkan gas.",
+            "Setelah trocar pertama masuk, siapkan kembali suntikan marcain dan trocar 5 ml, dengan urutan ( Suntikan - Bisturi - trocar ), perlu diingat pada trocar 5 ml, kondisi saluran gas harus terkunci keduanya hal ini dilakukan agar gas pada tekanan intra abdomen tidak keluar sehingga tekanan stabil.",
+            "Setelah trocar terpasang semua, berikan operator babcock kepada operator untuk menjepit kandung empedu pasien, kemudian Maryland untuk dilakukan diseksi, setelah batas saluran ditemukan siapkan endoclip 5mm untuk persiapan pemotongan saluran. Setelah saluran terpotong berikan spatel kepada operator untuk memisahkan bagian kantung dan hepar, setelah semua terpisah berikan endobag untuk mengeluarkan kantung empedu pasien, jahit luka operasi dengan vicryl 4-0 dan rapikan pasien"
+        ]
+}
+}

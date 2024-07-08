@@ -1,0 +1,57 @@
+{
+    "laporanOperasi": {
+        "namaTindakan": "ORIF (Open Reduction Internal Fixation) SHAFT HUMERUS",
+        "posisiPasien": "Lateral decubitus, dengan c-arm",
+        "jenisPembiusan": "Anestesi umum dengan / tanpa blok regional",
+        "asistenOperasi": "2 orang",
+        "instrumen": "1 orang",
+        "perkiraanLamaTindakan": "90 menit",
+        "instrumentasi": [
+            "Basic set dewasa",
+            "Set tulang: Large fragment (tulang besar)",
+            "Boor",
+            "Drill bit 2.5mm / 2.7mm",
+            "Hoffman kecil dr. Erica"
+        ],
+        "alatMedisHabisPakai": [
+            "Vicryl 2-0 atau T-vio 2-0",
+            "Monosyn 3-0 atau T-vio 3-0",
+            "Ioban kecil",
+            "Arm sling",
+            "Skin marker"
+        ],
+        "implant": [
+            {
+                "jenis": "Narrow LCP 4.5mm",
+                "brand": "KANGHUI"
+            },
+            {
+                "jenis": "Narrow LCP 5.5mm",
+                "brand": "IRENE / TRAFAS"
+            },
+            {
+                "jenis": "Narrow plate LC-DCP 3.5mm",
+                "brand": "IRENE / TRAFAS"
+            }
+        ],
+        "langkahLangkahOperasi": [
+            "Insisi posterior approach",
+            "Belah triceps tendon sambil identifikasi radial nerve",
+            "Identifikasi fragmen fraktur",
+            "Cuci dengan NaCl 0.9%",
+            "Pegang shaft humerus dengan reduction forceps besar",
+            "Reduksi dengan plate, pastikan radial nerve diatas plate",
+            "Pasang pasang, cek dengan c-arm",
+            "Subkutis jahit dengan vicryl / T-vio 2-0",
+            "Kulit ditutup dengan monosyn 3-0 atau T-vio 3-0",
+            "Balut dengan opsite / kassa fixomul",
+            "Pasang arm sling"
+        ],
+        "catatanSettingDanOperasi": [
+            "Diatermi cutting 40, coagulation 40",
+            "Manset tekanan darah di kaki",
+            "Draping pasien sampai tertutup kaki",
+            "Setelah operasi dilakukan evaluasi radial nerve (cek apakah pasien bisa mengekstensikan ibu jari atau tidak)"
+        ]
+    }
+}

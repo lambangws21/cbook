@@ -1,0 +1,47 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Release Extensor Carpi Radialis Brevis (ECRB) untuk Tennis Elbow",
+      "posisiPasien": "Supine pakai penyangga tangan. Pakai torniquet dengan setting 250mmHg",
+      "jenisPembiusan": "Anestesi umum dengan / tanpa blok regional",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "60 menit",
+      "instrumentasi": [
+        "Basic set dewasa",
+        "Set elbow dr. Erica",
+        "Rounger / knabel tang lurus",
+        "Bone curretage",
+        "Microfracture dr. Erica",
+        "Mallet"
+      ],
+      "alatMedisHabisPakai": [
+        "Elastic verband steril",
+        "Benang ethibond no. 2",
+        "Vicryl 2-0 atau T-vio 2-0",
+        "Monosyn 3-0 atau T-vio 3-0",
+        "Ioban besar",
+        "Arm sling",
+        "HOGY Orthopaedic drape",
+        "Skin marker",
+        "Pulsavac irrigation",
+        "Softban 4 inch (10cm)"
+      ],
+      "langkahLangkahOperasi": [
+        "Insisi lateral elbow, approach Kaplan, perdalam insisi dengan membelah ECRB dan EDC",
+        "Identifikasi origin EDC dan Nirchl node",
+        "Eksisi jaringan patologis >> diperiksa PA",
+        "Dekortikasi dengan microfracture",
+        "Repair common extensor dengan ethibond 2-0",
+        "Subkutis jahit dengan vicryl / T-vio 2-0",
+        "Kulit ditutup dengan monosyn 3-0 atau T-vio 3-0",
+        "Balut dengan softban dan elastic verband",
+        "Pasang arm sling"
+      ],
+      "catatanSettingDanOperasi": [
+        "Diatermi cutting 40, coagulation 40",
+        "Manset tekanan darah di kaki",
+        "Draping pasien sampai tertutup kaki"
+      ]
+    }
+  }
+  

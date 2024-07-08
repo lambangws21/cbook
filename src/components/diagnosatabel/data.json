@@ -1,0 +1,126 @@
+[
+  {
+    "diagnosaKeperawatan": "Ansietas (D.0080) b/d Kekhawatiran mengalami kegagalan",
+    "luaranKeperawatan": [
+      "Verbalisasi kebingungan pasien menurun",
+      "Perilaku tegas pasien menurun"
+    ],
+    "intervensiKeperawatan": [
+      "Monitor tanda-tanda ansietas (verbal dan non-verbal)",
+      "Ciptakan suasana terapeutik untuk menumbuhkan rasa kepercayaan",
+      "Jelaskan prosedur, termasuk sensasi yang mungkin dialami",
+      "Pemberian obat ansietas, jika perlu"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Risiko Perdarahan (D.0012) b/d Tindakan Pembedahan (Operasi)",
+    "luaranKeperawatan": [
+      "Tekanan darah, frekuensi nadi pasien meningkat",
+      "Turgor Kulit pasien baik",
+      "Hasil pemeriksaan penunjang dalam batas normal (HB, Hematokrit dkk)"
+    ],
+    "intervensiKeperawatan": [
+      "Monitor tanda dan gejala perdarahan",
+      "Monitor tanda-tanda vital pasien",
+      "Kolaborasi pemberian obat pengontrol perdarahan, jika perlu",
+      "Kolaborasi pemberian produk darah, jika perlu"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Nyeri Akut (D.0077) b/d Agen pencerobohan fisik (Prosedur Operasi)",
+    "luaranKeperawatan": [
+      "Keluhan nyeri pasien menurun atau tak ada",
+      "Wajah meringis pasien menurun atau tidak ada",
+      "Tanda-tanda vital pasien dalam batas normal",
+      "Nilai VAS Pasien menurun"
+    ],
+    "intervensiKeperawatan": [
+      "Identifikasi lokasi, karakteristik, durasi, frekuensi, kualitas, intensitas nyeri",
+      "Identifikasi skala nyeri",
+      "Gunakan teknik nonfarmakologis untuk mengurangi nyeri",
+      "Kontrol lingkungan yang memperberat nyeri",
+      "Jelaskan penyebab, periode, dan pemicu nyeri",
+      "Kolaborasi pemberian analgetik, jika perlu"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Risiko Hipotermia Perioperatif (D.0141) b/d Kombinasi anastesi regional dan umum",
+    "luaranKeperawatan": [
+      "Pasien tak tampak mengigil",
+      "Suhu tubuh pasien dalam batas normal (36) derajat celcius",
+      "Keluhan dingin pasien teratasi"
+    ],
+    "intervensiKeperawatan": [
+      "Monitor dan gunakan alat suhu terapi",
+      "Selimuti pasien dengan alat terapi suhu menggunakan kain",
+      "Evaluasi keluhan pasien dan kenyamanan pasien (apakah alat pemanas sudah hangat atau terlalu panas)"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Risiko Jatuh b/d Efek agen farmakologis (Mis.Sedasi, alkohol, anestesi umum)",
+    "luaranKeperawatan": [
+      "Tidak ada kerjadian jatuh di tempat tidur",
+      "Tidak ada kejadian jatuh saat duduk",
+      "Tidak ada kejadian jatuh saat jalan"
+    ],
+    "intervensiKeperawatan": [
+      "Identifikasi faktor risiko jatuh (mis usia lebih dari 65 tahun, penurunan tingkat kesadaran, defisit kognitif, hipotensi ortostatik, gangguan keseimbangan, gangguan pengelihatan, neuropati)",
+      "Pastikan roda tempat tidur pasien selalu dalam kondisi terkunci",
+      "Pastikan pengaman samping tempat tidur terpasang atau terkunci",
+      "Anjurkan memanggil perawat jika memerlukan bantuan untuk berpindah"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Risiko Infeksi b/d Efek prosedur invasif, penyakit kronis (Diabetes), ketidakade-kuatan pertahanan tubuh (merokok, penurunan Hemoglobin)",
+    "luaranKeperawatan": [
+      "Pasien tak tampak mengigil",
+      "Suhu tubuh pasien dalam batas normal (36 derajat celcius)",
+      "Keluhan dingin pasien teratasi"
+    ],
+    "intervensiKeperawatan": [
+      "Monitor tanda dan gejala lokal dan sistemik infeksi",
+      "Berikan perawatan pada kulit jika terdapat edema",
+      "Cuci tangan selalu sesudah kontak dengan pasien dan lingkungan pasien",
+      "Jelaskan tanda dan gejala bila terjadi infeksi"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Gangguan Integritas Jaringan (D.0129) b/d Imobilisasi, Diabetes dan Imunodefisiensi",
+    "luaranKeperawatan": [
+      "Keutuhan jaringan pasien meningkat atau menurun dengan kriteria:",
+      "Kerusakan jaringan pasien meningkat dengan ekspektasi menjadi 1",
+      "Kerusakan lapisan kulit pasien meningkat dengan ekspektasi nilai menjadi 1",
+      "Perfusi jaringan pasien meningkat dengan ekspektasi nilai menjadi 5"
+    ],
+    "intervensiKeperawatan": [
+      "Monitor karakteristik luka (mis. Drainase, warna, ukuran dan bau)",
+      "Lepaskan balutan dan plester secara perlahan",
+      "Bersihkan luka menggunakan Nacl atau pembersih non-isotonik, sesuai kebutuhan",
+      "Pasang balutan sesuai jenis luka",
+      "Pertahankan teknik steril dalam melakukan perawatan luka",
+      "Ganti balutan sesuai dengan jumlah eksudat dan drainase",
+      "Ajarkan perawatan luka secara mandiri",
+      "Kolaborasi prosedur debridement (mis. Enzimatik, biologis, dan autolitik), jika perlu",
+      "Kolaborasi pemberian antibiotik, jika perlu"
+    ]
+  },
+  {
+    "diagnosaKeperawatan": "Kebersihan Jalan Nafas (D.0001) b/d efek agen farmakologis (mis. Anastesi)",
+    "luaranKeperawatan": [
+      "Batuk efektif pasien meningkat dengan ekspektasi nilai menjadi 5",
+      "Produksi sputum pasien menurun dengan ekspektasi nilai menjadi 5",
+      "Frekuensi nafas dan pola nafas pasien membaik dengan ekspektasi nilai menjadi 5"
+    ],
+    "intervensiKeperawatan": [
+      "Monitor karakteristik luka (mis. Drainase, warna, ukuran dan bau)",
+      "Lepaskan balutan dan plester secara perlahan",
+      "Bersihkan luka menggunakan Nacl atau pembersih non-isotonik, sesuai kebutuhan",
+      "Pasang balutan sesuai jenis luka",
+      "Pertahankan teknik steril dalam melakukan perawatan luka",
+      "Ganti balutan sesuai dengan jumlah eksudat dan drainase",
+      "Ajarkan perawatan luka secara mandiri",
+      "Kolaborasi prosedur debridement (mis. Enzimatik, biologis, dan autolitik), jika perlu",
+      "Kolaborasi pemberian antibiotik, jika perlu"
+    ]
+  }
+]

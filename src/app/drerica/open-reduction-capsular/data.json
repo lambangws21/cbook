@@ -1,0 +1,65 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Open Reduction and Capsular Release Elbow",
+      "posisiPasien": "Supine pakai penyangga tangan. Pakai torniquet dengan setting 250mmHg",
+      "insisi": ["Medial", "Lateral"],
+      "jenisPembiusan": "Anestesi umum dengan / tanpa blok regional",
+      "asistenOperasi": "2 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "120 menit",
+      "instrumentasi": [
+        "Basic set dewasa",
+        "Set elbow dr. Erica",
+        "Osteotome lurus (pahat lurus kecil)",
+        "Rounger / knabel tang lurus",
+        "Oscillating saw kecil",
+        "Bor desouter",
+        "Palu kecil",
+        "Cobbs",
+        "Bone curretage"
+      ],
+      "alatMedisHabisPakai": [
+        "Elastic verband steril",
+        "Ethiloop 1.3mm 1 pak",
+        "Benang ethibond no. 2",
+        "Vicryl 2-0 atau T-vio 2-0",
+        "Monosyn 3-0 atau T-vio 3-0",
+        "Ioban besar",
+        "Arm sling",
+        "HOGY Orthopaedic drape",
+        "Skin marker",
+        "K-wire diameter 2-0 (2 buah)",
+        "Pulsavac irrigation",
+        "Softban 4 inch (10cm)",
+        "Dynacast prelude"
+      ],
+      "langkahLangkahOperasi": [
+        "Insisi medial elbow, diperdalam sampai identifikasi ulnar nerve.",
+        "Ulnar nerve dibebaskan dari septum intermuscularis medial sampai head dari flexor carpi ulnaris, dengan bantuan ethiloop",
+        "Release flexor pronator dengan diatermi",
+        "Release biceps dan brachialis dengan cobbs",
+        "Release triceps dengan diatermi dan cobbs",
+        "Release capsule dengan diatermi dan ronguer",
+        "Fossaplasty dengan curret dan osteotome lurus",
+        "Insisi lateral elbow, perdalam insisi dengan membelah ECU dan anconeus muscle",
+        "Release common extensor tendon",
+        "Jaringan fibrosis dibuang sampai seluruh radiocapitellar joint bebas",
+        "Reduksi sendi elbow, konfirmasi dengan c-arm",
+        "Bila tidak stabil, fiksasi dengan K-wire 2 buah",
+        "Irigasi sendi elbow dengan NaCl 0.9% 3 liter",
+        "Anterior transposition dari ulnar nerve menggunakan vicryl 2-0",
+        "Repair flexor pronator dengan ethibond 2-0",
+        "Repair common extensor dengan ethibond 2-0",
+        "Subkutis jahit dengan vicryl / T-vio 2-0",
+        "Kulit ditutup dengan monosyn 3-0 atau T-vio 3-0",
+        "Balut dengan softban dan elastic verband dan pasang splint",
+        "Pasang arm sling"
+      ],
+      "catatanSettingDanOperasi": [
+        "Diatermi cutting 40, coagulation 40",
+        "Manset tekanan darah di kaki",
+        "Draping pasien sampai tertutup kaki"
+      ]
+    }
+  }
+  

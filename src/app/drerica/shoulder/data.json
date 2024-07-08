@@ -1,0 +1,78 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Arthroscopy shoulder",
+      "posisiPasien": "Beach chair position (Setengah duduk)",
+      "jenisPembiusan": "Anestesi umum dengan / tanpa blok regional",
+      "asistenOperasi": "1 orang, bila rotator cuff repair : 2 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "Arthroscopic Acromioplasty: 60 menit dan Arthroscopic Acromioplasty Dengan Rotator Cuff Repair: 120 menit"
+      ,
+      "instrumentasi": [
+        "Tower arthroscopy",
+        "Basic set anak",
+        "Set arthroscopy smith and nephew",
+        "Kamera arthroscope smith nephew dan light source",
+        "Hand piece shaver dyonics smith and nephew",
+        "Suction floor orange",
+        "Alat arthroscopy dr. Erica (microfracture, knot pusher dan retriever)",
+        "Bila ditambah rotator cuff repair : mallet (palu)"
+      ],
+      "alatMedisHabisPakai": [
+        "Elastic verband steril",
+        "Prolene 4-0 atau T-vio 4-0",
+        "Ioban besar",
+        "Arm sling",
+        "HOGY Orthopaedic drape",
+        "Jarum abbocath 14G atau 16G",
+        "Pisau no.11",
+        "NaCl 0.9% 1 liter untuk air arthroscopy",
+        "Selang suction harus 2 buah",
+        "Skin marker",
+        "Depomedrol (Pfizer) atau Trilac atau Flamicort : 1 ampul"
+      ],
+      "alatMedisImplantDenganVendor": [
+        "Shaver : Dyonics 4.5mm Incisor plus elite",
+        "Burr : Dyonics Acromionizer Burr 4.0mm",
+        "Selang air : Dyonics 25 Inflow tube set (setting di 60mmHg)",
+        "Radiofrequency : Ambient super turbovac 90 (setting 7-9)",
+        "Cannula : Clear-trac complete threaded cannula and obturator 5.5mm x 72mm (biru)",
+        "Bila ditambah rotator cuff repair : Cannula : Clear-trac complete threaded cannula and obturator 8.5mm x 90mm (hijau) dan ARC canula pink dari CONMED LINVATEC",
+        "Bila ditambah rotator cuff repair : Healicoil SA PK 4.5mm",
+        "Bila ditambah rotator cuff repair : Accupas left dan right"
+      ],
+      "langkahLangkahOperasi": [
+        "Buat portal posterior",
+        "Masukkan trocar arthroscope yang sudah tersambung dengan selang air",
+        "Lakukan diagnostic arthroscopy di glenohumeral joint",
+        "Buat portal anterior dengan abbocath dan insisi diperlebar dengan straight hemostat (klem lurus)",
+        "Lakukan evaluasi dengan probe",
+        "MGHL release dan Capsular release dengan radiofrequency dan shaver",
+        "Lakukan diagnostic arthroscopy di subacromial joint",
+        "Cari undersurface acromion",
+        "Marking dengan Radiofrequency dan release coracoacromial ligament",
+        "Acromioplasty dengan burr",
+        "Evaluasi rotator cuff, bila intact, operasi selesai",
+        "Bila terdapat rotator cuff tear, buat portal lateral, pasang ARC canula pink",
+        "Debridement footprint greater tuberosity dengan shaver dan burr",
+        "Release rotator cuff dengan shaver dan radiofrequency",
+        "Pasang anchor healicoil, siapkan palu",
+        "Ambil benang anchor keluarkan di portal anterior",
+        "Jahit rotator cuff dengan accupas / truepass",
+        "Kulit ditutup dengan Prolene 4-0 atau T-vio 4-0",
+        "Balut kassa segi 4 dan fiksasi dengan fixomul stretch",
+        "Pasang arm sling"
+      ],
+      "catatanSettingDanOperasi": [
+        "Diatermi tidak dipakai",
+        "Sebelum operasi dimulai pastikan kamera sudah di white balance, air di selang air sudah dialirkan untuk mencegah emboli udara dan flashdisk sudah terpasang di sistem kamera",
+        "Setting water pump di 60mmHg",
+        "Setting coagulation dan cutting RF arthroscopy di 7 sampai 9",
+        "Setting shaver di 2000",
+        "Manset tekanan darah di kaki",
+        "Posisi pasien harus dipastikan ada side bar / bracket samping / penyangga badan pasien agar tidak jatuh",
+        "Lutut disangga dengan bantal khusus agar pasien tidak melorot dari tempat tidur",
+        "Draping pasien sampai tertutup kaki"
+      ]
+    }
+  }
+  

@@ -1,0 +1,81 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Arthroscopy Knee ACL Reconstruction",
+      "posisiPasien": "Supine dengan ganjal kaki 90 derajat dan lateral post.",
+      "torniquet": "300mmHg dipasang se-proksimal mungkin (pastikan torniquet di cek dulu sebelum kaki dicuci). Torniquet harus ada.",
+      "jenisPembiusan": "Anestesi regional dengan / tanpa sedasi",
+      "asistenOperasi": "2 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "120 menit",
+      "instrumentasi": [
+        "Tower arthroscopy",
+        "Basic set dewasa",
+        "Right angle forceps (klem 90)",
+        "Set arthroscopy smith and nephew",
+        "Kamera arthroscope smith nephew dan light source",
+        "Hand piece shaver dyonics smith and nephew",
+        "Suction floor orange",
+        "Bor desouter atau bor ACL arthrex (setting kecepatan 1400rpm)"
+      ],
+      "alatMedisHabisPakai": [
+        "Elastic verband steril",
+        "Prolene 4-0 atau T-vio 4-0",
+        "Ethibond no.2",
+        "HOGY Orthopaedic drape",
+        "Jarum abbocath 14G atau 16G",
+        "Pisau no.11",
+        "NaCl 0.9% 1 liter untuk air arthroscopy",
+        "Skin marker"
+      ],
+      "alatMedisImplantDenganVendor": [
+        "Shaver : Dyonics 4.5mm Incisor plus elite",
+        "Selang air : Dyonics 25 Inflow tube set (setting di 60mmHg)",
+        "Radiofrequency : Ambient super turbovac 90 (setting 7-9)",
+        "Implant : Endobutton CL ULTRA",
+        "Implant : BIOSURE-HA",
+        "ACL instrument dan graft preparation set. Wajib bawa tendon stripper."
+      ],
+      "langkahLangkahOperasi": [
+        "Insisi di medial tuberositas tibia untuk harvest hamstring graft",
+        "Jahit graft dengan ethibond, harvest dengan tendon stripper. Tendon stripper dibasahi dengan NaCl 0.9% sebelum dipakai",
+        "Asisten akan mempersiapkan graft dan mengukur diameter graft, operator melanjutkan arthroscopy",
+        "Buat anterolateral sejajar inferior patella dan sedekat mungkin dengan patellar tendon",
+        "Masukkan trocar arthroscope yang sudah tersambung dengan selang air",
+        "Lakukan diagnostic arthroscopy di suprapatella, medial compartment, lateral compartment",
+        "Buat portal anteromedial dengan abbocath, caspulotomy dengan klem lurus",
+        "Bersihkan anterior fat pad dengan shaver dan Radiofrequency",
+        "Lakukan evaluasi meniscus dengan probe",
+        "Debridement footprint ACL dan marking dengan awl",
+        "Posisikan lutut fleksi maksimal, asisten di samping lutut",
+        "Lakukan drilling dengan guide wire sampai menembus 2 cortex (pastikan posisi wire lurus untuk mencegah broken wire)",
+        "Masih dengan posisi fleksi maksimal, reaming dengan endobutton reamer 4.5mm sampai menembus 2 cortex",
+        "Reamer dilanjutkan dengan ukuran yang sesuai dengan graft yang didapat",
+        "Masukkan shuttle suture dengan eyelet guide wire, pasang ethibond di eyelet",
+        "Fiksasi ethibon dengan klem",
+        "Bersihkan tibia foot print (di samping anterior horn dari lateral meniscus)",
+        "Set acufex tibia drill guide tip to tip di 55 derajat dan kunci",
+        "Drill dengan guide wire",
+        "Reamer sesuai ukuran diameter graft",
+        "Bersihkan bone tunnel femur dan tibia dengan shaver",
+        "Ambil benang ethibond dari tibia tunnel",
+        "Graft passaging, asisten menarik graft dari femur dengan kontrol yang baik. Pakai kassa dan klem. Operator memegang graft dari tibia untuk menahan agar passage graft tetap terkontrol.",
+        "Setelah endobutton masuk, flip endobutton dan pastikan endobutton duduk di atas cortex tulang",
+        "Lakukan ekstensi fleksi lutut selama 20 kali untuk cyclic loading graft",
+        "Posisikan lutut fleksi 30 derajat, posterior drawer oleh asisten",
+        "Masukkan guide wire biosure dan pasang biosure dalam posisi posterior drawer",
+        "Evaluasi graft intra-artikular dengan probe",
+        "Kulit ditutup dengan prolene 4-0 atau T-vio 4-0",
+        "Luka ditutup opsite kecil",
+        "Kaki di balut softband 6 inch dan elastic verband 6 inch",
+        "Pasang knee brace"
+      ],
+      "catatanSettingDanOperasi": [
+        "Diatermi dipakai",
+        "Sebelum operasi dimulai pastikan kamera sudah di white balance, air di selang air sudah dialirkan untuk mencegah emboli udara dan flashdisk sudah terpasang di sistem kamera",
+        "Setting water pump di 60mmHg",
+        "Setting coagulation dan cutting RF arthroscopy di 7 sampai 9",
+        "Setting shaver di 2000"
+      ]
+    }
+  }
+  

@@ -1,0 +1,51 @@
+{
+    "laporanOperasi": "Burhul Drainase dan Evakuasi Tumor",
+    "definisi": "Tindakan operasi melubangi tulang tengkorak kepala guna untuk mengeluarkan cairan di otak atau mengambil tumor di kepala.",
+    "persiapan": {
+      "alatKesehatanHabisPakai": [
+        "Kapas otak",
+        "T-Hemovine / Gelitaspone",
+        "T-silk 2-0 S25 (jarum bulat)",
+        "T-silk 2-0 S24 (jarum cutting)",
+        "Prolane 3-0 (jarum bulat)",
+        "Surgicel kecil",
+        "Skin Marker",
+        "Bisturi 20 dan 15",
+        "Betadine dan Alkohol",
+        "Sarung tangan",
+        "Diatermi",
+        "Ioban 6640",
+        "Spuit 20cc",
+        "Abocat 18G"
+      ],
+      "instrumenOperasi": [
+        "Instrumen Bedah Syaraf",
+        "Kerison",
+        "Penghisap DKK",
+        "Pinset Jaringan yang ujungnya bulat",
+        "Pinset jaringan seperti Anatomis",
+        "Bipolar",
+        "Boor desolter trepanasi",
+        "Mata Boor Trepanasi untuk dewasa"
+      ]
+    },
+    "tindakan": [
+      "Cukur daerah yang akan dilakukan operasi",
+      "Skin marker (untuk menentukan daerah yang akan diinsisi)",
+      "Desinfeksi daerah yang akan dilakukan operasi",
+      "Berikan Bisturi untuk memulai insisi",
+      "Berikan Bipolar jika operator ingin menghentikan perdarahan",
+      "Siapkan Langenback untuk membuka daerah operasi",
+      "Siapkan T-silk 2-0 S25 untuk membuka daerah operasi",
+      "Siapkan adson (raspa) untuk membebaskan jaringan kulit kepala dan tengkorak kepala",
+      "Siapkan Boor Desokter Trepanasi",
+      "Siapkan Abocat 20cc 2 buah dan Abocat 18G untuk mempermudah tindakan boorhool",
+      "Siapkan kom kecil berikan air untuk menyimpan tulang kepala yang terpotong",
+      "Siapkan Kapas Otak, siapkan di kom berisikan air dan diatur di pinggir dengan tali terendam di kom",
+      "Siapkan bokal untuk menyimpan jaringan",
+      "Siapkan surgicel, potong menjadi empat bagian dan dibagi menjadi dua",
+      "Siapkan Prolane 3-0 atau T-silk 2-0 untuk menjahit tulang yang terpotong",
+      "Jahit kulit"
+    ]
+  }
+  

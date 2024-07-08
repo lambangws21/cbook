@@ -1,0 +1,74 @@
+{
+    "laporanOperasi": {
+      "judul": "Laporan Operasi Histerektomi",
+      "deskripsi": "Histerektomi adalah prosedur pembedahan untuk mengangkat rahim. Operasi ini biasanya dilakukan untuk mengatasi masalah pada sistem reproduksi wanita yang tidak kunjung membaik dengan metode pengobatan lain.",
+      "persiapan": {
+        "alatKesehatanHabisPakai": [
+          "Benang T-vio 1 V916",
+          "Benang Chromic/plain 2",
+          "Benang vicryl 4 cutting",
+          "Benang T-silk 1",
+          "Patient plate",
+          "Pencil Diatermi",
+          "Kotek/softek",
+          "Leukomed/ Fixomul",
+          "Betadine / Antiseptik",
+          "Bisturi no 20"
+        ],
+        "instrumentOperasi": [
+          "Set Histerektomi",
+          "Set BSD",
+          "Set Jas",
+          "Centong dalam pack",
+          "Klamp Kuat"
+        ],
+        "kamarOperasi": [
+          "Meja Instrument T dan Meja Panjang satu dan pendek satu",
+          "Wadah Instrument kotor",
+          "Tempat sampah medis",
+          "Botol suction dan selang suction"
+        ]
+      },
+      "timOperasi": {
+        "operator": "dr. Royanto",
+        "asistenOperator": "Br. Mardi",
+        "instrument": "Br. Lambang",
+        "sirkulasi": "Sr. Ina"
+      },
+      "persiapanPasienPreOperasi": [
+        "Perkenalan dengan pasien, konfirmasi tindakan yang akan dilakukan dan dokter operator yang akan melakukan.",
+        "Pasien digantikan baju operasi, haircap, dan marker dari kamar bedah.",
+        "Pastikan pasien tak menggunakan aksesoris cincin ataupun anting yang berbahan besi atau logam.",
+        "Pastikan pasien tak sudah tak menggunakan gigi palsu, jika pasien menggunakan gigi palsu.",
+        "Periksa kembali dokumen persiapan Operasi.",
+        "Posisikan pasien untuk siap di bius.",
+        "Posisi pasien Supine, dengan kedua kaki difiksasi dengan tali, agar terhindar kejadian jatuh.",
+        "Buka Instrumen dan jas operasi, tetap pertahankan steril."
+      ],
+      "persiapanIntraOperasi": [
+        "Melakukan cuci tangan steril.",
+        "Menggunakan jas operasi dan sarung tangan steril.",
+        "Hitung terlebih dahulu kassa yang tersedia di set instrumen histerektomi, pastikan kassa yang dihitung Genap sampai operasi selesai.",
+        "Berikan wadah / Kom untuk betadine dan Nacl.",
+        "Berikan YouthKlam kepada asisten operator untuk melakukan desinfektan kepada daerah yang akan dioperasi.",
+        "Tata Instrument Histerektomi yang akan digunakan dalam operasi.",
+        "Bantu Asisten operator untuk draping pasien.",
+        "Atur posisi Instrumen agar memudahkan saat operasi.",
+        "Tahapan Pemeberian instrumen kepada Operator:",
+        "Berikan Operator Pinset anatomis halus dan Scapel Handle.",
+        "Berikan kepada Asisten operator pinset sirugis dan kassa untuk mengedap atau membersihkan area insisi.",
+        "Persiapan diatermi.",
+        "Jika Insisi sudah sampai bagian Lemak berikan Ohak kepada asisten.",
+        "Jika insisi sudah sampai bagian fasia berikan koher kepada operator.",
+        "Jika sudah sampai di bagian otot berikan dauntiga atau langenback besar untuk membukan jalan operasi untuk mengeluarkan uterus.",
+        "Jika Uterus sudah terlihat berikan Klem panjang dan T-silk untuk side, untuk persiapan memotong tuba falopi kanan dan kiri.",
+        "Berikan Gunting untuk memotong tuba falopi dan bagian bawah uterus.",
+        "Jika Uterus sudah terangkat berikan benang T-vio 1 kepada operator untuk menjahit bagian bawah uterus.",
+        "Cuci-cuci bagian Peritonium dengan Nacl dan mengecek apakah ada perdarahan, jika sudah bersih.",
+        "Berikan T-vio 1 dan chromic 2 untuk menjahit peritonium, selanjutnya T-vio 1 lagi untuk menjahit Fasia, Pada lapisan subkutis berikan chromic 2 dan pada kulit berikan vicryl 4 cutting.",
+        "Rapikan instrumen dan Hitung kassa yang ada di atas meja instrumen dan wadah sampah steril, pastikan kassa lengkap!",
+        "Rapikan pasien dan instrumen."
+      ]
+    }
+  }
+  

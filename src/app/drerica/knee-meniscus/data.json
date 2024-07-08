@@ -1,0 +1,62 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Arthroscopy Knee Meniscus (Partial Meniscectomy atau Meniscus Repair)",
+      "posisiPasien": "Supine dengan ganjal kaki 90 derajat dan lateral post.",
+      "torniquet": "300mmHg dipasang se-proksimal mungkin (pastikan torniquet di cek dulu sebelum kaki dicuci). Torniquet harus ada.",
+      "jenisPembiusan": "Anestesi regional dengan / tanpa sedasi",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "60 menit",
+      "instrumentasi": [
+        "Tower arthroscopy",
+        "Basic set anak",
+        "Set arthroscopy smith and nephew",
+        "Kamera arthroscope smith nephew dan light source",
+        "Hand piece shaver dyonics smith and nephew",
+        "Suction floor orange",
+        "Alat arthroscopy dr. Erica (microfracture)",
+        "Skin marker",
+        "Mallet",
+        "Bila dilakukan meniscus repair : ambil knot pusher fasfix dan slotted canula di OK 1 (single pack)"
+      ],
+      "alatMedisHabisPakai": [
+        "Elastic verband steril",
+        "Prolene 4-0 atau T-vio 4-0",
+        "HOGY Orthopaedic drape",
+        "Jarum abbocath 14G atau 16G",
+        "Pisau no.11",
+        "NaCl 0.9% 1 liter untuk air arthroscopy",
+        "Depomedrol (Pfizer) atau Trilac atau Flamicort : 1 ampul"
+      ],
+      "alatMedisImplantDenganVendor": [
+        "Shaver : Dyonics 4.5mm Incisor plus elite",
+        "Selang air : Dyonics 25 Inflow tube set (setting di 60mmHg)",
+        "Radiofrequency : Ambient super turbovac 90 (setting 7-9)",
+        "Bila dilakukan meniscus repair : FAST FIX 360"
+      ],
+      "langkahLangkahOperasi": [
+        "Buat anterolateral",
+        "Masukkan trocar arthroscope yang sudah tersambung dengan selang air",
+        "Lakukan diagnostic arthroscopy di suprapatella, medial compartment, lateral compartment",
+        "Buat portal anteromedial dengan abbocath, caspulotomy dengan klem lurus",
+        "Bersihkan anterior fat pad dengan shaver dan Radiofrequency",
+        "Lakukan evaluasi meniscus dengan probe",
+        "Bila meniscus tidak bisa direpair, lakukan partial meniscectomy dengan shaver, arthroscopic punch dan radiofrequency",
+        "Bila meniscus bisa direpair, lakukan refreshing meniscus dengan shaver",
+        "Pasang slotted canula",
+        "Aplikasi fast fix 360 dan potong benang fast fix dengan knot pusher",
+        "Lakukan evaluasi dengan probe setelah repair",
+        "Kulit ditutup dengan prolene 4-0 atau T-vio 4-0",
+        "Luka ditutup opsite kecil",
+        "Kaki di balut softband 6 inch dan elastic verband 6 inch"
+      ],
+      "catatanSettingDanOperasi": [
+        "Diatermi tidak dipakai",
+        "Sebelum operasi dimulai pastikan kamera sudah di white balance, air di selang air sudah dialirkan untuk mencegah emboli udara dan flashdisk sudah terpasang di sistem kamera",
+        "Setting water pump di 60mmHg",
+        "Setting coagulation dan cutting RF arthroscopy di 7 sampai 9",
+        "Setting shaver di 2000"
+      ]
+    }
+  }
+  

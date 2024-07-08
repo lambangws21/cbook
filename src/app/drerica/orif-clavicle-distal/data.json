@@ -1,0 +1,50 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "ORIF (Open Reduction Internal Fixation) CLAVICLE/DISTAL CLAVICLE",
+      "posisiPasien": "Supine, diantara botol cairan infus dibelakang bahu, pakai c-arm",
+      "jenisPembiusan": "Anestesi umum dengan / tanpa blok regional",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "60 menit",
+      "instrumentasi": [
+        "Basic set dewasa",
+        "Set tulang: Small fragment (tulang kecil)",
+        "Boor",
+        "Drill bit 2.5mm / 2.7mm"
+      ],
+      "alatMedisHabisPakai": [
+        "Vicryl 2-0 atau T-vio 2-0",
+        "Monosyn 3-0 atau T-vio 3-0",
+        "Ioban kecil",
+        "Arm sling",
+        "Skin marker"
+      ],
+      "implant": [
+        {
+          "jenis": "Clavicle fracture",
+          "nonJKN": "Clavicular Locking S-plate 3.5mm (KANGHUI)",
+          "JKN": "Clavicle Reconstruction plate 3.5mm (IRENE/TRAFAS)"
+        },
+        {
+          "jenis": "Distal clavicle fracture",
+          "plate": "Clavicle locking hook plate (TRAFAS)"
+        }
+      ],
+      "langkahLangkahOperasi": [
+        "Insisi anterior clavicle",
+        "Identifikasi fragmen fracture",
+        "Reduksi dengan reduction forceps",
+        "Pasang LCP plate clavicle sesuai sisi cedera",
+        "Subkutis jahit dengan vicryl / T-vio 2-0",
+        "Kulit ditutup dengan monosyn 3-0 atau T-vio 3-0",
+        "Balut dengan opsite / kassa fixomul",
+        "Pasang arm sling"
+      ],
+      "catatanSettingDanOperasi": [
+        "Diatermi cutting 40, coagulation 40",
+        "Manset tekanan darah di kaki",
+        "Draping pasien sampai tertutup kaki"
+      ]
+    }
+  }
+  

@@ -1,0 +1,121 @@
+{
+  "laporanOperasi": {
+    "judul": "Tindakan Operasi Kraniotomi Dekompressi",
+    "operator": "dr. Reinindra",
+    "asisten": "-",
+    "instrumen": "Lambang",
+    "mentor": "sr. Medi",
+    "persiapanAlatKesehatan": [
+      "Kapas Otak / Whitecess",
+      "Ioban 6650/ 6640",
+      "T-Silk 2-0 S24 atau T-silk 0 cutting k/p",
+      "Vicryl 2-0 roundbonded",
+      "Vicryl 3-0 Roundbonded",
+      "Monocryl 3-0 mcp428",
+      "Tip Cleaner",
+      "Spuit 20 cc",
+      "Abbocath 18G",
+      "Bour Craniotomi",
+      "Boor Speeddreal dan panjang",
+      "Opsite 9,5",
+      "Bisturi 20 dan 15",
+      "Injeksi Pehacain atau lidocain"
+    ],
+    "persiapanInstrument": [
+      "Set Trepanasi",
+      "Set Suction dkk",
+      "Set Kerison",
+      "Boor Desoulter High Speed Drel (Hudson Brace 14/11 mmR untuk Dewasa dan 8/5 mmR untuk Anak-anak)",
+      "Bipolar Panjang",
+      "Digli Show"
+    ],
+    "penataanInstrumentMejaOperasi": [
+      "Skin Marker",
+      "Scalpel Handle 7 untuk bisturi 15 dan scalpel handle 3 untuk bisturi 20",
+      "Gunting Benang, Jaringan, dan Epidura (1/1/1)",
+      "Pinset Halus Sirugis pendek dan Kasar (1/1)",
+      "Pinset Sirugis panjang 1",
+      "Pinset Anatomis halus dan Besar (1/1)",
+      "Adson (1/1)",
+      "Klem kecil/ Mosquito Klem (>4)",
+      "Klem Lurus kecil (4)",
+      "Raspa periosteal layer (1)",
+      "Pengungkit flap (1)",
+      "Dura Tester (1)",
+      "Langen Back(1)",
+      "Spider (2)",
+      "Langen back gigi 4 (1)",
+      "Sendok dan Kom kecil (1/1)",
+      "Cross kraniotomi",
+      "Penghantar diglisho",
+      "Kenable kecil",
+      "Kerrison 2 dan 3 (1/1)",
+      "Penghisap Kecil, sedang dan besar(1/1/1)",
+      "Needle Holder"
+    ],
+    "teknikOperasi": [
+      {
+        "title": "Positioning",
+        "description": "Posisikan kepala pasien pada tepi meja untuk memudahkan operator. Head up kurang lebih 15 derajat (pasang donat kecil dibawah kepala). Letakkan kepala miring kontralateral lokasi lesi. Ganjal bahu satu sisi saja (pada sisi lesi) misalnya kepala miring ke kanan maka ganjal bantal di bahu kiri dan sebaliknya."
+      },
+      {
+        "title": "Washing",
+        "description": "Cuci lapangan operasi dengan hand scrub (anti septip soap). Tujuan menggunakan hand scrub: desinfektan, menghilangkan lemak yang ada di kulit kepala sehingga pori-pori terbuka, penetrasi betadine lebih baik. Keringkan dengan doek steril. Pasang doek steril di bawah kepala untuk membatasi kontak dengan meja operasi."
+      },
+      {
+        "title": "Markering",
+        "description": "Saat markering perhatikan: garis rambut – untuk kosmetik, sinus – untuk menghindari perdarahan, sutura – untuk mengetahui lokasi, zygoma – sebagai batas basis cranii."
+      },
+      {
+        "title": "Desinfeksi",
+        "description": "Desinfeksi lapangan operasi dengan betadine dan alkohol. Suntikkan Pehacain atau lidocaine 0,5% dengan 1 banding 9. Kemudian mulai draping."
+      }
+    ],
+    "ringkasanOperasi": [
+      "Incisi lapis demi lapis dari lapisan Skin",
+      "Connective Tissue-Aponeurosis /Galea (epicranial)- Loose areolar tissue-Pericranium. Pasang haak gigi 3 dua buah (oleh asisten), tarik ke atas sekitar 60 derajat atau buka sampai lapangan operasi terlihat. Buka flap secara perlahan agar jaringan terpisah dengan tulang.",
+      "Kompres dengan kasa basah untuk menghindari necrotic tissue. Di bawahnya diganjal dengan kasa steril supaya pembuluh darah tidak tertekuk.",
+      "Klem pada pangkal flap dan fiksasi pada doek. Buka pericranium dengan diatermi atau bipolar.",
+      "Kelupas secara hati-hati dengan raspara (raspatorium) pada daerah yang akan di burr hole atau gergaji.",
+      "Lakukan burr hole pertama dengan mata bor tajam (Hudson’s Brace 14/11 mmR) kemudian dengan mata bor yang melingkar (Conical boor) bila sudah menembus tabula interna. Burr Hole dilakukan minimal pada 4 tempat disesuaikan dengan merkering. Perdarahan dari tulang (Emissary Vein) dapat dihentikan dengan bone wax.",
+      "Pada kasus ini insisi periost atau dura tidak langsung dibuka tetapi dipertahankan dengan menjahit dengan vicryl 3-0 untuk menghindari semburan darah dikarenakan indikasi tindakan akibat dekompresi dan peningkatan TIK.",
+      "Insisi pada Dura atau Preost dilakukan dengan bisturi 15 dengan scalpel handle 7. Buka tulang dengan bur highspeed drip atau gigli.",
+      "Bebaskan dura dari cranium dengan menggunakan sonde atau duratester. Pada kasus ini menggunakan gigli.",
+      "Masukan penuntun gigli pada lubang boorhole. Pasang gigli kemudian masukkan penuntun gigli sampai menembus lubang boorhole di sebelahnya.",
+      "Lakukan pemotongan dengan gergaji sampai batok kepala terpisah. Patahkan tulang kepala dengan flap ke atas menjauhi otak dengan cara tulang dipegang dengan knabel tang dan bagian bawah dilindungi dengan elevator kemudian miringkan posisi elevator pada saat mematahkan tulang.",
+      "Setelah terdekompresi fragmen tulang dapat disimpan di subgaleal atau di dinding abdomen kemudian lapangan operasi dapat ditutup lapis demi lapis dengan cara sebagai berikut.",
+      "Teugel dura di tengah lapangan operasi dengan Vicryl 3.0 menembus keluar kulit.",
+      "Periost dan fascia otot dijahit dengan vicryl 2.0. Jahit Aponeurosi/galea dengan vicryl 2.0. Jahit kulit dengan T-lene 3-0 atau Prolene 3-0 dengan delujur."
+    ],
+    "diagnosaKeperawatan": {
+      "SDKI": [
+        "Risiko Perfusi Serebral Tidak Efektif (D.0017) berhubungan dengan Hipertensi",
+        "Penurunan Kapasitas Adaptif Intrakranial (D.0066) berhubungan dengan Hematoma kranial",
+        "Risiko Perdarahan (D.0012) berhubungan dengan Tindakan Pembedahan"
+      ],
+      "SIKI": {
+        "pemantauanTekananIntrakranial": {
+          "observasi": [
+            "Identifikasi penyebab peningkatan TIK (mis. Lesi menempati ruang, gangguan metabolisme, edema serebral, peningkatan tekanan vena, obstruksi aliran cairan serebrospinal, hipertensi intrakranial idiopatik)",
+            "Monitor peningkatan Tekanan darah",
+            "Monitor pelebran tekanan nadi (selisih TDS dan TDD)"
+          ],
+          "terapeutik": [
+            "Pertahankan Sterilitas sistem pemantauan",
+            "Pertahankan Posisi kepala dan leher netral",
+            "Dokumentasi Hasil pemantauan"
+          ],
+          "edukasi": [
+            "Jelaskan Tujuan dan prosedur pemantauan",
+            "Informasikan Hasil pemantauan, Jika perlu"
+          ]
+        }
+      },
+      "SLKI": {
+        "risikoPerfusiSerebralTidakEfektif": "Setelah dilakukan tindakan Keperawatan diharapkan keluhan Sakit kepala, Tekanan Intrakranial 4 (cukup Menurun) menjadi 2 (cukup meningkat).",
+        "kapasitasAdaptifIntrakranial": "Setelah dilakukan tindakan keperawatan diharapkan keluhan Sakit kepala, Tekanan Darah, Tekanan Nadi 4 (cukup Menurun) menjadi 2 (cukup meningkat).",
+        "tingkatPerdarahan": "Setelah dilakukan tindakan keperawatan diharapkan Membran mukosa lembab, dan Kelembapan 2 (cukup menurun) menjadi 4 (cukup meningkat). Hemoglobin dan hematokrit pasien 3 (sedang) menjadi 4 (cukup membaik)."
+      }
+    }
+  }
+}
