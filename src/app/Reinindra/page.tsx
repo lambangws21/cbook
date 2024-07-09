@@ -20,28 +20,28 @@ const menuList = [
 const Page = () => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-      <div className="flex justify-start items-center mb-4 border p-4 rounded-2xl ">
-        <div className="w-16 h-16 mr-4">
+  <div className="flex justify-start items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
+        <div className="w-16 h-16 sm:12 sm:12 mr-2 flex justify-center items-center">
           <Image
-            src={FOTO} // Ganti dengan path ke foto dr. Erica
-            alt="dokter"
-            className="rounded-full bg-cover"
+            src={FOTO}
+            alt="FOTO"
+            className="rounded-full sm:w-12 sm:h-12 bg-cover"
             width={64}
             height={64}
           />
         </div>
-        <div>
-          <div className=" text-xl font-semibold">
+          <div className="flex flex-col text-xl font-semibold sm:text-[13px]">
             {menuList[0].dokter}
-          </div>
-          <div className="text-gray-500">{menuList[0].spesialis}</div>
+            <div className="text-gray-500 sm:text-xs">
+              {menuList[0].spesialis}
+            </div>
         </div>
       </div>
       <div className="list">
         {menuList[0].items.map((item, index) => (
           <div key={index} className="mb-2">
             <Link href={item.link}>
-              <div className="text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white">{item.text}</div>
+              <div className="text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white sm:text-[10px]">{item.text}</div>
             </Link>
           </div>
         ))}

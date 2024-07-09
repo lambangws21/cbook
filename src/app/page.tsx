@@ -1,9 +1,12 @@
 "use client";
+
+import JadwalOperasi from "@/components/jadwaloperasi/jadwaloperasi";
+
 export default function Home() {
   return (
     <div>
       <main className="bg-white min-h-screen p-8">
-        <header className="text-center my-8">
+        {/* <header className="text-center my-8">
           <h1 className="text-4xl font-bold text-green-600">
             Kamar Bedah OK Carolus
           </h1>
@@ -117,12 +120,13 @@ export default function Home() {
           <p className="mt-2 text-gray-600">
             <strong>Alamat:</strong> Jl. Mawar No. 10, Jakarta
           </p>
-        </section>
+        </section> */}
+        <JadwalOperasi/>
       </main>
 
       <footer className="text-center my-8">
         <p className="text-gray-600">
-          &copy; {new Date().getFullYear()} OK Carolus. All rights reserved.
+          &copy; {new Date().getFullYear()} Herlambang Wicaksono. All rights reserved.
         </p>
       </footer>
     </div>

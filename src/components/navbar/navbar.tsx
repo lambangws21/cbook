@@ -12,7 +12,7 @@ const menuList = [
     items: [
       {
         link: "/",
-        text: "Profile",
+        text: "Jadwal Operasi",
         icon: <ShieldPlus />,
       },
       {
@@ -51,14 +51,14 @@ const Navbar = () => {
 
   return (
     <div
-      className={`sticky top-0 z-50 transition-all container duration-300 ${
+      className={`sticky top-0 z-50  transition-all container duration-300 flex justify-between ${
         scrolled
-          ? "bg-slate-100/20 rounded-3xl shadow-md p-4 w-auto"
-          : "bg-transparent"
+          ? "bg-slate-100/20 rounded-3xl shadow-md p-4 w-auto text-slate-700"
+          : "bg-transparent text-slate-900"
       } p-4`}
     >
       <div className="flex justify-center items-center gap-4 container">
-        <div className="user">
+        <div className=" " >
           <UserItems />
         </div>
         <div className="flex justify-center items-center w-screen">
