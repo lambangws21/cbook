@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation'; // Import usePathname
-import { Activity, BookCheck, PencilLine, ShieldPlus } from "lucide-react";
+import { Activity, BookCheck, PencilLine, Handshake } from "lucide-react";
 import UserItems from "../useritems/useritems";
 
 const menuList = [
@@ -11,9 +11,9 @@ const menuList = [
     group: "General",
     items: [
       {
-        link: "/",
-        text: "Jadwal Operasi",
-        icon: <ShieldPlus />,
+        link: "/pages/serahterima",
+        text: "Serah Terima",
+        icon: <Handshake />,
       },
       {
         link: "/diagnosaview",
@@ -66,7 +66,7 @@ const Navbar = () => {
             {menuList.map((menu, key) => (
               <div
                 key={key}
-                className="flex justify-center items-center gap-4 p-4 border rounded-2xl h-[70px]"
+                className="flex justify-center items-center gap-4 p-4 border rounded-2xl h-[70px] sm:h-[50px]"
               >
                 {menu.items.map((option, optionKey) => {
                   const isActive = pathname === option.link; // Determine if the link is active
@@ -74,11 +74,11 @@ const Navbar = () => {
                     <div key={optionKey}>
                       <Link
                         href={option.link}
-                        className={`flex justify-center p-2 items-center gap-3 ${
+                        className={`flex justify-center p-2 items-center gap-3 sm:text-xs sm:text-nowrap sm:p-0.5 sm:gap-0.5 ${
                           isActive
-                            ? "bg-blue-500 text-white"
+                            ? "bg-blue-500 text-white animate-pulse"
                             : scrolled
-                            ? "text-white hover:bg-slate-700"
+                            ? "text-slate-800 rounded-full border hover:bg-slate-200"
                             : "text-slate-900 p-2 hover:bg-blue-500 hover:text-white"
                         } rounded-2xl transition-all duration-300`}
                       >
