@@ -1,0 +1,37 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Uretroplasty Hipospadia letak phenoskrotal",
+      "pengertian": "Hipospadia adalah salah satu keabnormalan pada saluran kemih/uretra dan penis. Dalam kondisi ini, lubang uretra terletak di ujung penis untuk mengeluarkan urine, tetapi pada pengidap hipospadia, lubang uretra justru berada di bagian bawah penis. Kondisi ini dapat menyebabkan gangguan pada proses BAK serta ereksi.",
+      "hipospadiaImage": "/img/Hipospadia.JPG",
+      "tipeHipospadia": [
+        {"type": "Tipe Granular", "description": "Terletak pada kepala penis tapi tidak tepat di ujung"},
+        {"type": "Tipe Koronal", "description": "Pada leher kepala penis"},
+        {"type": "Tipe Penis", "description": "Pada batang penis"},
+        {"type": "Tipe Peroskrotal", "description": "Perbasan pangkal penis dengan kantung skrotum"},
+        {"type": "Tipe Skrotal", "description": "Terjadi pada kantung kemaluan"},
+        {"type": "Tipe Perineal", "description": "Daerah antara kantung kemaluan dan anus"}
+      ],
+      "alatMedis": [
+        "Mersilk 2-0 W21",
+        "Prolane 5-0 8556",
+        "PDS 6-0 W9858",
+        "PDS 5-0 1013",
+        "Csytofix",
+        "Cateter no 8",
+        "NGT no 8",
+        "Instalagel",
+        "Kateter Tip",
+        "Skin marker + penggaris (Metyln blue)",
+        "Neddle no 25 (uji ereksi)",
+        "Elastomul dan Fixomul",
+        "Nelaton (sterad)",
+        "Bisturi 15"
+      ],
+      "tindakan": [
+        "Pada saat menutup luka pada bagian penis, tutup dengan sofratule lalu tutup dengan kasa dan di tutup dengan elastomul.",
+        "Pada bagian Scrotum, tutup dengan softratul dengan kasa dan fixomul.",
+        "Cystofix, tutup dengan kasa dan fixomul."
+      ]
+    }
+  }
+  

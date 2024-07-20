@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Operation } from "@/app/operation";
+import { Operation } from "@/app/libs/operation";
 
 interface OperationCardProps {
   operation: Operation;

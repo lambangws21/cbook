@@ -16,3 +16,15 @@ export interface Operation {
     operationName: string;
     operationLink: string;
 }
+
+export interface tindakanHipospadia {
+  namaTindakan: string;
+  pengertian: string;
+  hipospadiaImage: string;
+  tipeHipospadia: Array<{
+    type: string;
+    description: string;
+  }>;
+  alatMedis: string[];
+  tindakan: string[];
+}
