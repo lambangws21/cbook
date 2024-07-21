@@ -28,3 +28,14 @@ export interface tindakanHipospadia {
   alatMedis: string[];
   tindakan: string[];
 }
+
+export interface ReimplantasiUreter{
+  judul: string;
+  deskripsi: string;
+  items: string[];
+  index: number;
+  alatKesehatanHabisPakai: string;
+  persipanInstrumen: string;
+  persiapanOperasi: string[];
+  tindakan: string;
+}
