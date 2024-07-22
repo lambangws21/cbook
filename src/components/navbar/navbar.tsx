@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation'; // Import usePathname
-import { Activity, BookCheck, PencilLine, Handshake } from "lucide-react";
+import { Activity,HomeIcon, BookCheck, PencilLine, Handshake } from "lucide-react";
 import UserItems from "../useritems/useritems";
 
 const menuList = [
@@ -11,24 +11,29 @@ const menuList = [
     group: "General",
     items: [
       {
+        link: "/",
+        text: "",
+        icon: <HomeIcon className="h-4 w-4"/>,
+      },
+      {
         link: "/pages/serahterima",
         text: "Serah Terima",
-        icon: <Handshake />,
+        icon: <Handshake className="h-4 w-4" />,
       },
       {
         link: "/diagnosaview",
         text: "Diagnosa",
-        icon: <Activity />,
+        icon: <Activity className="h-4 w-4"/>,
       },
       {
         link: "/pages/textgenerate",
         text: "Text Generator",
-        icon: <PencilLine />,
+        icon: <PencilLine className="h-4 w-4 p-0"/>,
       },
       {
         link: "/pages/operasi",
         text: "CBook",
-        icon: <BookCheck />,
+        icon: <BookCheck className="h-4 w-4 p-0"/>,
       },
     ],
   },

@@ -6,6 +6,7 @@ import FormField from "./formfield";
 import CheckboxField from "./checkboxfield";
 import Header from "./header";
 import Footer from "./footer";
+import Card from "../card";
 
 const SurgicalProcedureForm: React.FC = () => {
   const { formData, setFormData } = useFormState();
@@ -31,6 +32,8 @@ const SurgicalProcedureForm: React.FC = () => {
   };
 
   return (
+    <Card>
+      
     <form className="max-w-5xl sm:w-screen sm:p-1 mx-auto p-6 bg-white rounded shadow-md lg:min-w-full lg:p-5 ">
       <Header />
       <div className="relative grid gap-4 sm:leading-tight sm:bg-yellow-50 sm:p-2 sm:text-start sm:justify-start ">
@@ -712,6 +715,7 @@ const SurgicalProcedureForm: React.FC = () => {
       </div>
       <Footer />
     </form>
+    </Card>
   );
 };
 

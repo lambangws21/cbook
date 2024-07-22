@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <main className="bg-white min-h-screen p-8">
-        {/* <header className="text-center my-8">
+        <header className="text-center my-8">
           <h1 className="text-4xl font-bold text-green-600">
             Kamar Bedah OK Carolus
           </h1>
@@ -105,7 +105,7 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="my-16">
+        {/* <section className="my-16">
           <h2 className="text-3xl font-bold text-gray-700">Hubungi Kami</h2>
           <p className="mt-4 text-gray-600">
             Untuk informasi lebih lanjut atau konsultasi, silakan hubungi kami
@@ -121,7 +121,7 @@ export default function Home() {
             <strong>Alamat:</strong> Jl. Mawar No. 10, Jakarta
           </p>
         </section> */}
-        <JadwalOperasi/>
+      
       </main>
 
       <footer className="text-center my-8">
