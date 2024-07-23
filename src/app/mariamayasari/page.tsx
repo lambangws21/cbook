@@ -25,9 +25,9 @@ const Page = () => {
           <Image
             src={FOTO}
             alt="FOTO"
-            className="rounded-full sm:w-12 sm:h-12 bg-cover"
-            width={64}
-            height={64}
+            className="rounded-full sm:w-11 sm:h-11 bg-cover"
+            width={62}
+            height={62}
           />
         </div>
           <div className="flex flex-col text-xl font-semibold sm:text-[13px]">

@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import FOTO from "../../../public/vercel.svg";
+import FOTO from "../../../public/user.png";
 
 const menuList = [
   {

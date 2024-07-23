@@ -68,7 +68,7 @@ const Page = () => {
         </div>
       </div>
       <div className="list">
-        {menuList[0].items.slice(0, 3).map((item, index) => (
+        {menuList[0].items.slice(0, 2).map((item, index) => (
           <div key={index} className="mb-2">
             <Link href={item.link}>
               <div className="block text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white transition duration-300 sm:text-[10px]">
@@ -78,7 +78,7 @@ const Page = () => {
           </div>
         ))}
         {!isCollapsed &&
-          menuList[0].items.slice(3).map((item, index) => (
+          menuList[0].items.slice(2).map((item, index) => (
             <div key={index} className="mb-2">
               <Link href={item.link}>
                 <div className="block text-blue-500 sm:text-[10px] sm:p-2 border rounded-xl hover:bg-blue-500 hover:text-white transition duration-300">
