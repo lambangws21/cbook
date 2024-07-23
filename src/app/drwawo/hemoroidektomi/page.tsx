@@ -2,8 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import Card from "../../../components/card"
-import Foto from "../Images/posisi.png";
-import Stapler from "../Images/stapler.webp";
+import Foto from "./Images/posisi.webp";
+import Stapler from "./Images/stapler.webp";
 import data from "./data.json";
 
 interface OperationData {
