@@ -84,6 +84,11 @@ const useFormState = () => {
     jumlahKassa:"",
     jenisKassaRongga: "",
     jumlahPemeriksaan:"",
+    jumlahCairan: "",
+    instrumen: "",
+    namaInstrument: "",
+    hilang: "",
+    namaPenutup: "",
 
   });
 

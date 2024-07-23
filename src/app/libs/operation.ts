@@ -39,3 +39,12 @@ export interface ReimplantasiUreter{
   persiapanOperasi: string[];
   tindakan: string;
 }
+
+export interface HemoroidData {
+  jenisPembiusan: string;
+  Asisten: string;
+  Instrumentasi: string;
+  Deskripsi: string;
+  AlatKesehatan: string[];
+  Instrumen: string[];
+}

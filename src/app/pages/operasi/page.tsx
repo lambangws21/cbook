@@ -5,6 +5,7 @@ import Reinindra from "@/app/Reinindra/page";
 import Mariamayasari from "@/app/mariamayasari/page";
 import Royanto from "@/app/drroyanto/page";
 import Reinaldi from "@/app/reinaldi/page";
+import Wawo from "@/app/drwawo/page";
 
 const HomePage: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
         <Royanto />
         <Erica />
         <Reinaldi/>
+        <Wawo/>
       </div>
     </div>
   );
