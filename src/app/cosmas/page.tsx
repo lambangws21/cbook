@@ -5,7 +5,7 @@ import FOTO from "../../../public/images/cosmas.webp";
 
 const menuList = [
   {
-    dokter: "dr.Cosmas Gora",
+    dokter: "dr.Cosmas",
     spesialis: "Digestive",
     items: [
       {

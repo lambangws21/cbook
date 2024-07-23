@@ -36,12 +36,148 @@ const SurgicalProcedureForm: React.FC = () => {
 
   return (
     <Card>
+<<<<<<< HEAD
       <form className="max-w-5xl sm:w-screen sm:p-1 mx-auto p-6 lg:min-w-full lg:p-5 ">
         <Header />
         <div className="relative grid gap-4 sm:leading-tight sm:bg-yellow-50 sm:p-2 sm:text-start sm:justify-start ">
           <div className="text-2xl font-bold sm:text-xs  uppercase flex items-center justify-start md:text-xl">
             <div className="text-xl mr-3 font-bold sm:font-medium sm:text-2xl sm:hidden md:block md:text-7xl ">
               S
+=======
+    <form className="max-w-md sm:w-screen sm:p-1 mx-auto p-6 bg-white rounded shadow-md lg:min-w-full lg:p-5 ">
+      <Header />
+      <div className="relative grid gap-4 sm:leading-tight sm:bg-yellow-50 sm:p-2 sm:text-start sm:justify-start ">
+      <div className="text-2xl font-bold sm:text-xs  uppercase flex items-center justify-start md:text-xl">
+        <div className="text-7xl mr-3 font-bold sm:font-medium sm:text-2xl sm:sr-only ">
+          S
+        </div>{" "}
+        Surgical Procedure
+      </div>
+   
+        <div className="flex justify-center flex-col border-b-8 ">
+          <FormField
+            label="Diagnosa"
+            name="diagnosa"
+            className="text-md sm:text-[9px] py-2 sm:font-bold sm:gap-0 sm:text-wrap"
+            type="text"
+            value={formData.diagnosa}
+            onChange={handleChange}
+          />
+          <FormField
+            label="Kemajuan Tindakan Operasi"
+            name="kemajuanTindakan"
+            value={formData.kemajuanTindakan}
+            onChange={handleChange}
+            type="textarea"
+          />
+          <div className="mb-2 flex justify-start items-center gap-3 ">
+            <label className="block text-gray-700 md:text-xs sm:text-[8px]">
+              Perjalanan Operasi
+            </label>
+            <CheckboxField
+              label="Baru mulai"
+              name="baruMulai"
+              checked={formData.baruMulai}
+              onChange={handleChange}
+            />
+            <CheckboxField
+              label="Pertengahan"
+              name="pertengahan"
+              checked={formData.pertengahan}
+              onChange={handleChange}
+            />
+            <CheckboxField
+              label="Hampir selesai"
+              name="hampirSelesai"
+              checked={formData.hampirSelesai}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Lainnya"
+              name="tindakanLainnya"
+              value={formData.tindakanLainnya}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex justify-start items-center gap-3 mb-2">
+            <label className="block text-gray-700 md:text-xs sm:text-[8px] ">
+              Yang perlu diperhatikan pada pasien
+            </label>
+            <CheckboxField
+              label="Alergi"
+              name="alergi"
+              checked={formData.alergi}
+              onChange={handleChange}
+            />
+            <CheckboxField
+              label="Implant"
+              name="implant"
+              checked={formData.implant}
+              onChange={handleChange}
+            />
+            <CheckboxField
+              label="Penyakit Kronik"
+              name="penyakitKronik"
+              checked={formData.penyakitKronik}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Lainnya"
+              name="penyakitLainnya"
+              value={formData.penyakitLainnya}
+              onChange={handleChange}
+              className=""
+            />
+          </div>
+          <div className="flex justify-start items-center gap-2 mb-2">
+            <FormField
+              label="Jenis Insisi"
+              name="jenisInsisi"
+              value={formData.jenisInsisi}
+              onChange={handleChange}
+            />
+            <FormField
+              label="Area"
+              name="areaInsisi"
+              value={formData.areaInsisi}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex justify-start  gap-3 mb-2">
+            <label className="block text-gray-700  md:text-xs sm:text-[8px]">
+              Jenis Dressing yanng dibutuhkan :
+            </label>
+            <CheckboxField
+              label="Kasa"
+              name="kasa"
+              checked={formData.kasa}
+              onChange={handleChange}
+            />
+            <CheckboxField
+              label="Khusus"
+              name="khusus"
+              checked={formData.khusus}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex justify-start gap-2 items-center mb-2">
+            <label className="block text-gray-700 md:text-xs sm:text-[8px]">
+              Hal Khusus yang diperhatikan setelah operasi
+            </label>
+            <div className="flex gap-x-6 items-center mt-2">
+              <FormField
+                label="Ada"
+                name="ada"
+                value={formData.ada}
+                onChange={handleChange}
+              />
+              <CheckboxField
+                label="Tidak Ada"
+                name="tidakAdaHalKhusus"
+                checked={formData.tidakAdaHalKhusus}
+                onChange={handleChange}
+              />
+>>>>>>> 24ae4749d73a3a90a3977646de435ccfc0c91a3b
             </div>
             Surgical Procedure
           </div>
