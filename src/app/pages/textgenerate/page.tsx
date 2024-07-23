@@ -1,4 +1,3 @@
-// pages/text-generate.tsx
 "use client";
 import React, { useState } from 'react';
 import CustomModal from "@/components/modal";
@@ -27,14 +26,45 @@ const TextGenerate: React.FC = () => {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(completedSentence);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(completedSentence).then(() => {
+        console.log('Text copied to clipboard');
+      }).catch(err => {
+        console.error('Could not copy text: ', err);
+      });
+    } else {
+      fallbackCopyToClipboard(completedSentence);
+    }
+  };
+
+  const fallbackCopyToClipboard = (text: string) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+      document.execCommand('copy');
+      console.log('Fallback: Text copied to clipboard');
+    } catch (err) {
+      console.error('Fallback: Oops, unable to copy', err);
+    }
+
+    document.body.removeChild(textArea);
   };
 
   return (
     <div className="flex items-center justify-center ">
       <div className="bg-blue-500 border-2 p-5 rounded-lg shadow-md flex flex-wrap justify-center items-center">
         <h2 className="text-3xl font-semibold mb-4 text-blue-50 text-center underline">
-          Diagnosis Generate
+          Data Objektif Generate
         </h2>
         <form onSubmit={handleSubmit} className="flex p-2 gap-4 flex-wrap justify-center items-center">
           {/* Form fields */}
@@ -58,7 +88,7 @@ const TextGenerate: React.FC = () => {
             className="bg-slate-500 text-white rounded-md flex items-center justify-center gap-3 p-2 w-72 mt-4 hover:bg-slate-300 hover:text-black "
           >
             Submit
-            <SendHorizontal  className='hover:rotate-180 h-6 w-8 transition duration-1000'/>
+            <SendHorizontal className='hover:rotate-180 h-6 w-8 transition duration-1000' />
           </button>
         </form>
       </div>
@@ -74,18 +104,18 @@ const TextGenerate: React.FC = () => {
           value={completedSentence}
         />
         <div className='flex justify-center items-center mx-auto w-full gap-4 mt-4'>
-        <button
-          className="bg-blue-500 text-white rounded-md p-2 w-40 hover:bg-yellow-600"
-          onClick={copyToClipboard}
-        >
-          Salin Teks
-        </button>
-        <button
-          className="bg-slate-100 text-gray-700 rounded-md p-2 w-40  hover:bg-gray-400"
-          onClick={() => setModalIsOpen(false)}
-        >
-          Tutup
-        </button>
+          <button
+            className="bg-blue-500 text-white rounded-md p-2 w-40 hover:bg-yellow-600"
+            onClick={copyToClipboard}
+          >
+            Salin Teks
+          </button>
+          <button
+            className="bg-slate-100 text-gray-700 rounded-md p-2 w-40 hover:bg-gray-400"
+            onClick={() => setModalIsOpen(false)}
+          >
+            Tutup
+          </button>
         </div>
       </CustomModal>
     </div>

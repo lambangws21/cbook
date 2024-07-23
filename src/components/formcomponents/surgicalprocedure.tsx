@@ -33,8 +33,7 @@ const SurgicalProcedureForm: React.FC = () => {
 
   return (
     <Card>
-      
-    <form className="max-w-5xl sm:w-screen sm:p-1 mx-auto p-6 bg-white rounded shadow-md lg:min-w-full lg:p-5 ">
+    <form className="max-w-md sm:w-screen sm:p-1 mx-auto p-6 bg-white rounded shadow-md lg:min-w-full lg:p-5 ">
       <Header />
       <div className="relative grid gap-4 sm:leading-tight sm:bg-yellow-50 sm:p-2 sm:text-start sm:justify-start ">
       <div className="text-2xl font-bold sm:text-xs  uppercase flex items-center justify-start md:text-xl">
