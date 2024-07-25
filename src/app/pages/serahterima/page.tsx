@@ -1,4 +1,4 @@
-import FormSurgical from "@/components/formcomponents/surgicalprocedure"
+import FormSurgical from "@/components/formcomponents/surgicalprocedurecopy"
 
 const serahTerima = () => {
   return (
