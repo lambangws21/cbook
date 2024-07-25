@@ -7,10 +7,11 @@ import { FormSchema, FormData } from "@/lib/formTypes";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { toast } from "@/components/ui/use-toast";
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import FormField from '@/components/formcomponents/formfield';
 import CheckboxField from '@/components/formcomponents/checkboxfield';
 import { Label } from '@/components/ui/label';
+import Header from './header';
 
 const SerahTerima: React.FC = () => {
   const form = useForm<FormData>({
@@ -58,6 +59,7 @@ const SerahTerima: React.FC = () => {
   return (
     <Card>
       <CardContent>
+        <CardHeader><Header/></CardHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="relative w grid gap-4 sm:leading-tight sm:bg-yellow-50 sm:p-2">
