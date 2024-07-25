@@ -1,6 +1,8 @@
+import { Card, CardContent } from "./ui/card";
+
 interface cardProps {
   children: React.ReactNode;
-  
+
 }
 // types.ts
 export interface TeknikOperasiItem {
@@ -38,14 +40,16 @@ export interface LaporanOperasi {
   diagnosaKeperawatan: DiagnosaKeperawatanSDKI;
 }
 
-const Card = ({ children }: cardProps) => {
+const cardPage = ({ children }: cardProps) => {
   return (
-    <div className="mx-auto w-[223mm] h-auto bg-white bg-opacity-20 backdrop-filter backdrop-blur-xl rounded-3xl border border-white border-opacity-10 shadow-lg p-8 mb-4">
-      {children}
-    </div>
+    <Card>
+      <CardContent>
+        {children}
+      </CardContent>
+    </Card>
   );
 };
 
 
 
-export default Card;
+export default cardPage;

@@ -5,6 +5,7 @@ import MockData from "./data.json";
 import { copyToClipboard, formatListWithNumbers } from "@/components/copyboard/clipboardUtils";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 
 interface TableProps {
   data: {
@@ -30,27 +31,26 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
   return (
     <div className="overflow-x-auto">
       <ToastContainer />
-      <table className="min-w-full border-collapse block md:table">
-        <thead className="block md:table-header-group">
-          <tr className="border md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto md:relative">
-            <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-gray-300 block md:table-cell">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>
               Diagnosa Keperawatan
-            </th>
-            <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-gray-300 block md:table-cell">
+            </TableHead>
+            <TableHead>
               Luaran Keperawatan
-            </th>
-            <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-gray-300 block md:table-cell">
+            </TableHead>
+            <TableHead>
               Intervensi Keperawatan
-            </th>
-          </tr>
-        </thead>
-        <tbody className="block md:table-row-group">
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {data.map((row, index) => (
-            <tr
+            <TableRow
               key={index}
-              className="bg-white border border-gray-300 md:border-none block md:table-row"
             >
-              <td className="p-2 md:border md:border-gray-300 block md:table-cell">
+              <TableCell>
                 {row.diagnosaKeperawatan}
                 <button
                   className="mt-2 text-slate-900 rounded-3xl hover:bg-slate-400 p-2 w-auto h-auto bg-blue-600"
@@ -58,8 +58,8 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                 >
                   Copy Diagnosa
                 </button>
-              </td>
-              <td className="p-2 md:border md:border-gray-300 block md:table-cell">
+              </TableCell>
+              <TableCell>
                 <ul className="list-disc ml-5">
                   {row.luaranKeperawatan.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -71,8 +71,8 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                 >
                   Copy Luaran
                 </button>
-              </td>
-              <td className="p-2 md:border md:border-gray-300 block md:table-cell">
+              </TableCell>
+              <TableCell>
                 <ul className="list-disc ml-5">
                   {row.intervensiKeperawatan.map((item, index) => (
                     <li key={index}>{item}</li>
@@ -84,11 +84,11 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                 >
                   Copy Intervensi
                 </button>
-              </td>
-            </tr>
+              </TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 };

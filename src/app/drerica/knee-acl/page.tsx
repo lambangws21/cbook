@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import mockData from './data.json';
 import kneeAcl from './img/KneeAcl.webp';
-import Card from "../../../components/card";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 
 interface LaporanOperasi {
     namaTindakan: string;
@@ -28,10 +28,10 @@ const KneeAclRecons: React.FC = () => {
 
     return (
         <Card>
-            <div className="text-start">
-                <h1 className="mb-6 xs:text-4xl xs:text-center xs:font-semibold text-center">
+            <CardContent className='p-5'>
+                <CardHeader className="mb-6 xs:text-4xl xs:text-center xs:font-semibold text-center">
                     {laporan?.namaTindakan}
-                </h1>
+                </CardHeader>
                 <div className="ml-4 mb-3 xs:text-sm">
                     <p>Posisi Pasien: {laporan?.posisiPasien}</p>
                     <p>Jenis Pembiusan: {laporan?.jenisPembiusan}</p>
@@ -39,9 +39,9 @@ const KneeAclRecons: React.FC = () => {
                     <p>Instrumen: {laporan?.instrumen}</p>
                     <p>Perkiraan Lama Operasi: {laporan?.perkiraanLamaTindakan}</p>
                 </div>
-                <div className='mb-4 flex justify-center w-[690px] h-[390px]'>
+                <CardContent className='mb-4 flex justify-center w-[690px] h-[390px]'>
                     <Image src={kneeAcl} alt="ocilating" className="hover:scale-150 duration-700 w-96 -ml-11" />
-                </div>
+                </CardContent>
                 <div className="mb-4">
                     <h2 className="text-2xl font-semibold xs:text-xl mb-5">
                         Persiapan Alat Medis Habis Pakai Vendor:
@@ -78,7 +78,7 @@ const KneeAclRecons: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="mb-5 flex gap-4">
+                <CardContent className="mb-5 flex gap-4">
                     <div>
                         <h2 className="text-2xl font-semibold">Langkah-langkah Operasi:</h2>
                         <ul className="list-disc ml-7 mb-4">
@@ -89,7 +89,7 @@ const KneeAclRecons: React.FC = () => {
                             ))}
                         </ul>
                     </div>
-                </div>
+                </CardContent>
 
                 <h2 className="text-xl">Catatan dan Settingan Operasi:</h2>
                 <ul className="list-disc ml-7">
@@ -97,7 +97,7 @@ const KneeAclRecons: React.FC = () => {
                         <li key={index}>{item}</li>
                     ))}
                 </ul>
-            </div>
+            </CardContent>
         </Card>
     );
 };
