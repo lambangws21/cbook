@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-          <body className={`${inter.className} flex flex-col container mx-auto items-start justify-center`}>
-        <Navbar/>
+      <body className={`${inter.className} flex flex-col container mx-auto items-start justify-center`}>
+        <Navbar />
         <main className="w-full h-full">
-        {children}
+          {children}
         </main>
-        </body>
+      </body>
     </html>
   );
 }

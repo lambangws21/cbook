@@ -1,12 +1,12 @@
-export const copyToClipboard = (text) => {
+export const copyToClipboard = (text: string): void => {
   if (!navigator.clipboard) {
-    // Clipboard API not available
-    return fallbackCopyToClipboard(text);
+    fallbackCopyToClipboard(text);
+    return;
   }
-  return navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText(text).catch(err => console.error('Clipboard API: Oops, unable to copy', err));
 };
 
-const fallbackCopyToClipboard = (text) => {
+const fallbackCopyToClipboard = (text: string): void => {
   const textArea = document.createElement("textarea");
   textArea.value = text;
 
@@ -28,6 +28,6 @@ const fallbackCopyToClipboard = (text) => {
   document.body.removeChild(textArea);
 };
 
-export const formatListWithNumbers = (list) => {
+export const formatListWithNumbers = (list: string[]): string => {
   return list.map((item, index) => `${index + 1}. ${item}`).join('\n');
 };
