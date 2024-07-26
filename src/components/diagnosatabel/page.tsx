@@ -7,6 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { Card } from "../ui/card";
 import { copyToClipboard, formatListWithNumbers } from "@/components/copyboard/clipboardUtils";
 import MockData from "./data.json";
+import { Button } from "../ui/button";
 
 interface TableProps {
   data: {
@@ -29,8 +30,8 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
   };
 
   return (
-    <main>
-      <Card>
+  
+      <Card className="p-4 sm:w-[130vw] md:w-auto h-full">
         <ToastContainer />
         <Table>
           <TableHeader>
@@ -45,12 +46,10 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
               <TableRow key={index}>
                 <TableCell>
                   {row.diagnosaKeperawatan}
-                  <button
-                    className="mt-2 text-slate-900 rounded-3xl hover:bg-slate-400 p-2 w-auto h-auto bg-blue-600"
-                    onClick={() => handleCopy(row.diagnosaKeperawatan)}
+                  <Button onClick={() => handleCopy(row.diagnosaKeperawatan)}
                   >
                     Copy Diagnosa
-                  </button>
+                  </Button>
                 </TableCell>
                 <TableCell>
                   <ul className="list-disc ml-5">
@@ -58,12 +57,11 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
-                  <button
-                    className="mt-2 text-slate-900 rounded-3xl hover:bg-slate-400 p-2 w-auto h-auto bg-blue-600"
+                  <Button
                     onClick={() => handleCopyList(row.luaranKeperawatan)}
                   >
                     Copy Luaran
-                  </button>
+                  </Button>
                 </TableCell>
                 <TableCell>
                   <ul className="list-disc ml-5">
@@ -71,19 +69,17 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
-                  <button
-                    className="mt-2 text-slate-900 rounded-3xl hover:bg-slate-400 p-2 w-auto h-auto bg-blue-600"
+                  <Button
                     onClick={() => handleCopyList(row.intervensiKeperawatan)}
                   >
                     Copy Intervensi
-                  </button>
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </Card>
-    </main>
   );
 };
 
