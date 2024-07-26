@@ -1,4 +1,5 @@
 "use client"
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FOTO from "../../../public/images/mariamayasari.webp";
@@ -11,6 +12,10 @@ const menuList = [
       {
         link: "/mariamayasari/laparoskopi-app",
         text: "LAPARASKOPI APPENDIKTOMI",
+      },
+      {
+        link: "/mariamayasari/laparatomireseksiusus",
+        text: "LAPARATOMI RESEKSI USUS",
       },
 
     ],

@@ -1,7 +1,9 @@
 "use client"
+
 import { useState, useEffect } from 'react';
 import mockData from './data.json';
-import { Card, CardContent, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardTitle } from "../../../components/ui/card"
+import React from 'react';
 
 interface LaporanOperasi {
   judul: string;

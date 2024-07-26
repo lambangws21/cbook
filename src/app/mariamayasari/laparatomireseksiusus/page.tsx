@@ -1,9 +1,8 @@
-"use client"
+"use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import mockData from './data.json';
-import Foto from "./img/kneeAcl.webp";
-import {Card, CardContent, CardHeader, CardTitle} from "../../../components/ui/card";
+import { Card, CardContent, CardHeader } from "../../../components/ui/card";
 import React from 'react';
 
 interface LaporanOperasi {
@@ -20,7 +19,7 @@ interface LaporanOperasi {
     catatanSettingDanOperasi: string[];
 }
 
-const KneeAclRecons: React.FC = () => {
+const LaparatomiReseksiUsus: React.FC = () => {
     const [laporan, setLaporan] = useState<LaporanOperasi | null>(null);
 
     useEffect(() => {
@@ -40,9 +39,9 @@ const KneeAclRecons: React.FC = () => {
                     <p>Instrumen: {laporan?.instrumen}</p>
                     <p>Perkiraan Lama Operasi: {laporan?.perkiraanLamaTindakan}</p>
                 </div>
-                <CardContent className='mb-4 flex justify-center w-[690px] h-[390px]'>
-                    <Image src={Foto} alt="ocilating" className="hover:scale-150 duration-700 w-96 -ml-11" />
-                </CardContent>
+                {/* <CardContent className='mb-4 flex justify-center w-[690px] h-[390px]'>
+                    <Image src={laparotomyImage} alt="Laparotomy" className="hover:scale-150 duration-700 w-96 -ml-11" />
+                </CardContent> */}
                 <div className="mb-4">
                     <h2 className="text-2xl font-semibold xs:text-xl mb-5">
                         Persiapan Alat Medis Habis Pakai Vendor:
@@ -57,27 +56,15 @@ const KneeAclRecons: React.FC = () => {
                 </div>
                 <div className="mb-4">
                     <h2 className="text-2xl font-semibold xs:text-xl mb-5">
-                        Persiapan Alat Medis Habis Pakai:
+                        Persiapan Instrumentasi:
                     </h2>
                     <ul className="flex flex-wrap gap-4 justify-center">
-                        {laporan?.alatMedisHabisPakai?.map((item, index) => (
+                        {laporan?.instrumentasi?.map((item, index) => (
                             <li key={index} className="bg-gray-100 p-2 border rounded-xl w-1/3 hover:bg-green-300 custom-list-item">
                                 {item}
                             </li>
                         ))}
                     </ul>
-                </div>
-                <div className="mb-4 flex items-center p-2">
-                    <div>
-                        <h2 className="text-2xl font-semibold mb-5">Persiapan Instrument:</h2>
-                        <ul className="flex flex-wrap gap-4 justify-center">
-                            {laporan?.instrumentasi?.map((item, index) => (
-                                <li key={index} className="bg-gray-100 p-2 border rounded-xl w-1/3 hover:bg-green-300 custom-list-item">
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
                 </div>
                 <CardContent className="mb-5 flex gap-4">
                     <div>
@@ -103,4 +90,4 @@ const KneeAclRecons: React.FC = () => {
     );
 };
 
-export default KneeAclRecons;
+export default LaparatomiReseksiUsus;

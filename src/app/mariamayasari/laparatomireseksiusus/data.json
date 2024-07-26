@@ -1,0 +1,56 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Laparatomi Reseksi Usus",
+      "posisiPasien": "Terlentang",
+      "jenisPembiusan": "Obat bius",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "Tidak disebutkan",
+      "alatMedisImplantDenganVendor": [
+        "Set CVC (Team Anestesi)",
+        "Kateter dan Urine bag (sesuai dengan jenis kelamin)",
+        "Thoracic Drain ukuran 24 fr",
+        "T-silk 2-0 S24",
+        "T-Vio 2-0 V10",
+        "Mersilk 3-0 W598",
+        "Atramat 3-0 SS0733",
+        "T-Vio 3-0 V4",
+        "Trugut 2-0 atau T-chromic 2-0 C27",
+        "T-Dio 1 D73",
+        "T-vio 4-0 V3",
+        "Cairan Sublimat",
+        "Drain Penrose",
+        "Rectal Canule Tube 20/26/28",
+        "NGT 12/14/16 dan Urine bag (Drain)",
+        "Colostomy Bag",
+        "Yankauer Connecting",
+        "Kateter tip"
+      ],
+      "alatMedisHabisPakai": [],
+      "instrumentasi": [
+        "Laparatomi lengkap",
+        "Suction Lubang",
+        "Kapas Steril (sublimat)"
+      ],
+      "langkahLangkahOperasi": [
+        "Pasien terlentang, a dan antisepsis",
+        "Insisi mediana atas sampai ke bawah umbilikus",
+        "Ketika peritoneum dibuka tak keluar apa-apa",
+        "Tampak usus-usus dilatasi sampai ke kolon transversum",
+        "Dilakukan apendiktomi, dekompresi dari pangkal appendix",
+        "Ligasi puntung appendix 2 lapis",
+        "Flexura lienalis dibebaskan, teraba tumor sepanjang +/- 5 cm di fleksura lienalis",
+        "Reseksi kolon mulai dari 10 cm proksimal tumor sampai 15 cm distal tumor, dengan mengangkat mesocolon",
+        "Diameter colon arah oral dari tumor dan arah anal perbandingan 5:1. Diputuskan melakukan penyambungan secara side to side is peristalsis dengan jahitan 2 lapis",
+        "Cuci rongga abdomen, drain di parakolika kiri sampai ke pelvis",
+        "Tutup luka operasi lapis demi lapis",
+        "Operasi selesai"
+      ],
+      "catatanSettingDanOperasi": [
+        "Posisi pasien Supine",
+        "Jenis Insisi Pasien Midline",
+        "Pasien di pasang CVC oleh dokter Anestesi"
+      ]
+    }
+  }
+  

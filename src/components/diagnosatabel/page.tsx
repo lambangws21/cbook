@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 import { Card } from "../ui/card";
-import { copyToClipboard, formatListWithNumbers } from "@/components/copyboard/clipboardUtils";
+import { copyToClipboard, formatListWithNumbers } from "../../components/copyboard/clipboardUtils";
 import MockData from "./data.json";
 import { Button } from "../ui/button";
 

@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useState } from 'react';
-import CustomModal from "@/components/modal";
+import CustomModal from "../../../components/modal";
 import { SendHorizontal } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '../../../components/ui/card';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { useToast } from "@/components/ui/use-toast";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "../../../components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "../../../components/ui/textarea";
+import { Button } from '../../../components/ui/button';
+import { useToast } from "../../../components/ui/use-toast";
 
 const formSchema = z.object({
   operasi: z.string().min(2, { message: "Operasi must be at least 2 characters." }),

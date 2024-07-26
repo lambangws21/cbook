@@ -51,58 +51,57 @@ const Home = () => {
             Selamat Datang di Pusat Pelayanan Bedah Terbaik
           </p>
         </header>
-
-        <section className="min-w-screen flex items-center justify-center gap-20 mx-auto">
-          <div className="w-1/2">
+        <section className="min-w-screen flex flex-col items-center justify-center gap-20 mx-auto">
+          <div className="w-1/2 md:text-center sm:text-center lg:text-center">
             <h2 className="text-3xl font-bold text-gray-700">Visi Kami</h2>
             <p className="mt-4 text-gray-600">
               Menjadi pusat pelayanan bedah terkemuka yang diakui secara nasional
               dan internasional dalam memberikan perawatan bedah yang komprehensif
               dan inovatif.
             </p>
-            <div className="mt-7">
-            <h2 className="text-3xl font-bold text-gray-700">Misi Kami</h2>
-          <ul className="mt-4 list-disc list-outside text-gray-600">
-            <li>
-              Menyediakan layanan bedah yang berkualitas dengan mengutamakan
-              keselamatan dan kenyamanan pasien.
-            </li>
-            <li>
-              Menggunakan teknologi canggih dan metode bedah terkini untuk hasil
-              yang optimal.
-            </li>
-            <li>
-              Memberikan pendidikan dan pelatihan berkelanjutan kepada tenaga
-              medis untuk meningkatkan kompetensi.
-            </li>
-            <li>
-              Membangun hubungan yang harmonis dengan pasien dan keluarga
-              melalui komunikasi yang efektif dan pelayanan yang penuh empati.
-            </li>
-          </ul>
-          </div>
-          </div>
-          <Card className="w-1/4 ">
-            <CardContent>
-            <h2 className="text-2xl font-bold text-gray-700">Kalender Kenangan</h2>
-            <div className="mt-4 ">
-              <Calendar
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-              />
-              {selectedDate && (
-                <div className="mt-4 text-center text-lg text-gray-700">
-                  {getBirthdayReminder(selectedDate) || "Tidak ada ulang tahun hari ini."}
-                </div>
-              )}
+            <div className="mt-7 md:text-center sm:text-center lg:text-center">
+              <h2 className="text-3xl font-bold text-gray-700">Misi Kami</h2>
+              <ul className="mt-4 list-disc md:list-none sm:list-none lg:list-none list-outside text-gray-600">
+                <li>
+                  Menyediakan layanan bedah yang berkualitas dengan mengutamakan
+                  keselamatan dan kenyamanan pasien.
+                </li>
+                <li>
+                  Menggunakan teknologi canggih dan metode bedah terkini untuk hasil
+                  yang optimal.
+                </li>
+                <li>
+                  Memberikan pendidikan dan pelatihan berkelanjutan kepada tenaga
+                  medis untuk meningkatkan kompetensi.
+                </li>
+                <li>
+                  Membangun hubungan yang harmonis dengan pasien dan keluarga
+                  melalui komunikasi yang efektif dan pelayanan yang penuh empati.
+                </li>
+              </ul>
             </div>
+          </div>
+          <Card className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4">
+            <CardContent>
+              <h2 className="text-2xl font-bold text-gray-700">Kalender Kenangan</h2>
+              <div className="mt-4 ">
+                <Calendar
+                  selected={selectedDate}
+                  onSelect={setSelectedDate}
+                />
+                {selectedDate && (
+                  <div className="mt-4 text-center text-lg text-gray-700">
+                    {getBirthdayReminder(selectedDate) || "Tidak ada ulang tahun hari ini."}
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         </section>
 
         <section className="min-w-screen flex flex-col mt-9 items-center justify-center gap-2 mx-auto6">
-       <h2 className="text-3xl font-bold text-gray-700">ICARE</h2>
-       <IcareCarousel/>
+          <h2 className="text-3xl font-bold text-gray-700">ICARE</h2>
+          <IcareCarousel />
         </section>
 
         <section className="my-16">
