@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import erica from "../../../public/images/drerica.webp";
+import { Button } from "@/components/ui/button";
 
 const menuList = [
   {
@@ -88,12 +89,12 @@ const Page = () => {
             </div>
           ))}
       </div>
-      <button
+      <Button
         onClick={toggleCollapse}
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-300 sm:px-2 sm:py-2 sm:text-[10px] sm:mt-0"
       >
         {isCollapsed ? "Show More" : "Show Less"}
-      </button>
+      </Button>
     </div>
   );
 };

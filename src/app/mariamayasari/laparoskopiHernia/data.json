@@ -1,0 +1,43 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Laparoskopi Hernia",
+      "posisiPasien": "Supine",
+      "jenisPembiusan": "Tidak disebutkan",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "Tidak disebutkan",
+      "alatMedisImplantDenganVendor": [
+        "Bisturi 11",
+        "Plastik 2 M",
+        "Plester Steril",
+        "Marcain 20 cc",
+        "Mesh Progrip 15x9cm",
+        "Vicryl 2-0 vcp602 atau Trusyn 2--0",
+        "Vicryl 2-0 Round Bodied jarum kecil",
+        "Vicryl 3-0 Round Bodied",
+        "Propane atau T-lene 2-0 dan 3-0 Round Bodied"
+      ],
+      "alatMedisHabisPakai": [],
+      "instrumentasi": [
+        "Monitor laparoskopi storz",
+        "Monitor 2",
+        "Harmonic atau Enolcon",
+        "Suction Laparoskopi",
+        "Lensa 10 mm 30 derajat",
+        "Trocar dan selang gas",
+        "Set laparoskopi digestive",
+        "Kom stainless",
+        "Basic laparoskopi",
+        "Needle laparoskopi",
+        "Gunting laparoskopi",
+        "Hook laparoskopi",
+        "Spatula laparoskopi"
+      ],
+      "catatanSettingDanOperasi": [
+        "Pasien di posisi supine, dengan penyusunan monitor dan harmonic atau enolcon berada bersebrangan dengan operator",
+        "Light source, selang gas dan kamera berada di bagian atas tubuh pasien",
+        "Bila operasi di bagian dextra, tangan kiri pasien ke bawah dan begitu juga sebaliknya"
+      ]
+    }
+  }
+  

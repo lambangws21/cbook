@@ -1,10 +1,10 @@
 "use client"
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import mockData from './data.json';
-import Foto from "@/app/drerica/knee-acl/img/KneeAcl.webp";
-import {Card, CardContent, CardHeader, CardTitle} from "../../../components/ui/card";
-import React from 'react';
+// import laparoscopyImage from './img/Laparoscopy.webp';
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface LaporanOperasi {
     namaTindakan: string;
@@ -16,11 +16,10 @@ interface LaporanOperasi {
     alatMedisImplantDenganVendor: string[];
     alatMedisHabisPakai: string[];
     instrumentasi: string[];
-    langkahLangkahOperasi: string[];
     catatanSettingDanOperasi: string[];
 }
 
-const KneeAclRecons: React.FC = () => {
+const LaparoskopiHernia: React.FC = () => {
     const [laporan, setLaporan] = useState<LaporanOperasi | null>(null);
 
     useEffect(() => {
@@ -30,7 +29,7 @@ const KneeAclRecons: React.FC = () => {
     return (
         <Card>
             <CardContent className='p-5'>
-                <CardHeader className="mb-6 xs:text-4xl xs:text-center xs:font-semibold text-center">
+                <CardHeader className="mb-6 text-4xl text-center">
                     {laporan?.namaTindakan}
                 </CardHeader>
                 <div className="ml-4 mb-3 xs:text-sm">
@@ -40,9 +39,9 @@ const KneeAclRecons: React.FC = () => {
                     <p>Instrumen: {laporan?.instrumen}</p>
                     <p>Perkiraan Lama Operasi: {laporan?.perkiraanLamaTindakan}</p>
                 </div>
-                <CardContent className='mb-4 flex justify-center w-[690px] h-[390px]'>
-                    <Image src={Foto} alt="ocilating" className="hover:scale-150 duration-700 w-96 -ml-11" />
-                </CardContent>
+                {/* <CardContent className='mb-4 flex justify-center w-[690px] h-[390px]'>
+                    <Image src={laparoscopyImage} alt="Laparoscopy" className="hover:scale-150 duration-700 w-96 -ml-11" />
+                </CardContent> */}
                 <div className="mb-4">
                     <h2 className="text-2xl font-semibold xs:text-xl mb-5">
                         Persiapan Alat Medis Habis Pakai Vendor:
@@ -57,33 +56,21 @@ const KneeAclRecons: React.FC = () => {
                 </div>
                 <div className="mb-4">
                     <h2 className="text-2xl font-semibold xs:text-xl mb-5">
-                        Persiapan Alat Medis Habis Pakai:
+                        Persiapan Instrumentasi:
                     </h2>
                     <ul className="flex flex-wrap gap-4 justify-center">
-                        {laporan?.alatMedisHabisPakai?.map((item, index) => (
+                        {laporan?.instrumentasi?.map((item, index) => (
                             <li key={index} className="bg-gray-100 p-2 border rounded-xl w-1/3 hover:bg-green-300 custom-list-item">
                                 {item}
                             </li>
                         ))}
                     </ul>
                 </div>
-                <div className="mb-4 flex items-center p-2">
-                    <div>
-                        <h2 className="text-2xl font-semibold mb-5">Persiapan Instrument:</h2>
-                        <ul className="flex flex-wrap gap-4 justify-center">
-                            {laporan?.instrumentasi?.map((item, index) => (
-                                <li key={index} className="bg-gray-100 p-2 border rounded-xl w-1/3 hover:bg-green-300 custom-list-item">
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
                 <CardContent className="mb-5 flex gap-4">
                     <div>
-                        <h2 className="text-2xl font-semibold">Langkah-langkah Operasi:</h2>
+                        <h2 className="text-2xl font-semibold">Catatan dan setting Operasi:</h2>
                         <ul className="list-disc ml-7 mb-4">
-                            {laporan?.langkahLangkahOperasi?.map((item, index) => (
+                            {laporan?.catatanSettingDanOperasi?.map((item, index) => (
                                 <li key={index} className="mb-2">
                                     {item}
                                 </li>
@@ -91,16 +78,9 @@ const KneeAclRecons: React.FC = () => {
                         </ul>
                     </div>
                 </CardContent>
-
-                <h2 className="text-xl">Catatan dan Settingan Operasi:</h2>
-                <ul className="list-disc ml-7">
-                    {laporan?.catatanSettingDanOperasi?.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
             </CardContent>
         </Card>
     );
 };
 
-export default KneeAclRecons;
+export default LaparoskopiHernia;
