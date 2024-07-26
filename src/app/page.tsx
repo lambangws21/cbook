@@ -4,9 +4,7 @@ import React, { useState, useEffect } from "react";
 import { TanggalUlangTahun } from "@/lib/birthdayTypes"; // Sesuaikan dengan jalur file yang tepat
 import { Calendar } from "@/components/ui/calendar"; // Impor komponen kalender
 import { format } from "date-fns"; // Impor format dari date-fns untuk memformat tanggal
-import { ToastContainer, toast as showToast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { NextPage } from "next"; // Impor tipe NextPage dari Next.js
+import { toast, Toaster } from "@/components/toast"; // Impor toast dan Toaster dari file yang baru dibuat
 
 // Data ulang tahun
 const birthdays: TanggalUlangTahun[] = [
@@ -16,25 +14,7 @@ const birthdays: TanggalUlangTahun[] = [
   // Tambahkan data ulang tahun lainnya di sini
 ];
 
-interface ToastOptions {
-  title: string;
-  description: string;
-}
-
-export const toast = ({ title, description }: ToastOptions) => {
-  showToast.info(
-    <div>
-      <h4>{title}</h4>
-      <p>{description}</p>
-    </div>
-  );
-};
-
-export const Toaster = () => {
-  return <ToastContainer />;
-};
-
-const Home: NextPage = () => {
+const Home = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
 
   // Fungsi untuk mendapatkan pengingat ulang tahun berdasarkan tanggal yang dipilih
