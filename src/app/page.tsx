@@ -5,6 +5,8 @@ import { TanggalUlangTahun } from "@/lib/birthdayTypes"; // Sesuaikan dengan jal
 import { Calendar } from "@/components/ui/calendar"; // Impor komponen kalender
 import { format } from "date-fns"; // Impor format dari date-fns untuk memformat tanggal
 import { toast, Toaster } from "@/components/toast"; // Impor toast dan Toaster dari file yang baru dibuat
+import { Card, CardContent } from "@/components/ui/card";
+import IcareCarousel from "@/components/carousel/icareCarousel"
 
 // Data ulang tahun
 const birthdays: TanggalUlangTahun[] = [
@@ -31,7 +33,7 @@ const Home = () => {
     const birthdayToday = getBirthdayReminder(today);
     if (birthdayToday) {
       toast({
-        title: "Pengingat Ulang Tahun",
+        title: "Selamat Beraktivitas, Sehat Selalu 🤗",
         description: birthdayToday,
       });
     }
@@ -50,34 +52,17 @@ const Home = () => {
           </p>
         </header>
 
-        <section className="my-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
+        <section className="min-w-screen flex items-center justify-center gap-20 mx-auto">
+          <div className="w-1/2">
             <h2 className="text-3xl font-bold text-gray-700">Visi Kami</h2>
             <p className="mt-4 text-gray-600">
               Menjadi pusat pelayanan bedah terkemuka yang diakui secara nasional
               dan internasional dalam memberikan perawatan bedah yang komprehensif
               dan inovatif.
             </p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold text-gray-700">Pengingat Ulang Tahun</h2>
-            <div className="mt-4">
-              <Calendar
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-              />
-              {selectedDate && (
-                <div className="mt-4 text-center text-lg text-gray-700">
-                  {getBirthdayReminder(selectedDate) || "Tidak ada ulang tahun hari ini."}
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-
-        <section className="my-16">
-          <h2 className="text-3xl font-bold text-gray-700">Misi Kami</h2>
-          <ul className="mt-4 list-disc list-inside text-gray-600">
+            <div className="mt-7">
+            <h2 className="text-3xl font-bold text-gray-700">Misi Kami</h2>
+          <ul className="mt-4 list-disc list-outside text-gray-600">
             <li>
               Menyediakan layanan bedah yang berkualitas dengan mengutamakan
               keselamatan dan kenyamanan pasien.
@@ -95,44 +80,29 @@ const Home = () => {
               melalui komunikasi yang efektif dan pelayanan yang penuh empati.
             </li>
           </ul>
+          </div>
+          </div>
+          <Card className="w-1/4 ">
+            <CardContent>
+            <h2 className="text-2xl font-bold text-gray-700">Kalender Kenangan</h2>
+            <div className="mt-4 ">
+              <Calendar
+                selected={selectedDate}
+                onSelect={setSelectedDate}
+              />
+              {selectedDate && (
+                <div className="mt-4 text-center text-lg text-gray-700">
+                  {getBirthdayReminder(selectedDate) || "Tidak ada ulang tahun hari ini."}
+                </div>
+              )}
+            </div>
+            </CardContent>
+          </Card>
         </section>
 
-        <section className="my-16">
-          <h2 className="text-3xl font-bold text-gray-700">Layanan Kami</h2>
-          <div className="mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-green-600">Bedah Umum</h3>
-              <p className="mt-2 text-gray-600">
-                Kami menangani berbagai jenis operasi umum dengan teknik minimal
-                invasif yang meminimalkan nyeri dan mempercepat pemulihan.
-              </p>
-            </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-green-600">
-                Bedah Ortopedi
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Layanan bedah untuk mengatasi masalah tulang, sendi, dan otot
-                dengan pendekatan yang holistik.
-              </p>
-            </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-green-600">Bedah Saraf</h3>
-              <p className="mt-2 text-gray-600">
-                Tim ahli bedah saraf kami siap memberikan perawatan terbaik
-                untuk kondisi neurologis kompleks.
-              </p>
-            </div>
-            <div className="p-6 bg-gray-100 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-green-600">
-                Bedah Plastik dan Rekonstruksi
-              </h3>
-              <p className="mt-2 text-gray-600">
-                Menyediakan solusi bedah plastik dan rekonstruksi untuk
-                memperbaiki fungsi dan estetika tubuh.
-              </p>
-            </div>
-          </div>
+        <section className="min-w-screen flex flex-col mt-9 items-center justify-center gap-2 mx-auto6">
+       <h2 className="text-3xl font-bold text-gray-700">ICARE</h2>
+       <IcareCarousel/>
         </section>
 
         <section className="my-16">
