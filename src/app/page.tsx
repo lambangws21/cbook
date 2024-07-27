@@ -5,8 +5,8 @@ import { TanggalUlangTahun } from "@/lib/birthdayTypes"; // Sesuaikan dengan jal
 import { Calendar } from "@/components/ui/calendar"; // Impor komponen kalender
 import { format } from "date-fns"; // Impor format dari date-fns untuk memformat tanggal
 import { toast, Toaster } from "@/components/toast"; // Impor toast dan Toaster dari file yang baru dibuat
-import { Card, CardContent } from "@/components/ui/card";
-import IcareCarousel from "@/components/carousel/icareCarousel"
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import IcareCarousel from "@/components/carousel/icareCarousel";
 
 // Data ulang tahun
 const birthdays: TanggalUlangTahun[] = [
@@ -44,24 +44,24 @@ const Home = () => {
       <main className="bg-white min-h-screen p-8">
         <Toaster /> {/* Menampilkan toaster untuk pesan ulang tahun */}
         <header className="text-center my-8">
-          <h1 className="text-4xl font-bold text-green-600">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Kamar Bedah OK Carolus
           </h1>
-          <p className="text-lg mt-4">
+          <p className="leading-7 [&:not(:first-child)]:mt-6">
             Selamat Datang di Pusat Pelayanan Bedah Terbaik
           </p>
         </header>
-        <section className="min-w-screen flex flex-col items-center justify-center gap-20 mx-auto">
-          <div className="w-1/2 md:text-center sm:text-center lg:text-center">
-            <h2 className="text-3xl font-bold text-gray-700">Visi Kami</h2>
-            <p className="mt-4 text-gray-600">
+        <section className="flex flex-col items-center justify-center gap-20 mx-auto w-full max-w-screen-lg">
+          <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+            <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center">Visi Kami</h2>
+            <p className="mt-4 text-gray-600 text-center">
               Menjadi pusat pelayanan bedah terkemuka yang diakui secara nasional
               dan internasional dalam memberikan perawatan bedah yang komprehensif
               dan inovatif.
             </p>
-            <div className="mt-7 md:text-center sm:text-center lg:text-center">
-              <h2 className="text-3xl font-bold text-gray-700">Misi Kami</h2>
-              <ul className="mt-4 list-disc md:list-none sm:list-none lg:list-none list-outside text-gray-600">
+            <div className="mt-7">
+              <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center">Misi Kami</h2>
+              <ul className="mt-4 list-disc list-inside text-gray-600 text-center">
                 <li>
                   Menyediakan layanan bedah yang berkualitas dengan mengutamakan
                   keselamatan dan kenyamanan pasien.
@@ -81,10 +81,10 @@ const Home = () => {
               </ul>
             </div>
           </div>
-          <Card className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4">
+          <Card className="w-full">
             <CardContent>
-              <h2 className="text-2xl font-bold text-gray-700">Kalender Kenangan</h2>
-              <div className="mt-4 ">
+              <CardHeader className="text-2xl font-bold text-gray-700 text-center">Kalender Kenangan</CardHeader>
+              <CardContent className="mt-4 flex justify-center">
                 <Calendar
                   selected={selectedDate}
                   onSelect={setSelectedDate}
@@ -94,21 +94,21 @@ const Home = () => {
                     {getBirthdayReminder(selectedDate) || "Tidak ada ulang tahun hari ini."}
                   </div>
                 )}
-              </div>
+              </CardContent>
             </CardContent>
           </Card>
         </section>
 
-        <section className="min-w-screen flex flex-col mt-9 items-center justify-center gap-2 mx-auto6">
-          <h2 className="text-3xl font-bold text-gray-700">ICARE</h2>
+        <section className="flex flex-col mt-9 items-center justify-center gap-2 w-full max-w-screen-lg mx-auto">
+          <h2 className="text-3xl font-bold text-gray-700 text-center">ICARE</h2>
           <IcareCarousel />
         </section>
 
-        <section className="my-16">
-          <h2 className="text-3xl font-bold text-gray-700">
+        <section className="my-16 w-full max-w-screen-lg mx-auto">
+          <h2 className="text-3xl font-bold text-gray-700 text-center">
             Mengapa Memilih Kami?
           </h2>
-          <ul className="mt-4 list-disc list-inside text-gray-600">
+          <ul className="mt-4 list-disc list-inside text-gray-600 text-center">
             <li>
               Pengalaman dan Keahlian: Tim kami memiliki pengalaman
               bertahun-tahun dalam berbagai jenis operasi dengan tingkat
@@ -124,7 +124,6 @@ const Home = () => {
             </li>
           </ul>
         </section>
-
       </main>
 
       <footer className="text-center my-8">

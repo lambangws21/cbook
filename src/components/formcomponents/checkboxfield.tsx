@@ -1,25 +1,29 @@
+// components/formcomponent/checkboxfield.tsx
 import React from 'react';
-import { Checkbox } from "../ui/checkbox";
-import { Label } from "../ui/label";
 
 interface CheckboxFieldProps {
   label: string;
   name: string;
   checked: boolean;
-  onChange: (checked: boolean) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
 }
 
-const CheckboxField: React.FC<CheckboxFieldProps> = ({ label, name, checked, onChange }) => {
+const CheckboxField: React.FC<CheckboxFieldProps> = ({ label, name, checked, onChange, disabled }) => {
   return (
-    <div className="mb-1 sm:mb-0 sm:text-[9px] flex items-center justify-center">
-      <Checkbox
+    <div className="flex items-center">
+      <input
+        type="checkbox"
         id={name}
         name={name}
         checked={checked}
-        onCheckedChange={onChange} // Note the change here
-        className="mr-2 rounded-full border-gray-300 text-indigo-600 focus:ring-indigo-500"
+        onChange={onChange}
+        disabled={disabled}
+        className="form-checkbox"
       />
-      <Label htmlFor={name}>{label}</Label>
+      <label htmlFor={name} className="ml-2">
+        {label}
+      </label>
     </div>
   );
 };

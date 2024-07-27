@@ -1,25 +1,28 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, Controller } from "react-hook-form";
 import { FormSchema, FormData } from "@/lib/formTypes";
+import { defaultValues } from "@/lib/defaultValues";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { useToast } from "@/components/ui/use-toast";
+import { Card, CardContent } from '@/components/ui/card';
 import FormField from '@/components/formcomponents/formfield';
 import CheckboxField from '@/components/formcomponents/checkboxfield';
 import { Label } from '@/components/ui/label';
-import Header from './header';
 
 const SerahTerima: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
   const form = useForm<FormData>({
     resolver: zodResolver(FormSchema),
-    defaultValues: FormSchema.parse({}),
+    defaultValues,
   });
-  
+
   async function onSubmit(data: FormData) {
+    setIsLoading(true);
     console.log('Form data to be submitted:', data); // Log form data here
     try {
       const response = await fetch('/api/submit-form', {
@@ -33,11 +36,7 @@ const SerahTerima: React.FC = () => {
       if (response.ok) {
         toast({
           title: "Form submitted successfully",
-          description: (
-            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-              <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-            </pre>
-          ),
+          description: "Data berhasil disimpan!",
         });
       } else {
         throw new Error('Form submission failed');
@@ -53,13 +52,32 @@ const SerahTerima: React.FC = () => {
         title: "Error submitting form",
         description: errorMessage,
       });
+    } finally {
+      setIsLoading(false);
     }
   }
+
+  const renderCheckboxGroup = (checkboxes: { name: keyof FormData, label: string }[]) => {
+    return checkboxes.map(({ name, label }) => (
+      <Controller
+        key={name}
+        control={form.control}
+        name={name}
+        render={({ field }) => (
+          <CheckboxField
+            label={label}
+            name={name}
+            checked={!!field.value} // Ensure the value is boolean
+            onChange={field.onChange}
+          />
+        )}
+      />
+    ));
+  };
 
   return (
     <Card>
       <CardContent>
-        <CardHeader><Header/></CardHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="relative w grid gap-4 sm:leading-tight sm:bg-yellow-50 sm:p-2">
@@ -97,42 +115,11 @@ const SerahTerima: React.FC = () => {
                 />
                 <div className="mb-2 flex justify-start items-center gap-3">
                   <Label>Perjalanan Operasi</Label>
-                  <Controller
-                    control={form.control}
-                    name="baruMulai"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Baru mulai"
-                        name="baruMulai"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="pertengahan"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Pertengahan"
-                        name="pertengahan"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="hampirSelesai"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Hampir selesai"
-                        name="hampirSelesai"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "baruMulai", label: "Baru mulai" },
+                    { name: "pertengahan", label: "Pertengahan" },
+                    { name: "hampirSelesai", label: "Hampir selesai" },
+                  ])}
                   <Controller
                     control={form.control}
                     name="tindakanLainnya"
@@ -147,45 +134,14 @@ const SerahTerima: React.FC = () => {
                   />
                 </div>
                 <div className="flex justify-start items-center gap-3 mb-2">
-                  <Label className="block text-gray-700 md:text-xs sm:text-[8px]">
+                  <Label>
                     Yang perlu diperhatikan pada pasien
                   </Label>
-                  <Controller
-                    control={form.control}
-                    name="alergi"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Alergi"
-                        name="alergi"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="implant"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Implant"
-                        name="implant"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="penyakitKronik"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Penyakit Kronik"
-                        name="penyakitKronik"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "alergi", label: "Alergi" },
+                    { name: "implant", label: "Implant" },
+                    { name: "penyakitKronik", label: "Penyakit Kronik" },
+                  ])}
                   <Controller
                     control={form.control}
                     name="penyakitLainnya"
@@ -199,7 +155,7 @@ const SerahTerima: React.FC = () => {
                     )}
                   />
                 </div>
-                <div className="flex justify-start items-center gap-2 mb-2">
+                <div className="flex justify-start gap-2 mb-2">
                   <Controller
                     control={form.control}
                     name="jenisInsisi"
@@ -227,86 +183,26 @@ const SerahTerima: React.FC = () => {
                 </div>
                 <div className="flex justify-start gap-3 mb-2">
                   <Label>Jenis Dressing yang dibutuhkan :</Label>
-                  <Controller
-                    control={form.control}
-                    name="kasa"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Kasa"
-                        name="kasa"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="khusus"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Khusus"
-                        name="khusus"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "kasa", label: "Kasa" },
+                    { name: "khusus", label: "Khusus" },
+                  ])}
                 </div>
                 <div className="flex justify-start gap-2 items-center mb-2">
                   <Label>Hal Khusus yang diperhatikan setelah operasi</Label>
                   <div className="flex gap-x-6 items-center mt-2">
-                    <Controller
-                      control={form.control}
-                      name="tidakAdaHalKhusus"
-                      render={({ field }) => (
-                        <CheckboxField
-                          label="Tidak Ada"
-                          name="tidakAdaHalKhusus"
-                          checked={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    />
+                    {renderCheckboxGroup([
+                      { name: "tidakAdaHalKhusus", label: "Tidak Ada" },
+                    ])}
                   </div>
                 </div>
                 <div className="flex justify-start gap-2 items-center mb-3">
                   <Label>Rencana perawatan pasca operasi</Label>
-                  <Controller
-                    control={form.control}
-                    name="ruangPemulihan"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Ruang Pemulihan"
-                        name="ruangPemulihan"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="icu"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="ICU"
-                        name="icu"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="hcu"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="HCU"
-                        name="hcu"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "ruangPemulihan", label: "Ruang Pemulihan" },
+                    { name: "icu", label: "ICU" },
+                    { name: "hcu", label: "HCU" },
+                  ])}
                   <Controller
                     control={form.control}
                     name="lainnya"
@@ -357,117 +253,48 @@ const SerahTerima: React.FC = () => {
                 </div>
                 <div className="flex justify-start items-center gap-3 mb-2">
                   <Label>Cairan Irigasi</Label>
+                  {renderCheckboxGroup([
+                    { name: "hangat", label: "Hangat" },
+                    { name: "dingin", label: "Dingin" },
+                    { name: "suhuRuangan", label: "Suhu Ruangan" },
+                  ])}
+                </div>
+                <div className="flex justify-start gap-2 items-center mb-2">
+                  <Label>Cairan di Meja Instrumen</Label>
+                  {renderCheckboxGroup([
+                    { name: "adaCairan", label: "Ada" },
+                    { name: "tidakAdaInstrumenMeja", label: "Tidak Ada" },
+                  ])}
+                </div>
+                <div className="flex justify-start gap-2 items-center mb-2">
+                  <Label>Jumlah perdarahan sampai saat ini</Label>
                   <Controller
                     control={form.control}
-                    name="cairan"
+                    name="darah"
                     render={({ field }) => (
                       <FormField
-                        label="Nama Cairan"
-                        name="cairan"
+                        label="Darah"
+                        name="darah"
                         value={field.value}
                         onChange={field.onChange}
                       />
                     )}
                   />
-                  <Controller
-                    control={form.control}
-                    name="hangat"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Hangat"
-                        name="hangat"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="dingin"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Dingin"
-                        name="dingin"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="suhuRuangan"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Suhu Ruangan"
-                        name="suhuRuangan"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                </div>
-                <div className="flex justify-start gap-2 items-center mb-2">
-                  <Label>Cairan di Meja Instrumen</Label>
-                  <div className="flex gap-x-6 items-center ml-6">
-                    <Controller
-                      control={form.control}
-                      name="adaCairan"
-                      render={({ field }) => (
-                        <FormField
-                          label="Ada"
-                          name="adaCairan"
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    />
-                    <Controller
-                      control={form.control}
-                      name="tidakAdaInstrumenMeja"
-                      render={({ field }) => (
-                        <CheckboxField
-                          label="Tidak Ada"
-                          name="tidakAdaInstrumenMeja"
-                          checked={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    />
-                  </div>
-                </div>
-                <div className="flex justify-start gap-2 items-center mb-2">
-                  <Label>Jumlah perdarahan sampai saat ini</Label>
-                  <div className="flex gap-x-6 items-center mt-2 ml-6">
-                    <Controller
-                      control={form.control}
-                      name="darah"
-                      render={({ field }) => (
-                        <FormField
-                          label="Darah"
-                          name="darah"
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    />
-                  </div>
                 </div>
                 <div className="flex justify-start gap-2 items-center mb-2">
                   <Label>Produksi Urine</Label>
-                  <div className="flex gap-x-6 items-center mt-2 ml-6">
-                    <Controller
-                      control={form.control}
-                      name="urine"
-                      render={({ field }) => (
-                        <FormField
-                          label="Jumlah"
-                          name="urine"
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    />
-                  </div>
+                  <Controller
+                    control={form.control}
+                    name="urine"
+                    render={({ field }) => (
+                      <FormField
+                        label="Jumlah"
+                        name="urine"
+                        value={field.value}
+                        onChange={field.onChange}
+                      />
+                    )}
+                  />
                 </div>
                 <div className="flex justify-start items-center gap-3">
                   <Label>Persiapan darah yang tersedia</Label>
@@ -490,45 +317,6 @@ const SerahTerima: React.FC = () => {
                       <FormField
                         label="Jenis Darah"
                         name="jenisDarah"
-                        value={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                </div>
-                <div className="mb-2 flex justify-start items-center gap-3">
-                  <Label>Drain pasien</Label>
-                  <Controller
-                    control={form.control}
-                    name="letakDrain"
-                    render={({ field }) => (
-                      <FormField
-                        label="Letak Drain"
-                        name="letakDrain"
-                        value={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="jenisDrain"
-                    render={({ field }) => (
-                      <FormField
-                        label="Jenis Drain"
-                        name="jenisDrain"
-                        value={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="ukuranDrain"
-                    render={({ field }) => (
-                      <FormField
-                        label="Ukuran Drain"
-                        name="ukuranDrain"
                         value={field.value}
                         onChange={field.onChange}
                       />
@@ -560,30 +348,10 @@ const SerahTerima: React.FC = () => {
                       />
                     )}
                   />
-                  <Controller
-                    control={form.control}
-                    name="lengkap"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Lengkap"
-                        name="lengkap"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="tidakLengkap"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak Lengkap"
-                        name="tidakLengkap"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "lengkap", label: "Lengkap" },
+                    { name: "tidakLengkap", label: "Tidak Lengkap" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-3">
                   <Label>Instrumen Tambahan</Label>
@@ -616,7 +384,7 @@ const SerahTerima: React.FC = () => {
                   />
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-3">
-                  <Label>Instrumen yang akan disterilkan ulang :</Label>
+                  <Label>Instrumen yang akan disterilkan ulang</Label>
                   <Controller
                     control={form.control}
                     name="instrumenSterilkanUlang"
@@ -667,106 +435,22 @@ const SerahTerima: React.FC = () => {
               </div>
               <div className="flex justify-center flex-col border-b-8 max-w-full mx-auto p-7">
                 <div className="mb-2 flex justify-start items-center gap-3">
-                  <Label>Specimen :</Label>
-                  <Controller
-                    control={form.control}
-                    name="adaSpecimen"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Ada Specimen"
-                        name="adaSpecimen"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaSpecimen"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak Ada"
-                        name="tidakAdaSpecimen"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="sudahDiambil"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Sudah diambil"
-                        name="sudahDiambil"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="belumDiambil"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Belum diambil"
-                        name="belumDiambil"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  <Label>Specimen</Label>
+                  {renderCheckboxGroup([
+                    { name: "adaSpecimen", label: "Ada Specimen" },
+                    { name: "tidakAdaSpecimen", label: "Tidak Ada" },
+                    { name: "sudahDiambil", label: "Sudah diambil" },
+                    { name: "belumDiambil", label: "Belum diambil" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-3">
                   <Label>Jenis Pemeriksaan</Label>
-                  <Controller
-                    control={form.control}
-                    name="patologi"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Patologi"
-                        name="patologi"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="vc"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="VC"
-                        name="vc"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="sitologi"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Sitologi"
-                        name="sitologi"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="kultur"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Kultur"
-                        name="kultur"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "patologi", label: "Patologi" },
+                    { name: "vc", label: "VC" },
+                    { name: "sitologi", label: "Sitologi" },
+                    { name: "kultur", label: "Kultur" },
+                  ])}
                   <Controller
                     control={form.control}
                     name="jumlahPemeriksaan"
@@ -782,72 +466,23 @@ const SerahTerima: React.FC = () => {
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-3">
                   <Label>Fiksasi Specimen</Label>
-                  <Controller
-                    control={form.control}
-                    name="formalin"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Formalin 10%"
-                        name="formalin"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="tidakDifiksasi"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak difiksasi"
-                        name="tidakDifiksasi"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "formalin", label: "Formalin 10%" },
+                    { name: "tidakDifiksasi", label: "Tidak difiksasi" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-3">
                   <Label>Label Specimen</Label>
-                  <Controller
-                    control={form.control}
-                    name="adaLabel"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Ada Label"
-                        name="adaLabel"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaLabel"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak ada"
-                        name="tidakAdaLabel"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "adaLabel", label: "Ada Label" },
+                    { name: "tidakAdaLabel", label: "Tidak ada" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-3">
                   <Label>Penggunaan Graft</Label>
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaGraft"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak ada"
-                        name="tidakAdaGraft"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "tidakAdaGraft", label: "Tidak ada" },
+                  ])}
                   <Controller
                     control={form.control}
                     name="adaGraft"
@@ -925,18 +560,9 @@ const SerahTerima: React.FC = () => {
                       />
                     )}
                   />
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaKasa"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak ada"
-                        name="tidakAdaKasa"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "tidakAdaKasa", label: "Tidak ada" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-5">
                   <Label>Jarum</Label>
@@ -1010,12 +636,12 @@ const SerahTerima: React.FC = () => {
               </div>
             </div>
             {/* Have Any Question */}
-            <div className="relative grid gap-4 sm:p-2 sm:bg-purple-50">
+            <div className="relative grid gap-4 sm:leading-tight sm:bg-blue-50 sm:p-2">
               <div className="text-2xl font-bold mb-4 uppercase flex items-center justify-start">
                 <div className="text-5xl mr-3 font-bold">H</div> Have You Any
                 Question?
               </div>
-              <div className="flex justify-center flex-col border-b-8">
+              <div className="flex justify-center flex-col border-b-8 max-w-full mx-auto p-7">
                 <div className="mb-2 flex justify-start items-center gap-5">
                   <Label>Hal lain yang ingin ditanyakan</Label>
                   <Controller
@@ -1031,18 +657,9 @@ const SerahTerima: React.FC = () => {
                       />
                     )}
                   />
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaPertayaan"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak ada"
-                        name="tidakAdaPertayaan"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "tidakAdaPertayaan", label: "Tidak ada" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-5">
                   <Label>Dokumen yang harus dilengkapi</Label>
@@ -1058,18 +675,9 @@ const SerahTerima: React.FC = () => {
                       />
                     )}
                   />
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaDokumen"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak ada"
-                        name="tidakAdaDokumen"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "tidakAdaDokumen", label: "Tidak ada" },
+                  ])}
                 </div>
                 <div className="mb-2 flex justify-start items-center gap-5">
                   <Label>Nomor serial Implant</Label>
@@ -1085,22 +693,15 @@ const SerahTerima: React.FC = () => {
                       />
                     )}
                   />
-                  <Controller
-                    control={form.control}
-                    name="tidakAdaSerialImplant"
-                    render={({ field }) => (
-                      <CheckboxField
-                        label="Tidak ada"
-                        name="tidakAdaSerialImplant"
-                        checked={field.value}
-                        onChange={field.onChange}
-                      />
-                    )}
-                  />
+                  {renderCheckboxGroup([
+                    { name: "tidakAdaSerialImplant", label: "Tidak ada" },
+                  ])}
                 </div>
               </div>
             </div>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" disabled={isLoading}>
+              {isLoading ? "Submitting..." : "Submit"}
+            </Button>
           </form>
         </Form>
       </CardContent>
