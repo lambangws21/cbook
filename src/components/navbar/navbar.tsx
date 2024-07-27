@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation'; // Import usePathname
-import { Activity,HomeIcon, BookCheck, PencilLine, Handshake } from "lucide-react";
+import { Activity, HomeIcon, BookCheck, PencilLine, Handshake } from "lucide-react";
 import UserItems from "../useritems/useritems";
-import {Badge} from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 
 const menuList = [
   {
@@ -14,7 +14,7 @@ const menuList = [
       {
         link: "/",
         text: "",
-        icon: <HomeIcon className="h-4 w-4"/>,
+        icon: <HomeIcon className="h-4 w-4" />,
       },
       {
         link: "/pages/serahterima",
@@ -24,17 +24,17 @@ const menuList = [
       {
         link: "/diagnosaview",
         text: "Diagnosa",
-        icon: <Activity className="h-4 w-4"/>,
+        icon: <Activity className="h-4 w-4" />,
       },
       {
         link: "/pages/textgenerate",
         text: "Text Generator",
-        icon: <PencilLine className="h-4 w-4 p-0"/>,
+        icon: <PencilLine className="h-4 w-4 p-0" />,
       },
       {
         link: "/pages/operasi",
         text: "CBook",
-        icon: <BookCheck className="h-4 w-4 p-0"/>,
+        icon: <BookCheck className="h-4 w-4 p-0" />,
       },
     ],
   },
