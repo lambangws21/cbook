@@ -1,0 +1,29 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "Pasang Cimino",
+      "posisiPasien": "Tidak disebutkan",
+      "jenisPembiusan": "Tidak disebutkan",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "Tidak disebutkan",
+      "alatMedisImplantDenganVendor": [],
+      "alatMedisHabisPakai": [
+        "T-silk 1 tanpa jarum",
+        "T-vio / Vicryl 4-0 taper",
+        "T-lene / Prolene 6-0",
+        "T-lene / Prolene 7-0",
+        "NGT no 5 dan 3.5",
+        "Lidocaine 5 amp",
+        "Inviclot 1 cc + Nacl 100 ml",
+        "Bisturi 15"
+      ],
+      "instrumentasi": [
+        "Set Cimino",
+        "Jas Hogy (menyesuaikan dengan jaminan)",
+        "USG ( sewa alat)"
+      ],
+      "langkahLangkahOperasi": [],
+      "catatanSettingDanOperasi": []
+    }
+  }
+  

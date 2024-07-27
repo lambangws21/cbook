@@ -63,7 +63,7 @@ const Navbar = () => {
           : "bg-transparent text-slate-900"
       } p-4`}
     >
-      <div className="xs:hidden sm:hidden flex justify-center items-center gap-4 container">
+      <div className="flex justify-center items-center gap-4 container">
         <div className=" " >
           <UserItems />
         </div>

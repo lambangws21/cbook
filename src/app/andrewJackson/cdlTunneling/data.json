@@ -1,0 +1,28 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "CDL Tunneling",
+      "posisiPasien": "Tidak disebutkan",
+      "jenisPembiusan": "Tidak disebutkan",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "Tidak disebutkan",
+      "alatMedisImplantDenganVendor": [],
+      "alatMedisHabisPakai": [
+        "Spuit 10 cc dan 5 cc",
+        "Jarum 24",
+        "T-lene / Prolene 4-0 Round Bodied",
+        "Lidocaine 2 - 5 ampul",
+        "Alat Tunneling sesuai dengan permintaan",
+        "Inviclot 1 cc + 25 cc Nacl (piggy)",
+        "Locking 1 cc inviclot + 3 cc Nacl",
+        "Bisturi 11"
+      ],
+      "instrumentasi": [
+        "Set CDL",
+        "Jas Hogy (sesuaikan dengan jaminan)"
+      ],
+      "langkahLangkahOperasi": [],
+      "catatanSettingDanOperasi": []
+    }
+  }
+  

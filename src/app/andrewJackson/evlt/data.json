@@ -1,0 +1,44 @@
+{
+    "laporanOperasi": {
+      "namaTindakan": "CDL Tunneling",
+      "posisiPasien": "Tidak disebutkan",
+      "jenisPembiusan": "Tidak disebutkan",
+      "asistenOperasi": "1 orang",
+      "instrumen": "1 orang",
+      "perkiraanLamaTindakan": "Tidak disebutkan",
+      "alatMedisImplantDenganVendor": [],
+      "alatMedisHabisPakai": [
+        "Needle no 22",
+        "Spuit 20 cc (1 buah)",
+        "Spuit 10 cc (2 buah)",
+        "Spuit 5 cc (1 buah)",
+        "Opsite 6,5 (min 10)",
+        "Prolene 6-0 W8706 (double jarum min 2)",
+        "Mata pisau 11",
+        "Jas hogy",
+        "Orthopedic Drape (2 bila bilateral)",
+        "Plastik 2 meter",
+        "Spinocan no 25 G",
+        "Skin Marker",
+        "Stocking (dibawa dari ruangan)",
+        "Monas dr.Andrew untuk memasang Stocking",
+        "Epinephrine 1 ampul",
+        "Meylon 25 cc 1",
+        "Lidocaine 25 amp",
+        "Venodenol (min 2 ampul)",
+        "Nacl dingin 1000 ml dan 500 ml (di diamkan dalam kulkas selama 24 jam)",
+        "Softban / velban 15 (min 2)",
+        "Saleb Elocon"
+      ],
+      "instrumentasi": [
+        "Set EVLT atau BSA",
+        "USG (sewa alat)"
+      ],
+      "langkahLangkahOperasi": [],
+      "catatanSettingDanOperasi": [
+        "Nacl 1000 ml 0,9 % di oplos dengan Lidocaine 25 ml (12,5 ampul) di oplos dengan 0,01 % + 1 ml dan Meylon 12 ml (25 cc).",
+        "Bila oplosan menggunakan 500cc dosisnya dibagi dua"
+      ]
+    }
+  }
+  
