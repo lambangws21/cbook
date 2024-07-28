@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // URL dari Web App Google Apps Script Anda
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzTHdN-e3nBf1Z6b5_ShOrVxffUejUOkNVo1LPMkOrV5MB9J1_r5Hk0gFVPBLzCZSqeEw/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4yCjfcHVTHxugqGfy8cmhQs0in9qnrQv_DFpruPXpSzftAuZ7x9xPheihOSfd1C-UHw/exec';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {

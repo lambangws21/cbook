@@ -19,7 +19,7 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({ label, name, checked, onC
         checked={checked}
         onChange={onChange}
         disabled={disabled}
-        className="form-checkbox"
+        className="form-checkbox "
       />
       <label htmlFor={name} className="ml-2">
         {label}

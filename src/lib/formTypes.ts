@@ -1,8 +1,14 @@
-// lib/formTypes.ts
 import { z } from "zod";
 
+// Define the schema for the form data
 export const FormSchema = z.object({
-  diagnosa: z.string().min(1, "Diagnosa is required"),
+  namaPasien: z.string(),
+  noRekamMedis: z.string(),
+  namaDokter: z.string(),
+  namaPenyerah: z.string(),
+  namaPenerima: z.string(),
+  namaPemberi: z.string(),
+  diagnosa: z.string(),
   kemajuanTindakan: z.string().optional(),
   baruMulai: z.boolean().optional(),
   pertengahan: z.boolean().optional(),
@@ -77,4 +83,5 @@ export const FormSchema = z.object({
   tidakAdaSerialImplant: z.boolean().optional(),
 });
 
+// Define the TypeScript type based on the schema
 export type FormData = z.infer<typeof FormSchema>;
