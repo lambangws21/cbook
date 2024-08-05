@@ -49,7 +49,7 @@ const Home = () => {
             Kamar Bedah OK Carolus
           </h1>
           <p className="leading-7 [&:not(:first-child)]:mt-6">
-            Selamat Datang di C-BOOK "Carolus Book", Website ini dibuat untuk kenangan dan juga pembelajaran yang sudah saya dapatkan di OK Carolus. Jika ada hal yang ingin disampaikan, jangan sungkan untuk menghubungi <Link href={'https://www.instagram.com/wicaksonoherlambang/'} className={'text-blue-500 hover:underline'}>saya di Instagram</Link> atau melalui <Link href={'mailto:lambangws21@gmail.com'} className={'text-blue-500 hover:underline'}>email</Link>.
+            Selamat Datang di C-BOOK &quot;Carolus Book&quot;, Website ini dibuat untuk kenangan dan juga pembelajaran yang sudah saya dapatkan di OK Carolus. Jika ada hal yang ingin disampaikan, jangan sungkan untuk menghubungi <Link href={'https://www.instagram.com/wicaksonoherlambang/'} className={'text-blue-500 hover:underline'}>saya di Instagram</Link> atau melalui <Link href={'mailto:lambangws21@gmail.com'} className={'text-blue-500 hover:underline'}>email</Link>.
           </p>
         </header>
         <section className="flex flex-col items-center justify-center gap-20 mx-auto w-full max-w-screen-lg">
