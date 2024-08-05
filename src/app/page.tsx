@@ -7,7 +7,6 @@ import { format } from "date-fns"; // Impor format dari date-fns untuk memformat
 import { toast, Toaster } from "@/components/toast"; // Impor toast dan Toaster dari file yang baru dibuat
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import IcareCarousel from "@/components/carousel/icareCarousel";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 // Data ulang tahun
