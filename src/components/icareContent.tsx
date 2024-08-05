@@ -1,19 +1,19 @@
 export const ICAREContent = [
     {
-      title: "Bedah Umum",
-      description: "Kami menangani berbagai jenis operasi umum dengan teknik minimal invasif yang meminimalkan nyeri dan mempercepat pemulihan.",
+      title: "Diagnosa Tabel",
+      description: "Saya Berharap dengan adanya diagnosa tabel ini, dapat membantu teman-teman untuk membuat asuhan keperawatan yang tepat dan cepat.",
     },
     {
-      title: "Bedah Ortopedi",
-      description: "Layanan bedah untuk mengatasi masalah tulang, sendi, dan otot dengan pendekatan yang holistik.",
+      title: "Text Generator",
+      description: "Dengan Text Generator diharapkan membuat data objektif lebih mudah dan dapat di tambahkan jika kurang",
     },
     {
-      title: "Bedah Saraf",
-      description: "Tim ahli bedah saraf kami siap memberikan perawatan terbaik untuk kondisi neurologis kompleks.",
+      title: "C-Book",
+      description: "Kumpulan beberapa persiapan operasi yang sudah saya ikuti, yang kemungkinan akan sama, dan diharpakan ini hanya menjadi catatan saja",
     },
     {
-      title: "Bedah Plastik dan Rekonstruksi",
-      description: "Menyediakan solusi bedah plastik dan rekonstruksi untuk memperbaiki fungsi dan estetika tubuh.",
+      title: "Next Update",
+      description: "Jika waktu dan semangat tetap ada, saya akan tetap melakukan update dan pengembangan website ini, doakan saja.",
     },
     // Tambahkan lebih banyak konten di sini jika diperlukan
   ];

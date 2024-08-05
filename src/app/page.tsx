@@ -7,6 +7,8 @@ import { format } from "date-fns"; // Impor format dari date-fns untuk memformat
 import { toast, Toaster } from "@/components/toast"; // Impor toast dan Toaster dari file yang baru dibuat
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import IcareCarousel from "@/components/carousel/icareCarousel";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // Data ulang tahun
 const birthdays: TanggalUlangTahun[] = [
@@ -48,39 +50,10 @@ const Home = () => {
             Kamar Bedah OK Carolus
           </h1>
           <p className="leading-7 [&:not(:first-child)]:mt-6">
-            Selamat Datang di Pusat Pelayanan Bedah Terbaik
+            Selamat Datang di C-BOOK "Carolus Book", Website ini dibuat untuk kenangan dan juga pembelajaran yang sudah saya dapatkan di OK Carolus. Jika ada hal yang ingin disampaikan, jangan sungkan untuk menghubungi <Link href={'https://www.instagram.com/wicaksonoherlambang/'} className={'text-blue-500 hover:underline'}>saya di Instagram</Link> atau melalui <Link href={'mailto:lambangws21@gmail.com'} className={'text-blue-500 hover:underline'}>email</Link>.
           </p>
         </header>
         <section className="flex flex-col items-center justify-center gap-20 mx-auto w-full max-w-screen-lg">
-          <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-            <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center">Visi Kami</h2>
-            <p className="mt-4 text-gray-600 text-center">
-              Menjadi pusat pelayanan bedah terkemuka yang diakui secara nasional
-              dan internasional dalam memberikan perawatan bedah yang komprehensif
-              dan inovatif.
-            </p>
-            <div className="mt-7">
-              <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center">Misi Kami</h2>
-              <ul className="mt-4 list-disc list-inside text-gray-600 text-center">
-                <li>
-                  Menyediakan layanan bedah yang berkualitas dengan mengutamakan
-                  keselamatan dan kenyamanan pasien.
-                </li>
-                <li>
-                  Menggunakan teknologi canggih dan metode bedah terkini untuk hasil
-                  yang optimal.
-                </li>
-                <li>
-                  Memberikan pendidikan dan pelatihan berkelanjutan kepada tenaga
-                  medis untuk meningkatkan kompetensi.
-                </li>
-                <li>
-                  Membangun hubungan yang harmonis dengan pasien dan keluarga
-                  melalui komunikasi yang efektif dan pelayanan yang penuh empati.
-                </li>
-              </ul>
-            </div>
-          </div>
           <Card className="w-full">
             <CardContent>
               <CardHeader className="text-2xl font-bold text-gray-700 text-center">Kalender Kenangan</CardHeader>
@@ -100,29 +73,8 @@ const Home = () => {
         </section>
 
         <section className="flex flex-col mt-9 items-center justify-center gap-2 w-full max-w-screen-lg mx-auto">
-          <h2 className="text-3xl font-bold text-gray-700 text-center">ICARE</h2>
+          <h2 className="text-3xl font-bold text-gray-700 text-center">Semoga Membantu </h2>
           <IcareCarousel />
-        </section>
-
-        <section className="my-16 w-full max-w-screen-lg mx-auto">
-          <h2 className="text-3xl font-bold text-gray-700 text-center">
-            Mengapa Memilih Kami?
-          </h2>
-          <ul className="mt-4 list-disc list-inside text-gray-600 text-center">
-            <li>
-              Pengalaman dan Keahlian: Tim kami memiliki pengalaman
-              bertahun-tahun dalam berbagai jenis operasi dengan tingkat
-              keberhasilan yang tinggi.
-            </li>
-            <li>
-              Pelayanan Personal: Kami memahami kebutuhan unik setiap pasien dan
-              memberikan perawatan yang dipersonalisasi.
-            </li>
-            <li>
-              Keamanan dan Kenyamanan: Kami mengutamakan keamanan pasien dan
-              menyediakan lingkungan yang nyaman selama proses perawatan.
-            </li>
-          </ul>
         </section>
       </main>
 

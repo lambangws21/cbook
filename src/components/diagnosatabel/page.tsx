@@ -26,17 +26,17 @@ interface TableProps {
 const NursingCareTable: React.FC<TableProps> = ({ data }) => {
   const handleCopy = (text: string) => {
     copyToClipboard(text);
-    toast.success("Copied to clipboard!");
+    toast.success("Diagnosa sudah disalin");
   };
 
   const handleCopyList = (list: string[]) => {
     const formattedText = formatListWithNumbers(list);
     copyToClipboard(formattedText);
-    toast.success("Copied to clipboard!");
+    toast.success("Sudah Tersalin");
   };
 
   return (
-    <Card className="p-4 sm:w-[130vw] md:w-auto h-full">
+    <Card>
       <ToastContainer />
       <Table>
         <TableHeader>
