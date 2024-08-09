@@ -8,7 +8,7 @@ import clavilceLocking from "./img/ClavicleLocking35.JPG"
 import recons from "./img/Recons35.JPG"
 import clavicleHook from "./img/ClavicleHook.JPG"
 
-import Card from ".@/components/card";
+import Card from "@/components/card";
 
 const OrifClavicleDistal = () => {
     const [laporan, setLaporan] = useState({});

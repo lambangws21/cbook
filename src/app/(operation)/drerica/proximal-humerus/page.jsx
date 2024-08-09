@@ -7,7 +7,7 @@ import philosKanghui from "./img/platePhilos.JPG";
 import philosDarken from "./img/plateDarken.JPG";
 import philosIrene from "./img/philosIreneTrafas.JPG"
 import proximalHumerus from "./img/proximalhumerus.JPG"
-import Card from '../../../components/card';
+import Card from '@/components/card';
 
 const OrifProximalHumerus = () => {
     const [laporan, setLaporan] = useState({});
