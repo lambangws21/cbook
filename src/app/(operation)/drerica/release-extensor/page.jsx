@@ -5,7 +5,7 @@ import Image from 'next/image'
 import mockData from './data.json'
 import releaseExtensore from './img/ReleaseExtensor.JPG';
 import releaseExtensore1 from './img/ReleaseExtensor1.JPG';
-import Card from "../../../components/card"
+import Card from "@/components/card"
 
 const ReleaseExtensorCarpiRadialis = () => {
     const [laporan, setLaporan] = useState({});

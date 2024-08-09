@@ -8,7 +8,7 @@ import shaftHumerusPosisi from "./img/shafthumerus.JPG";
 import posisiAssintenInstrumen from "./img/posisiinstrumenasisten.JPG";
 import posisiPlate from "./img/posisiplate.JPG";
 import posisiPlate2 from "./img/posisiplate2.JPG"
-import Card from "../../../components/card";
+import Card from "@/components/card";
 
 const OrifShaftHumerus = () => {
     const [laporan, setLaporan] = useState({});

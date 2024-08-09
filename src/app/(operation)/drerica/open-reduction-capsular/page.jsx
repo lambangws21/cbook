@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import mockData from './data.json'
 import capsular from './img/Capsular.JPG'
-import Card from "../../../components/card"
+import Card from "@/components/card"
 
 const OpenReductionCapsular = () => {
     const [laporan, setLaporan] = useState({});
