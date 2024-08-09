@@ -18,7 +18,9 @@ const Home = () => {
   const getBirthdayReminder = (date: Date | undefined) => {
     if (!date) return null;
     const todayMonthDay = format(date, "MM-dd");
-    const birthday = birthdays.find(bd => format(bd.date, "MM-dd") === todayMonthDay);
+    const birthday = birthdays.find(
+      bd => format(bd.date, "MM-dd") === todayMonthDay
+    );
     return birthday ? `${birthday.message} 🎉` : null;
   };
 
@@ -35,13 +37,15 @@ const Home = () => {
 
       setTimeout(() => {
         setShowConfetti(false);
-      }, 15000); // Stop confetti after 5 seconds
+      }, 5000); // Stop confetti after 5 seconds
     }
   }, []);
 
   return (
     <div>
-      {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} />} {/* Tambahkan confetti */}
+      {showConfetti && (
+        <Confetti width={window.innerWidth} height={window.innerHeight} />
+      )} {/* Tambahkan confetti */}
       <main className="bg-white min-h-screen p-8">
         <Toaster />
         <header className="text-center my-8">
