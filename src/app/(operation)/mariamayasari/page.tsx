@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FOTO from "../../../public/images/mariamayasari.webp";
+import FOTO from "../../../../public/images/mariamayasari.webp";
 import { Button } from "@/components/ui/button";
 
 const menuList = [
@@ -21,6 +21,10 @@ const menuList = [
       {
         link: "/mariamayasari/laparoskopiHernia",
         text: "LAPAROSKOPI HERNIA",
+      },
+      {
+        link: "/mariamayasari/laparoskopireseksihepar",
+        text: "Laparoskpi Reseksi Hepar",
       },
     ],
   },

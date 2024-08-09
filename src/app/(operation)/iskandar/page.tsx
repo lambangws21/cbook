@@ -2,42 +2,18 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import erica from "../../../public/images/drerica.webp";
+import Iskandar from "../../../../public/images/iskandar.webp";
 import { Button } from "@/components/ui/button";
 
 const menuList = [
   {
-    dokter: "dr. Erica",
-    spesialis: "Orthopedi",
+    dokter: "dr. Iskandar",
+    spesialis: "Bedah Anak",
     items: [
       {
-        link: "/drerica/knee-acl",
-        text: "Arthroscopy Knee ACL Reconstruction",
-      },
-      {
-        link: "/drerica/knee-meniscus",
-        text: "Arthroscopy Knee Meniscus (Partial Meniscectomy atau Meniscus Repair)",
-      },
-      {
-        link: "/drerica/open-reduction-capsular",
-        text: "Open Reduction and Capsular Release Elbow",
-      },
-      {
-        link: "/drerica/orif-clavicle-distal",
-        text: "ORIF (Open Reduction Internal Fixation) CLAVICLE/DISTAL CLAVICLE",
-      },
-      {
-        link: "/drerica/proximal-humerus",
-        text: "ORIF (Open Reduction Internal Fixation) PROXIMAL HUMERUS",
-      },
-      {
-        link: "/drerica/release-extensor",
-        text: "Release Extensor Carpi Radialis Brevis (ECRB) untuk Tennis Elbow",
-      },
-      {
-        link: "/drerica/shoulder",
-        text: "Arthroscopy shoulder",
-      },
+        link: "/iskandar/laparoskopihernia",
+        text: "Laparoskopi Hernia",
+      }
     ],
   },
 ];
@@ -54,8 +30,8 @@ const Page = () => {
       <div className="flex justify-start items-center mb-4 border p-4 sm:p-0 rounded-2xl bg-gray-50">
         <div className="w-16 h-16 mr-4 flex justify-center items-center">
           <Image
-            src={erica}
-            alt="dr. Erica"
+            src={Iskandar}
+            alt="dr. Iskandar"
             className="rounded-full sm:w-12 sm:h-12 bg-cover"
             width={64}
             height={64}

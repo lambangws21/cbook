@@ -1,24 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { TanggalUlangTahun } from "@/lib/birthdayTypes"; // Sesuaikan dengan jalur file yang tepat
-import { Calendar } from "@/components/ui/calendar"; // Impor komponen kalender
-import { format } from "date-fns"; // Impor format dari date-fns untuk memformat tanggal
-import { toast, Toaster } from "@/components/toast"; // Impor toast dan Toaster dari file yang baru dibuat
+import { birthdays } from "@/lib/birtdayData"; // Impor data ulang tahun dari file terpisah
+import { Calendar } from "@/components/ui/calendar"; 
+import { format } from "date-fns";
+import { toast, Toaster } from "@/components/toast";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import IcareCarousel from "@/components/carousel/icareCarousel";
 import Link from "next/link";
-
-// Data ulang tahun
-const birthdays: TanggalUlangTahun[] = [
-  { date: new Date(1994, 6, 26), name: "Herlambang Wicaksono", message: "Happy Birthday, Herlambang!" },
-  { date: new Date(2024, 7, 26), name: "John Doe", message: "Happy Birthday, John!" },
-  { date: new Date(2024, 8, 14), name: "Jane Smith", message: "Happy Birthday, Jane!" },
-  // Tambahkan data ulang tahun lainnya di sini
-];
+import Confetti from "react-confetti"; // Impor komponen confetti untuk efek animasi
 
 const Home = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [showConfetti, setShowConfetti] = useState<boolean>(false);
 
   // Fungsi untuk mendapatkan pengingat ulang tahun berdasarkan tanggal yang dipilih
   const getBirthdayReminder = (date: Date | undefined) => {
@@ -33,17 +27,23 @@ const Home = () => {
     const today = new Date();
     const birthdayToday = getBirthdayReminder(today);
     if (birthdayToday) {
+      setShowConfetti(true);
       toast({
         title: "Selamat Beraktivitas, Sehat Selalu 🤗",
         description: birthdayToday,
       });
+
+      setTimeout(() => {
+        setShowConfetti(false);
+      }, 15000); // Stop confetti after 5 seconds
     }
   }, []);
 
   return (
     <div>
+      {showConfetti && <Confetti width={window.innerWidth} height={window.innerHeight} />} {/* Tambahkan confetti */}
       <main className="bg-white min-h-screen p-8">
-        <Toaster /> {/* Menampilkan toaster untuk pesan ulang tahun */}
+        <Toaster />
         <header className="text-center my-8">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Kamar Bedah OK Carolus

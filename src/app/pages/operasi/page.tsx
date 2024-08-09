@@ -1,13 +1,16 @@
 "use client";
-import Cosmas from "@/app/cosmas/page";
-import Erica from "@/app/drerica/page";
-import Reinindra from "@/app/Reinindra/page";
-import Mariamayasari from "@/app/mariamayasari/page";
-import Royanto from "@/app/drroyanto/page";
-import Reinaldi from "@/app/reinaldi/page";
-import Wawo from "@/app/drwawo/page";
-import PersiapanAnestesi from "@/app/persiapan-anestesi/page";
-import AndrewJackson from "@/app/andrewJackson/page"
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3667269883.
+import Cosmas from "@/app/(operation)/cosmas/page";
+import Erica from "@/app/(operation)/drerica/page";
+import Reinindra from "@/app/(operation)/Reinindra/page";
+import Mariamayasari from "@/app/(operation)/mariamayasari/page";
+import Royanto from "@/app/(operation)/drroyanto/page";
+import Reinaldi from "@/app/(operation)/reinaldi/page";
+import Wawo from "@/app/(operation)/drwawo/page";
+import PersiapanAnestesi from "@/app/(operation)/persiapan-anestesi/page";
+import AndrewJackson from "@/app/(operation)/andrewJackson/page"
+import Iskandar from "@/app/(operation)/iskandar/page"
+
 
 const HomePage: React.FC = () => {
   return (
@@ -18,6 +21,7 @@ const HomePage: React.FC = () => {
        <AndrewJackson/>
         <Cosmas />
         <Reinindra />
+        <Iskandar/>
         <Mariamayasari />
         <Royanto />
         <Erica />

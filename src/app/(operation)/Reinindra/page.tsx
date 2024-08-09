@@ -1,16 +1,16 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import FOTO from "../../../public/user.png";
+import FOTO from "../../../../public/images/reinindra.webp";
 
 const menuList = [
   {
-    dokter: "Persipan Anestesi",
-    spesialis: "Anestesi",
+    dokter: "dr.Renindra",
+    spesialis: "Bedah Saraf",
     items: [
       {
-        link: "/persiapan-anestesi/general",
-        text: "Anestesi General (Asuransi/Umum)",
+        link: "/Reinindra/kraniotom",
+        text: "Operasi Kraniotomi Dekompressi",
       },
 
     ],
@@ -20,7 +20,7 @@ const menuList = [
 const Page = () => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-    <div className="flex justify-start items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
+  <div className="flex justify-start items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
         <div className="w-16 h-16 sm:12 sm:12 mr-2 flex justify-center items-center">
           <Image
             src={FOTO}

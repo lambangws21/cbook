@@ -1,5 +1,5 @@
 {
-    "laporanOperasi": {
+    "laporanOperasiKneeAcl": {
       "namaTindakan": "Arthroscopy Knee ACL Reconstruction",
       "posisiPasien": "Supine dengan ganjal kaki 90 derajat dan lateral post.",
       "torniquet": "300mmHg dipasang se-proksimal mungkin (pastikan torniquet di cek dulu sebelum kaki dicuci). Torniquet harus ada.",
@@ -78,4 +78,5 @@
       ]
     }
   }
+  
   

@@ -1,20 +1,16 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import FOTO from "../../../public/images/reinaldi.webp";
+import FOTO from "../../../../public/images/wawo.webp";
 
 const menuList = [
   {
-    dokter: "dr.Reinaldi",
-    spesialis: "Urologi",
+    dokter: "dr.Wawo",
+    spesialis: "Bedah Umum",
     items: [
       {
-        link: "/reinaldi/uretroplasty",
-        text: "Uretroplasty",
-      },
-      {
-        link: "/reinaldi/laparoskopi-reimplantasi-ureter",
-        text: "Laparoskopi Reimplantasi Ureter",
+        link: "/drwawo/hemoroidektomi",
+        text: "Hemoroidektomi dengan Stapler",
       },
 
     ],

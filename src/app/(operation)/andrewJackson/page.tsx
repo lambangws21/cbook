@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FOTO from "../../../public/images/andrejackson.webp";
+import FOTO from "../../../../public/images/andrejackson.webp";
 import { Button } from "@/components/ui/button";
 
 const menuList = [

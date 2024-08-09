@@ -1,12 +1,12 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import mockData from './data.json';
-import Foto from "@/app/drerica/knee-acl/img/KneeAcl.webp";
-import {Card, CardContent, CardHeader, CardTitle} from "../../../components/ui/card";
+import mockData from '@/app/(operation)/drerica/data.json';
+import Foto from "./img/KneeAcl.webp";
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import React from 'react';
 
-interface LaporanOperasi {
+interface laporanOperasiKneeAcl {
     namaTindakan: string;
     posisiPasien: string;
     jenisPembiusan: string;
@@ -21,10 +21,10 @@ interface LaporanOperasi {
 }
 
 const KneeAclRecons: React.FC = () => {
-    const [laporan, setLaporan] = useState<LaporanOperasi | null>(null);
+    const [laporan, setLaporan] = useState<laporanOperasiKneeAcl | null>(null);
 
     useEffect(() => {
-        setLaporan(mockData.laporanOperasi);
+        setLaporan(mockData.laporanOperasiKneeAcl);
     }, []);
 
     return (

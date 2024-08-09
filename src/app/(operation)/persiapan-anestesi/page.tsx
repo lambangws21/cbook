@@ -1,16 +1,16 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import FOTO from "../../../public/images/drroyanto.webp";
+import FOTO from "../../../../public/user.png";
 
 const menuList = [
   {
-    dokter: "dr.Royanto",
-    spesialis: "Obstetri",
+    dokter: "Persipan Anestesi",
+    spesialis: "Anestesi",
     items: [
       {
-        link: "/drroyanto/histerektomi",
-        text: "Laparatomi Histerektomi",
+        link: "/persiapan-anestesi/general",
+        text: "Anestesi General (Asuransi/Umum)",
       },
 
     ],

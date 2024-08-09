@@ -1,0 +1,62 @@
+{
+    "Judul": "Laparoskopi Hernia dr Iskandar",
+    "Perawat" : "sr. Nia",
+    "JenisPembiusan": "General anastesi",
+    "Posisi": "Supine",
+    "PersiapanOperasi": {
+      "PersiapanPasien": [
+        "Surat persetujuan (tindakan dan anastesi)",
+        "Obat-obatan",
+        "Puasa"
+      ],
+      "PersiapanInstrumen": [
+        "Monitor storz",
+        "Light source",
+        "Selang irigasi dan gas",
+        "Plastik 2 m",
+        "Kabel monopolar",
+        "Lensa/telescop 10 mm dgn tingkat kemiringan 0 derajat",
+        "Plastik kiloan, dimana plastik ini nanti akan dipotong dan dibuat bolong berbentuk persegi",
+        "Trocart 10 mm 1, dipasang di umbilical. Trocart 5 mm 1 jika memakai hook/ melakukan pembakaran menggunakan kabel mopolar. Pengaturan esu cut 20 coag 20",
+        "Desinfektan klem 1",
+        "Doek klem 5",
+        "Pinset chirurgis halus 1",
+        "Kidney tray",
+        "Klem bengkok 3 (untuk menjepit fasia)",
+        "Agunting benang 1",
+        "Gunting metzembeum 1",
+        "Needleholder 1",
+        "Double endeed 2",
+        "Kom steinless",
+        "Cairan steranios"
+      ],
+      "PersiapanBahanHabisPakai": [
+        "Messno 15",
+        "Hdscoen 6.5/7",
+        "Alkohol",
+        "Povidon iodine",
+        "Benang (Raden 4.0, vicryl 4.0 cut w8396, vicryl bulta 4.0 vcp317, vicril 2.0 vcp602)",
+        "Air steril 1 liter 3 (1 untuk pembilasan lensa, 2 untuk irigasi)",
+        "Dermabone"
+      ]
+    },
+    "Catatan": [
+      "Rendam light source dan lensa menggunakan cairan steranios kurang lebih 30 menit. Dimana light source dan lensa dimasukkan ke dalam cidex.",
+      "Sebelum dilakukan draping, pasang plastik yang sudah dilubangi berbentuk kotak dan diplester menggunakan mikropor.",
+      "Tempatkan injakan monopolar di sisi operator. Misal hernia sinistra, jadi operator di sisi kanan pijakannya."
+    ],
+    "TeknikInstrumen": [
+      "Mencuci tangan bedah, keringkan menggunakan wash lap, pakai baju bedah. Setelah menggunakan baju bedah, bilas light source dan kamera menggunakan air steril yang sudah ditaruh di kom steinless.",
+      "Pasang bisturi no 15, hitung kassa dimana disaksikan oleh sirkuler.",
+      "Lakukan desinfektan pada sekitar area yang akan dilakukan insisi dengan povidone Iodine.",
+      "Untuk draping, berikan dpek besar untuk area bawah lalu dpek sedang untuk atas. Dpek kecil untuk sisi kanan dan kiri. Fiksasi dengan dpek klem.",
+      "Pasang light source dengan kecerahan 9, selang irigasi, selang suction, selang gas.",
+      "Memberikan alkohol + kassa kepada operator untuk sekitar area yang akan diinsisi. Lalu berikan kassa kering untuk mengeringkan bekas alkohol tadi.",
+      "Memberikan bisturi no 15 yang sudah ditaruh di kidney tray untuk insisi kulit umbilical, lalu memberikan klem bengkok untuk menjepit fasia 2. Berikan double endeed untuk memperluas pandangan yang akan diinsisi, lalu berikan scissor metzembeum untuk insisi fasia. Setelah fasia terinsisi, berikan benang vicryl 2.0 vcp602 atau yang 5/8 untuk menjahit sekeliling fasia tadi. Setelah fasia terjadi, berikan trocart 10mm. Lalu beri head camera yang sudah dibungkus dengan plastik 2 m dan disambung dengan light source + lensa 10 mm nol derajat.",
+      "Setelah head camera masuk, CO2 dihidupkan atau menunggu instruksi dokter. Posisikan meja operasi turun lalu head down. Operator menginsisi sisi inguinal kiri menggunakan bisturi no 15, lalu memberikan meriline.",
+      "Untuk insisi ke tiga, terkadang dokter memiliki dua cara: yang pertama tanpa trocart 5 mm, dan yang kedua memakai trocart 5 mm. Kapan waktu memakai trocart? Saat dokter meminta untuk memakai hook atau akan melakukan pembakaran atau melepaskan jaringan yang didalam.",
+      "Setelah hernia ditemukan, jangan lupa untuk melakukan dokumentasi. Lalu beri benang raden 4.0. Setelah itu dijait. Setelah hernia selesai dilakukan jahit gas CO2 dimatikan. Benang 2/0 yang diikat di fasia tadi diikat. Berikan needle holder dan benang vicryl 4/0 untuk jahit fasia. Tutup luka dengan dermabonde.",
+      "Operasi selesai"
+    ]
+  }
+  
