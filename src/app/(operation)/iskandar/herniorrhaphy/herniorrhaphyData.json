@@ -1,0 +1,43 @@
+{
+  "Judul": "Laporan Operasi Herniorrhaphy",
+  "jenisPembiusan": "Anestesi Umum",
+  "assistant": "sr. Okta",
+  "instrumen": "br. Lambang",
+  "sirkulasi": "br. Berto",
+  "persiapanDrapingPasien": [
+    "Posisi pasien dalam supine dan sudah dalam pembiusan atau narkose",
+    "Siapkan dan letakan doek Besar berkantung di bagian bawah pasien atau kaki pasien",
+    "Lanjutkan doek besar kedua letakan di bagian atas pasien atau di bagian kepala pasien",
+    "Doek Kecil letakan bagian kanan dan kiri kemudian fiksasi menggunakan doek klem, Hati-hati ketika fiksasi menggunakan doek klem jangan sampai mengenai kulit pasien"
+  ],
+  "persiapanDimejaOperasi": [
+    "Set BSA (Bedah Anak)",
+    "Monopolar Kecil",
+    "Jas"
+  ],
+  "persiapanAlatKesehatan": [
+    "Patient Plate Anak",
+    "Tip Cleaner",
+    "Dermabond",
+    "Vicryl 4-0 vcp310",
+    "Vicryl 4-0 w9386",
+    "Nacl 1 liter",
+    "Betadine",
+    "Handscone",
+    "Yankauer atau Suction",
+    "Rindamen Steramor"
+  ],
+  "langkahLangkahOperasi": [
+    "Berikan operator bisturi untuk persiapan insisi",
+    "Dilanjutkan diatermi dan pinset halus, untuk pinset, berikan pinset kasar kepada asisten dan jangan lupa siapkan juga bipolar.",
+    "Ketika diseksi untuk mencapai pada fasia berikan adson untuk memegang fasia dan berikan gunting untuk memotong jaringan fascia",
+    "Siapkan Pinset Anatomis untuk mencari cincin hernia pasien dan juga ketika cincin sudah ketemu berikan operator klem, klem yang disiapkan minimal 4",
+    "Siapkan vicryl 4-0 vpc310 untuk menutup cincin hernia, siapkan gunting jaringan",
+    "Pada proses ini, tindakan akan dilanjutkan untuk kontrol perdarahan, ketika sudah selesai kontrol perdarahan, lanjutkan dengan penutupan luka pasien.",
+    "Pada proses penutupan luka, konfirmasi kepada operator apakah menggunakan dermabond atau jahit."
+  ],
+  "note": [
+    "Gunakan dermabond untuk penutupan luka.",
+    "Pastikan tidak ada infeksi pasca operasi."
+  ]
+}

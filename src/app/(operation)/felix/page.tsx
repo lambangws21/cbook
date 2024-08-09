@@ -2,22 +2,19 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Iskandar from "../../../../public/images/iskandar.webp";
+import Foto from "../../../../public/images/felix.webp";
 import { Button } from "@/components/ui/button";
 
 const menuList = [
   {
-    dokter: "dr. Iskandar",
-    spesialis: "Bedah Anak",
+    dokter: "dr. Felix",
+    spesialis: "Bedah Umum",
     items: [
       {
-        link: "/iskandar/laparoskopihernia",
-        text: "Laparoskopi Hernia",
+        link: "/felix/eksisipsoas",
+        text: "Eksisi PSOAS",
       },
-      {
-        link: "/iskandar/herniorrhaphy",
-        text: "Herniorrhaphy",
-      },
+  
     ],
   },
 ];
@@ -34,7 +31,7 @@ const Page = () => {
       <div className="flex justify-start items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
         <div className="w-16 h-16 sm:12 sm:12 mr-2 flex justify-center items-center">
           <Image
-            src={Iskandar}
+            src={Foto}
             alt="FOTO"
             className="rounded-full sm:w-12 sm:h-12 bg-cover"
             width={64}

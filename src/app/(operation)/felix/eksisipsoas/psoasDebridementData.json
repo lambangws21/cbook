@@ -1,0 +1,57 @@
+{
+    "operator": "dr. Felix",
+    "assistant": "sr. Jenny",
+    "instrumen": "herlambang",
+    "sirkulasi": "br. Geter",
+    "persiapanAlatKesehatan": [
+      "Vicryl 3-0 VCP316",
+      "Vicryl 4-0 W9386",
+      "Prolene 4-0 W525",
+      "Tip Cleaner",
+      "Patient Plate",
+      "Opsite 6,5x5 / 9,5x8",
+      "Yankauer atau Suction"
+    ],
+    "persiapanInstrumen": [
+      "BSA (menyesuaikan dengan kondisi pasien, jika eksisi luas atau lukanya luas gunakan BSD)",
+      "Jas",
+      "Gunting Jaringan dan Gunting Benang (Metzenbaum)",
+      "Bocal Steril untuk kultur"
+    ],
+    "persiapanKamar": [
+      "Siapkan Tempat Sampah Infeksius untuk tindakan operasi",
+      "Bak instrumen kotor, untuk instrumen kotor nantinya",
+      "Meja Instrumen, siapkan Panjang dan pendek",
+      "Pada Meja Panjang meletakan jas dan pendek letakan instrumen",
+      "Siapkan Handscoon dan bisturi yang akan digunakan, diatermi dan suction"
+    ],
+    "persiapanDraping": [
+      "Pasien diposisikan Lateral Sinistra atau menyesuaikan dengan lokasinya",
+      "Ganjal pada pinggang pasien dan bagian depan di bagian pubis",
+      "Ketika posisi sudah mantap, persiapan desinfeksi, desinfeksi dilakukan memutar ke arah jarum jam dari tengah sampai pinggir.",
+      "Siapkan dan letakan doek Besar berkantung di bagian bawah pasien atau kaki pasien",
+      "Lanjutkan doek besar kedua letakan di bagian atas pasien atau di bagian kepala pasien",
+      "Doek Kecil letakan bagian kanan dan kiri kemudian fiksasi menggunakan doek klem, Hati-hati ketika fiksasi menggunakan doek klem jangan sampai mengenai kulit pasien"
+    ],
+    "penyusunanInstrumen": [
+      "Scalpel handle dengan bisturi dan pinset halus",
+      "Pinset Sirugis pendek 1",
+      "Pinset Anatomis pendek 1",
+      "Sonde probe",
+      "Klem atau mosquito 4",
+      "Langenback atau Double ended",
+      "Needle holder",
+      "Kassa steril UV"
+    ],
+    "langkahLangkahOperasi": [
+      "Berikan operator piala ginjal yang berisikan bisturi",
+      "Berikan Asisten pinset sirurgis untuk membantu tindakan eksisi",
+      "Siapkan spuit untuk tindakan pengambilan sampel kultur jika perlu",
+      "Berikan Diatermi dan pinset untuk menghentikan perdarahan atau membuka luka",
+      "Berikan klem mosquito",
+      "Jika ada jaringan yang akan dilakukan pemeriksaan patologi, amankan jaringan dan sampaikan pada sirkulasi ada jaringan patologi",
+      "Jika sudah, bersihkan daerah yang dilakukan operasi, siapkan tampon dengan campuran obat kloramfenikol untuk menjadi tampon luka",
+      "Tutup luka dengan kassa"
+    ]
+  }
+  

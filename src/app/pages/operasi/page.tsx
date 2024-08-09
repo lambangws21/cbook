@@ -10,6 +10,8 @@ import Wawo from "@/app/(operation)/drwawo/page";
 import PersiapanAnestesi from "@/app/(operation)/persiapan-anestesi/page";
 import AndrewJackson from "@/app/(operation)/andrewJackson/page"
 import Iskandar from "@/app/(operation)/iskandar/page"
+import Felix from "@/app/(operation)/felix/page"
+
 
 
 const HomePage: React.FC = () => {
@@ -25,6 +27,7 @@ const HomePage: React.FC = () => {
         <Mariamayasari />
         <Royanto />
         <Erica />
+        <Felix/>
         <Reinaldi/>
         <Wawo/>
       </div>
