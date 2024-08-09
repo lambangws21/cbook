@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import mockData from './data.json';
-import { Card, CardContent, CardHeader } from "../../../components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import React from 'react';
 
 interface LaporanOperasi {

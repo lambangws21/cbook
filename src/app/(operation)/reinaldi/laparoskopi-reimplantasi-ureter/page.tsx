@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import mockData from './data.json';
 import hipospadiaImage from '../img/hypospadias1.webp';
-import Card from "../../../components/card";
+import Card from "@/components/card";
 
 interface TipeHipospadia {
   type: string;

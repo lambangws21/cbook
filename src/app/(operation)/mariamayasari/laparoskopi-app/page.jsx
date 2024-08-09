@@ -1,7 +1,7 @@
 "use client"
 import  { useState, useEffect } from 'react';
 import mockData from './data.json';
-import Card from "../../../components/card";
+import Card from "@/components/card";
 
 const LaporanOperasi = () => {
   const [laporan, setLaporan] = useState({});
