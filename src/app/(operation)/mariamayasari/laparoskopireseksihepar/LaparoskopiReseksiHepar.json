@@ -1,0 +1,54 @@
+{
+    "Judul": "Laparoskopi Diagnostik Hepar",
+    "Operator": "dr. Maria Mayasari",
+    "Asisten": "2 Orang",
+    "Instrumentasi": "1 Orang",
+    "PersiapanAlatKesehatanDanObat": [
+        "Lina Clear",
+        "Selang Suction",
+        "Trusyn 2-0 atau Vicryl 2-0 Vcp602",
+        "Plastik 2 meter dan Plester Steril",
+        "Alkohol 98%",
+        "Stapler Hepar sesuai dengan permintaan operator",
+        "Trocar 12 mm, 11 mm, 5 mm",
+        "Spuit 20 cc dan 10 cc",
+        "Marcain 20 cc",
+        "Endoclip 10 mm",
+        "Endobag",
+        "Kateter dan Urine Bag (disesuaikan dengan pasien)",
+        "Aqua untuk irigasi"
+    ],
+    "PersiapanInstrumen": [
+        "Monitor Laparoskopi Storz atau sejenisnya",
+        "Enolcon, Harmonic atau sejenisnya",
+        "Basic Laparoskopi",
+        "Laparoskopi Digestive (Grasper usus panjang, Bepkock, Suction laparoskopi, Jarum, Marylyn, Kipas Laparoskopi, Gunting Laparoskopi)",
+        "Kom Stainless",
+        "Kabel Monopolar"
+    ],
+    "LangkahOperasi": [
+        "Pasien terlentang, antisepsis",
+        "Insisi transumbilikal",
+        "Masukkan trokar cara Hasson",
+        "Gas dan kamera dimasukkan",
+        "Tampak tumor liver di sisi kiri menggantung dari segmen 2",
+        "Evaluasi liver lobus kanan, tampak permukaan licin",
+        "Pasang trokar 2-3 dan 4 sesuai prosedur",
+        "Ligamentum teres hepatis dibebaskan",
+        "Ligamentum koronarius kiri dibebaskan",
+        "Ligamentum koronarius kanan dibebaskan sebagian",
+        "Perabaan permukaan liver lobus kanan, teraba nodul di segmen 7, diputuskan injeksi etanol 95% sebanyak 20 ml",
+        "Dilanjutkan dengan pembebasan tumor",
+        "Potong parenkim tumor dengan endostapler, harmonic scalpel",
+        "Perdarahan diatasi dengan klip 2 titanium buah",
+        "Tumor dibebaskan",
+        "Ekstraksi spesimen tumor dengan melebarkan luka umbilikus",
+        "Drain di sub diafragma kiri",
+        "Tutup luka operasi lapis demi lapis",
+        "Operasi selesai"
+    ],
+    "Catatan" : [
+        "Siapkan juga instrument laparatomie",
+        "Konfirmasi kembali penggunaan Stapler"
+    ]
+}
