@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -60,20 +59,57 @@
   }
 }
 
-
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
   }
 }
 
-/* styles/globals.css */
+/* Penyesuaian tipografi responsif */
+@media (max-width: 640px) {
+  body {
+    @apply text-sm;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  body {
+    @apply text-base;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    @apply text-lg;
+  }
+}
+
+/* Utility khusus untuk wrapper transisi halaman */
 .page-transition-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
+}
+
+/* Container responsif untuk konten */
+.container {
+  @apply mx-auto px-2;
+}
+
+/* Contoh penyesuaian responsive untuk card */
+.card-responsive {
+  @apply p-4 bg-card text-card-foreground rounded-lg shadow-md;
+}
+
+@media (max-width: 640px) {
+  .card-responsive {
+    @apply p-2;
+  }
 }

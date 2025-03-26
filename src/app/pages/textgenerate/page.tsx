@@ -63,15 +63,15 @@ const TextGenerate: React.FC = () => {
   };
 
   return (
-    <Card>
+    <Card className="p-4 max-w-lg mx-auto">
       <CardHeader>
-        <CardTitle>
+        <CardTitle className="text-center text-xl md:text-2xl">
           Data Objektif Generate
         </CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)} >
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
             {Object.keys(formSchema.shape).map((key) => (
               <FormField
                 key={key}
@@ -79,18 +79,23 @@ const TextGenerate: React.FC = () => {
                 name={key as keyof FormData}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}</FormLabel>
+                    <FormLabel className="text-sm sm:text-base">
+                      {key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
+                    </FormLabel>
                     <FormControl>
-                      <Input placeholder={key} {...field} />
+                      <Input placeholder={key} {...field} className="w-full" />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
             ))}
-            <Button type="submit" className="bg-slate-500 text-white rounded-md flex items-center justify-center gap-3 p-2 mx-auto hover:bg-slate-300 hover:text-black mt-4">
+            <Button 
+              type="submit" 
+              className="bg-slate-500 text-white rounded-md flex items-center justify-center gap-3 p-2 mx-auto hover:bg-slate-300 hover:text-black mt-4 w-full sm:w-auto"
+            >
               Submit
-              <SendHorizontal className='hover:rotate-180 h-6 w-8 transition duration-1000' />
+              <SendHorizontal className="hover:rotate-180 h-6 w-8 transition duration-1000" />
             </Button>
           </form>
         </Form>
@@ -99,23 +104,24 @@ const TextGenerate: React.FC = () => {
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         contentLabel="Lengkapi Kalimat Modal"
+        className="w-11/12 max-w-md mx-auto"  // Modal responsive
       >
         <ToastContainer />
-        <h2 className="text-2xl md:text-4xl font-semibold mb-4 flex justify-center">Data Generated!</h2>
+        <h2 className="text-2xl md:text-4xl font-semibold mb-4 text-center">Data Generated!</h2>
         <Textarea
           readOnly
-          className="w-full h-44 justify-center border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-900"
+          className="w-full h-44 border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-900"
           value={completedSentence}
         />
-        <div className='flex justify-center items-center mx-auto w-full gap-4 mt-4'>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
           <Button
-            className="bg-blue-500 text-white rounded-md p-2 w-full md:w-40 hover:bg-yellow-600"
+            className="bg-blue-500 text-white rounded-md p-2 w-full sm:w-40 hover:bg-yellow-600"
             onClick={handleCopy}
           >
             Salin Teks
           </Button>
           <Button
-            className="bg-slate-100 text-gray-700 rounded-md p-2 w-full md:w-40 hover:bg-gray-400"
+            className="bg-slate-100 text-gray-700 rounded-md p-2 w-full sm:w-40 hover:bg-gray-400"
             onClick={() => setModalIsOpen(false)}
           >
             Tutup

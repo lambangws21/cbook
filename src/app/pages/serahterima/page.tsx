@@ -1,8 +1,9 @@
 import FormSurgical from "@/components/formcomponents/surgicalprocedurecopy"
+import JadwalOperasi from "@/components/JadwalOperasiUi/jadwalUi"
 
 const serahTerima = () => {
   return (
-    <div><FormSurgical/></div>
+    <div><JadwalOperasi/></div>
   )
 }
 
