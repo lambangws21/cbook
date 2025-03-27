@@ -1,31 +1,44 @@
-// components/Modal.tsx
-import React from 'react';
-import Modal from 'react-modal';
+"use client";
+
+import React from "react";
+import Modal from "react-modal";
 
 interface ModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
   contentLabel: string;
   children: React.ReactNode;
-  className?: string; // Menambahkan properti opsional className
+  className?: string;
+  overlayClassName?: string;
 }
 
+const defaultModalClass =
+  "modal-content border-2 border-white shadow-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-300/20 p-5 rounded-lg w-auto";
+const defaultOverlayClass =
+  "modal-overlay flex justify-center items-center bg-black bg-opacity-50";
+
+// Komponen CustomModal dengan tampilan yang clean dan opsi kustomisasi kelas
 const CustomModal: React.FC<ModalProps> = ({
   isOpen,
   onRequestClose,
   contentLabel,
   children,
-  className, // Mengambil properti className dari props
+  className,
+  overlayClassName,
 }) => {
   return (
     <Modal
+      ariaHideApp={false}
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel={contentLabel}
-      className={className || "Modal border-2 border-white shadow-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-300/20 p-5 rounded-lg w-auto"}
-      overlayClassName="Overlay flex justify-center items-center border bg-black p-5 rounded-full shadow-md w-30 bg-slate-600"
+      className={className || defaultModalClass}
+      overlayClassName={overlayClassName || defaultOverlayClass}
     >
-      <div className="border-2 border-white shadow-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-300/55 w-[470px] h-[330px] -z-10 blur-3xl p-5 rounded-lg"></div>
+      {/* Elemen dekoratif background (opsional) */}
+      <div className="absolute inset-0 -z-10">
+        <div className="w-full h-full bg-slate-300/55 blur-3xl p-5 rounded-lg"></div>
+      </div>
       {children}
     </Modal>
   );
