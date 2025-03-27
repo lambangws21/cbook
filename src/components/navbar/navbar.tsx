@@ -75,7 +75,7 @@ const Navbar = () => {
               onClick={() => setShowDropdown(false)}
               className={`flex items-center gap-2 p-2 rounded-2xl transition-all duration-300 hover:cursor-pointer sm:text-xs ${
                 isActive
-                  ? "bg-blue-500 text-white animate-pulse"
+                  ? "bg-blue-500 text-white animate-none"
                   : scrolled
                   ? "text-blue-200 rounded-full border hover:bg-slate-500"
                   : "text-blue-200 p-2 hover:bg-blue-500 hover:text-white"
@@ -104,7 +104,7 @@ const Navbar = () => {
           <div className="relative w-full">
             <button
               onClick={() => setShowDropdown(!showDropdown)}
-              className="flex items-center justify-end w-full p-2 text-blue-200 hover:bg-blue-500 hover:text-white rounded-md transition-colors"
+              className="flex items-center justify-end w-full  p-2 text-blue-700 border shadow-lg hover:bg-blue-500 hover:text-white rounded-md transition-colors"
             >
               <Menu className="h-6 w-6" />
             </button>

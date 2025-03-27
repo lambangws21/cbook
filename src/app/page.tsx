@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import IcareCarousel from "@/components/carousel/icareCarousel";
 import Link from "next/link";
 import Confetti from "react-confetti"; // Import confetti for animation effects
+import { motion, AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
@@ -18,6 +19,7 @@ const Home = () => {
     width: typeof window !== "undefined" ? window.innerWidth : 800, 
     height: typeof window !== "undefined" ? window.innerHeight : 600 
   });
+  const [showNewFeatureBanner, setShowNewFeatureBanner] = useState(true);
 
   // Update window dimensions on resize
   useEffect(() => {
@@ -147,6 +149,27 @@ const Home = () => {
           &copy; {new Date().getFullYear()} Herlambang Wicaksono. All rights reserved.
         </p>
       </footer>
+
+      {/* Notifikasi Banner Fitur Baru */}
+      <AnimatePresence>
+        {showNewFeatureBanner && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed bottom-0 left-0 right-0 bg-blue-600 text-white p-4 flex items-center justify-between z-50"
+          >
+            <span>Ada fitur baru! Cek update terbaru kami.</span>
+            <button
+              onClick={() => setShowNewFeatureBanner(false)}
+              className="text-2xl font-bold"
+            >
+              &times;
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
