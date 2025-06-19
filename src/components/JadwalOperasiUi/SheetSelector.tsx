@@ -50,7 +50,6 @@ const SheetSelector: React.FC = () => {
     setSelectedSheet(e.target.value);
   };
 
-  // Edit button handler
   const handleEdit = (record: OperationRecord) => {
     if (selectedSheet === "all") {
       toast.error("Pilih sheet spesifik untuk melakukan edit.");
@@ -59,7 +58,6 @@ const SheetSelector: React.FC = () => {
     setEditingRecord(record);
   };
 
-  // Delete button handler yang memunculkan modal konfirmasi
   const handleDelete = (record: OperationRecord) => {
     if (selectedSheet === "all") {
       toast.error("Pilih sheet spesifik untuk melakukan delete.");
@@ -69,12 +67,11 @@ const SheetSelector: React.FC = () => {
     setConfirmModalOpen(true);
   };
 
-  // Fungsi untuk mengonfirmasi penghapusan record
   const handleConfirmDelete = async () => {
     if (!recordToDelete) return;
     try {
       const res = await fetch("/api/dataDokter/delput", {
-        method: "POST", // tetap POST karena Google Apps Script hanya support GET & POST
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           methodOverride: "DELETE",
@@ -85,7 +82,7 @@ const SheetSelector: React.FC = () => {
       const text = (await res.text()).trim();
       const result = text ? JSON.parse(text) : {};
       if (result.status === "success") {
-        toast.success(`Berhasil ${recordToDelete.namaPasien} pasien ${recordToDelete.namaDokter} berhasil dihapus.`);
+        toast.success(`Berhasil menghapus ${recordToDelete.namaPasien} dari dokter ${recordToDelete.namaDokter}.`);
         fetchData();
       } else {
         toast.error(`Gagal menghapus: ${result.error || result.message || "Unknown error"}`);
@@ -99,27 +96,22 @@ const SheetSelector: React.FC = () => {
     }
   };
 
-  // Fungsi untuk membatalkan penghapusan record
   const handleCancelDelete = () => {
     setConfirmModalOpen(false);
     setRecordToDelete(null);
   };
 
-  if (loading) {
-    return <p>Loading data...</p>;
-  }
+  if (loading) return <p className="text-center py-4">Loading data...</p>;
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-screen-xl mx-auto">
       <div className="mb-4">
-        <label htmlFor="sheetSelect" className="block mb-1">
-          Pilih Sheet:
-        </label>
+        <label htmlFor="sheetSelect" className="block mb-1 font-medium text-gray-800 dark:text-gray-200">Pilih Sheet:</label>
         <select
           id="sheetSelect"
           value={selectedSheet}
           onChange={handleSheetChange}
-          className="border p-2"
+          className="border p-2 rounded w-full sm:w-64 bg-white dark:bg-slate-800 text-black dark:text-white"
         >
           <option value="all">Semua Sheet</option>
           <option value="Sheet1">Sheet1</option>
@@ -132,30 +124,23 @@ const SheetSelector: React.FC = () => {
       {selectedSheet === "all" ? (
         <DataCard data={data} />
       ) : (
-        <div>
+        <div className="overflow-x-auto">
           <DataCardSingle sheetName={selectedSheet} records={data[selectedSheet] || []} />
           <div className="mt-4">
-            <h2 className="text-xl font-semibold mb-2">
-              Aksi Update & Delete (Sheet: {selectedSheet})
-            </h2>
-            <motion.table
-              className="w-full border-collapse"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <thead>
+            <h2 className="text-lg font-semibold mb-2">Aksi Update & Delete (Sheet: {selectedSheet})</h2>
+            <motion.table className="w-full table-auto border-collapse" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <thead className="bg-gray-100 dark:bg-slate-700 text-sm">
                 <tr>
                   <th className="border px-2 py-1">Date</th>
                   <th className="border px-2 py-1">Nama Pasien</th>
-                  <th className="border px-2 py-1">Nomor Rekam Medis</th>
-                  <th className="border px-2 py-1">Jaminan Operasi</th>
-                  <th className="border px-2 py-1">Nama Dokter</th>
-                  <th className="border px-2 py-1">Jenis Bius</th>
-                  <th className="border px-2 py-1">Ruang Operasi</th>
-                  <th className="border px-2 py-1">Jenis Operasi</th>
-                  <th className="border px-2 py-1">Team Operasi</th>
-                  <th className="border px-2 py-1">Actions</th>
+                  <th className="border px-2 py-1">No RM</th>
+                  <th className="border px-2 py-1">Jaminan</th>
+                  <th className="border px-2 py-1">Dokter</th>
+                  <th className="border px-2 py-1">Bius</th>
+                  <th className="border px-2 py-1">Ruang</th>
+                  <th className="border px-2 py-1">Operasi</th>
+                  <th className="border px-2 py-1">Team</th>
+                  <th className="border px-2 py-1">Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -164,31 +149,20 @@ const SheetSelector: React.FC = () => {
                     key={`sheet-specific-${rec.no}-${index}`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="transition-all duration-300 hover:bg-gray-100"
+                    className="hover:bg-gray-100 dark:hover:bg-slate-800 transition-all"
                   >
-                    <td className="border px-2 py-1">{rec.date}</td>
-                    <td className="border px-2 py-1">{rec.namaPasien}</td>
-                    <td className="border px-2 py-1">{rec.nomorRekamMedis}</td>
-                    <td className="border px-2 py-1">{rec.jaminanOperasi}</td>
-                    <td className="border px-2 py-1">{rec.namaDokter}</td>
-                    <td className="border px-2 py-1">{rec.jenisBius}</td>
-                    <td className="border px-2 py-1">{rec.tindakanOperasi}</td>
-                    <td className="border px-2 py-1">{rec.ruangOperasi}</td>
-                    <td className="border px-2 py-1">{rec.teamOperasi}</td>
-                    <td className="border px-2 py-1">
-                      <button
-                        className="bg-blue-500 text-white px-2 py-1 mr-2"
-                        onClick={() => handleEdit(rec)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="bg-red-500 text-white px-2 py-1"
-                        onClick={() => handleDelete(rec)}
-                      >
-                        Delete
-                      </button>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.date}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.namaPasien}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.nomorRekamMedis}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.jaminanOperasi}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.namaDokter}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.jenisBius}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.tindakanOperasi}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.ruangOperasi}</td>
+                    <td className="border px-2 py-1 text-xs sm:text-sm">{rec.teamOperasi}</td>
+                    <td className="border px-2 py-1 flex gap-2 justify-center">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded" onClick={() => handleEdit(rec)}>Edit</button>
+                      <button className="bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1 rounded" onClick={() => handleDelete(rec)}>Hapus</button>
                     </td>
                   </motion.tr>
                 ))}
@@ -198,12 +172,11 @@ const SheetSelector: React.FC = () => {
         </div>
       )}
 
-      {/* Modal untuk edit record */}
       <AnimatePresence>
         {editingRecord && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-2">
             <motion.div
-              className="bg-white p-4 rounded shadow-md w-full max-w-4xl"
+              className="relative bg-white dark:bg-slate-900 p-4 rounded-lg shadow-lg w-full max-w-xl mx-auto"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -217,7 +190,7 @@ const SheetSelector: React.FC = () => {
               />
               <button
                 onClick={() => setEditingRecord(null)}
-                className="absolute top-2 right-2 text-gray-700 text-2xl font-bold"
+                className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl"
               >
                 &times;
               </button>
@@ -226,13 +199,10 @@ const SheetSelector: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Modal konfirmasi untuk delete */}
       <ConfirmModal
         isOpen={confirmModalOpen}
         title="Konfirmasi Hapus"
-        message={`Apakah Anda yakin akan menghapus ${
-          recordToDelete?.namaPasien || ""
-        } pasien ${recordToDelete?.namaDokter || ""}?`}
+        message={`Apakah Anda yakin akan menghapus ${recordToDelete?.namaPasien || ""} pasien ${recordToDelete?.namaDokter || ""}?`}
         onConfirm={handleConfirmDelete}
         onCancel={handleCancelDelete}
       />

@@ -35,10 +35,7 @@ interface StaffItem {
 }
 
 export default function OperationForm() {
-  // State untuk menentukan sheet mana yang dipilih (OR1, OR2, dsb.)
   const [targetSheet, setTargetSheet] = useState<string>("");
-
-  // State untuk form data operasi
   const [formData, setFormData] = useState<OperationFormData>({
     date: "",
     namaPasien: "",
@@ -52,30 +49,25 @@ export default function OperationForm() {
     status: "pending",
   });
 
-  // Data dokter untuk <select>
   const [doctorOptions, setDoctorOptions] = useState<DoctorOption[]>([]);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [responseMessage, setResponseMessage] = useState<string>("");
 
-  // Ambil data dokter dari API untuk mengisi select option
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
         const res = await fetch("/api/dataDokter/getImages?getImages=true");
         const data: StaffItem[] = await res.json();
         if (Array.isArray(data)) {
-          // Filter data yang berasal dari dokter
           const doctors = data.filter(
-            (item: StaffItem) =>
-              item.role === "dokter" || item["Data Dokter"] !== undefined
+            (item) => item.role === "dokter" || item["Data Dokter"]
           );
-          const options: DoctorOption[] = doctors.map((doc: StaffItem) => ({
-            id: doc.ID,
-            name: doc["Data Dokter"] ? doc["Data Dokter"] : "",
-          }));
-          setDoctorOptions(options);
-        } else {
-          console.error("Data is not an array:", data);
+          setDoctorOptions(
+            doctors.map((doc) => ({
+              id: doc.ID,
+              name: doc["Data Dokter"] || "",
+            }))
+          );
         }
       } catch (error) {
         console.error("Error fetching doctors:", error);
@@ -85,37 +77,23 @@ export default function OperationForm() {
     fetchDoctors();
   }, []);
 
-  // Tangani perubahan pada input field
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // Submit form
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setResponseMessage("");
 
-    // Pastikan field namaDokter telah dipilih
-    if (!formData.namaDokter) {
-      toast.error("Silakan pilih dokter dari daftar.");
+    if (!formData.namaDokter || !targetSheet) {
+      toast.error("Lengkapi semua data yang wajib diisi.");
       setIsSubmitting(false);
       return;
     }
 
-    // Pastikan targetSheet terisi (pilih OR)
-    if (!targetSheet) {
-      toast.error("Silakan pilih ruang operasi (OR).");
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Gabungkan targetSheet + formData
-    const payload = {
-      targetSheet,
-      ...formData,
-    };
+    const payload = { targetSheet, ...formData };
 
     try {
       const res = await fetch("/api/dataDokter/dokter", {
@@ -127,194 +105,114 @@ export default function OperationForm() {
       setIsSubmitting(false);
 
       if (data.success) {
-        toast.success("Data operasi berhasil disimpan.");
-        setResponseMessage("Data operasi berhasil disimpan.");
+        toast.success("✔️ Data berhasil disimpan");
+        setResponseMessage("✔️ Data berhasil disimpan");
+        setFormData({
+          date: "",
+          namaPasien: "",
+          nomorRekamMedis: "",
+          namaDokter: "",
+          jenisBius: "",
+          jaminanOperasi: "",
+          tindakanOperasi: "",
+          teamOperasi: "",
+          ruangOperasi: "",
+          status: "pending",
+        });
+        setTargetSheet("");
       } else {
-        toast.error("Error: " + (data.error || "Terjadi kesalahan"));
-        setResponseMessage("Error: " + (data.error || "Terjadi kesalahan"));
+        toast.error("❌ " + (data.error || "Terjadi kesalahan"));
+        setResponseMessage("❌ " + (data.error || "Terjadi kesalahan"));
       }
     } catch {
       setIsSubmitting(false);
-      toast.error("Terjadi kesalahan saat menyimpan data");
-      setResponseMessage("Terjadi kesalahan saat menyimpan data");
+      toast.error("❌ Gagal menyimpan data");
+      setResponseMessage("❌ Gagal menyimpan data");
     }
   };
 
   return (
-    <div className="max-w-xl bg-slate-900 mx-auto border rounded-lg p-6 shadow-sm">
-      <h2 className="text-2xl font-bold mb-4">Form Data Operasi</h2>
-      <form onSubmit={handleSubmit}>
-        {/* AnimatedSelect untuk memilih Ruang Operasi (sheet) */}
-        <AnimatedSelect
-          label="Ruang Operasi"
-          id="targetSheet"
-          value={targetSheet}
-          onChange={(e) => setTargetSheet(e.target.value)}
-          options={[
-            { label: "Pilih Ruang Operasi", value: "" },
-            { label: "OR1", value: "Sheet1" },
-            { label: "OR2", value: "Sheet2" },
-            { label: "OR3", value: "Sheet3" },
-            { label: "OR4", value: "Sheet4" },
-          ]}
-        />
+    <div className="flex items-center justify-center px-4 py-8 bg-gradient-to-br from-slate-100 to-slate-300 dark:from-gray-900 dark:to-gray-950">
+    <div className="w-full max-w-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl shadow-xl p-6 max-h-screen overflow-y-auto">
+      <h2 className="text-2xl font-bold text-center mb-6">Form Data Operasi</h2>
 
-        {/* Date */}
-        <div className="mb-4">
-          <InputField
-            label="Date"
-            name="date"
-            type="date"
-            placeholder="Tanggal Operasi"
-            value={formData.date}
-            onChange={handleChange}
-            required
-            id="date"
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <AnimatedSelect
+            label="Ruang Operasi"
+            id="targetSheet"
+            value={targetSheet}
+            onChange={(e) => setTargetSheet(e.target.value)}
+            options={[
+              { label: "Pilih Ruang Operasi", value: "" },
+              { label: "OR1", value: "Sheet1" },
+              { label: "OR2", value: "Sheet2" },
+              { label: "OR3", value: "Sheet3" },
+              { label: "OR4", value: "Sheet4" },
+            ]}
           />
-        </div>
 
-        {/* Nama Pasien */}
-        <div className="mb-4">
-          <InputField
-            label="Nama Pasien"
-            name="namaPasien"
-            placeholder="Nama Pasien"
-            value={formData.namaPasien}
-            onChange={handleChange}
-            required
-            id="namaPasien"
+          <InputField label="Tanggal Operasi" name="date" type="date" value={formData.date} onChange={handleChange} required id="date" />
+          <InputField label="Nama Pasien" name="namaPasien" value={formData.namaPasien} onChange={handleChange} required id="namaPasien" />
+          <InputField label="No Rekam Medis" name="nomorRekamMedis" value={formData.nomorRekamMedis} onChange={handleChange} required id="nomorRekamMedis" />
+
+          {/* Nama Dokter */}
+          <div>
+            <label htmlFor="namaDokter" className="block text-sm font-medium mb-1">
+              Nama Dokter
+            </label>
+            <select
+              id="namaDokter"
+              value={formData.namaDokter}
+              onChange={handleChange}
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 px-3 py-2 text-sm bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            >
+              <option value="">Pilih Dokter</option>
+              {doctorOptions.map((option) => (
+                <option key={option.id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <InputField label="Jenis Bius" name="jenisBius" value={formData.jenisBius} onChange={handleChange} required id="jenisBius" />
+          <InputField label="Jaminan" name="jaminanOperasi" value={formData.jaminanOperasi} onChange={handleChange} required id="jaminanOperasi" />
+          <InputField label="Tindakan Operasi" name="tindakanOperasi" value={formData.tindakanOperasi} onChange={handleChange} required id="tindakanOperasi" />
+          <InputField label="Team Operasi" name="teamOperasi" value={formData.teamOperasi} onChange={handleChange} required id="teamOperasi" />
+          <InputField label="Nama Ruangan" name="ruangOperasi" value={formData.ruangOperasi} onChange={handleChange} required id="ruangOperasi" />
+
+          <AnimatedSelect
+            label="Status Operasi"
+            id="status"
+            value={formData.status}
+            onChange={(e) => setFormData((prev) => ({ ...prev, status: e.target.value }))}
+            options={[
+              { label: "Pending", value: "pending" },
+              { label: "Berjalan", value: "berjalan" },
+              { label: "Selesai", value: "selesai" },
+              { label: "Batal", value: "batal" },
+            ]}
           />
-        </div>
 
-        {/* No Rekam Medis */}
-        <div className="mb-4">
-          <InputField
-            label="No Rekam Medis"
-            name="nomorRekamMedis"
-            placeholder="No Rekam Medis"
-            value={formData.nomorRekamMedis}
-            onChange={handleChange}
-            required
-            id="nomorRekamMedis"
-          />
-        </div>
-
-        {/* Nama Dokter (select) */}
-        <div className="mb-4">
-          <label htmlFor="namaDokter" className="block font-semibold mb-1 text-gray-200">
-            Nama Dokter
-          </label>
-          <select
-            id="namaDokter"
-            value={formData.namaDokter}
-            onChange={handleChange}
-            className="w-full p-2 border rounded"
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-all duration-300 flex items-center justify-center"
           >
-            <option value="">Pilih Dokter</option>
-            {doctorOptions.map((option) => (
-              <option key={option.id} value={option.name}>
-                {option.name}
-              </option>
-            ))}
-          </select>
-        </div>
+            {isSubmitting && (
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+            )}
+            {isSubmitting ? "Menyimpan..." : "Simpan Data"}
+          </button>
 
-        {/* Jenis Bius */}
-        <div className="mb-4">
-          <InputField
-            label="Jenis Bius"
-            name="jenisBius"
-            placeholder="Jenis Bius"
-            value={formData.jenisBius}
-            onChange={handleChange}
-            required
-            id="jenisBius"
-          />
-        </div>
-
-        {/* Jaminan Operasi */}
-        <div className="mb-4">
-          <InputField
-            label="Jaminan Pasien"
-            name="jaminanOperasi"
-            placeholder="Jaminan Operasi"
-            value={formData.jaminanOperasi}
-            onChange={handleChange}
-            required
-            id="jaminanOperasi"
-          />
-        </div>
-
-        {/* Tindakan Operasi */}
-        <div className="mb-4">
-          <InputField
-            label="Tindakan Operasi"
-            name="tindakanOperasi"
-            placeholder="Tindakan Operasi"
-            value={formData.tindakanOperasi}
-            onChange={handleChange}
-            required
-            id="tindakanOperasi"
-          />
-        </div>
-
-        {/* Team Operasi */}
-        <div className="mb-4">
-          <InputField
-            label="Team Operasi"
-            name="teamOperasi"
-            placeholder="Team Operasi"
-            value={formData.teamOperasi}
-            onChange={handleChange}
-            required
-            id="teamOperasi"
-          />
-        </div>
-
-        {/* Ruang Operasi (nama ruangan) */}
-        <div className="mb-4">
-          <InputField
-            label="Nama Ruangan"
-            name="ruangOperasi"
-            placeholder="Ruang Operasi"
-            value={formData.ruangOperasi}
-            onChange={handleChange}
-            required
-            id="ruangOperasi"
-          />
-        </div>
-
-        {/* AnimatedSelect untuk Status Operasi */}
-        <AnimatedSelect
-          label="Status Operasi"
-          id="status"
-          value={formData.status}
-          onChange={(e) =>
-            setFormData((prev) => ({ ...prev, status: e.target.value }))
-          }
-          options={[
-            { label: "Pending", value: "pending" },
-            { label: "Berjalan", value: "berjalan" },
-            { label: "Selesai", value: "selesai" },
-            { label: "Batal", value: "batal" },
-          ]}
-        />
-
-        {/* Tombol Submit */}
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex items-center justify-center mt-4"
-        >
-          {isSubmitting && (
-            <div className="w-4 h-4 border-4 border-t-transparent border-blue-500 animate-spin mr-2"></div>
+          {responseMessage && (
+            <p className="text-center text-sm mt-3 text-green-600 dark:text-green-400">
+              {responseMessage}
+            </p>
           )}
-          {isSubmitting ? "Submitting..." : "Submit Operasi"}
-        </button>
-      </form>
-
-      {/* Pesan Respons */}
-      {responseMessage && <p className="mt-4 text-gray-200">{responseMessage}</p>}
+        </form>
+      </div>
     </div>
   );
 }

@@ -2,17 +2,18 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Router from "next/router";
 import { usePathname } from "next/navigation";
 import { Activity, HomeIcon, BookCheck, PencilLine, Handshake, Menu } from "lucide-react";
-import UserItems from "../useritems/useritems";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import UserItems from "../useritems/useritems";
 
 const menuList = [
   {
     group: "General",
     items: [
-      { link: "/", text: "", icon: <HomeIcon className="h-4 w-4" /> },
+      { link: "/", text: "Beranda", icon: <HomeIcon className="h-4 w-4" /> },
       { link: "/pages/serahterima", text: "Jadwal Operasi", icon: <Handshake className="h-4 w-4" /> },
       { link: "/diagnosaview", text: "Diagnosa", icon: <Activity className="h-4 w-4" /> },
       { link: "/pages/textgenerate", text: "Text Generator", icon: <PencilLine className="h-4 w-4" /> },
@@ -21,68 +22,59 @@ const menuList = [
   },
 ];
 
-const Spinner = () => (
-  <svg className="animate-spin h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-  </svg>
-);
-
-const Navbar = () => {
+export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [windowDimensions, setWindowDimensions] = useState({ width: 800, height: 600 });
-  const pathname = usePathname();
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 0);
-    const handleResize = () => setWindowDimensions({ width: window.innerWidth, height: window.innerHeight });
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    // Inisialisasi ukuran
-    handleResize();
+
+    handleResize(); // inisialisasi saat mount
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // Set loading saat berpindah halaman
-  useEffect(() => {
-    const handleRouteChangeStart = () => setLoading(true);
-    const handleRouteChangeComplete = () => setLoading(false);
-    const handleRouteChangeError = () => setLoading(false);
-
-    Router.events.on("routeChangeStart", handleRouteChangeStart);
-    Router.events.on("routeChangeComplete", handleRouteChangeComplete);
-    Router.events.on("routeChangeError", handleRouteChangeError);
-    return () => {
-      Router.events.off("routeChangeStart", handleRouteChangeStart);
-      Router.events.off("routeChangeComplete", handleRouteChangeComplete);
-      Router.events.off("routeChangeError", handleRouteChangeError);
-    };
-  }, []);
+  if (windowWidth === 0) return null; // cegah render saat SSR (hydration-safe)
 
   const renderMenuItems = () =>
-    menuList.map((group, groupIndex) =>
-      group.items.map((option, optionIndex) => {
-        const isActive = pathname === option.link;
+    menuList.flatMap((group, groupIndex) =>
+      group.items.map((item, itemIndex) => {
+        const isActive = pathname === item.link;
+        const baseStyle = `flex items-center gap-2 p-2 rounded-2xl relative sm:text-xs transition-all`;
+
         return (
-          <Badge key={`${groupIndex}-${optionIndex}`}>
+          <Badge key={`${groupIndex}-${itemIndex}`} className="overflow-hidden">
             <Link
-              href={option.link}
+              href={item.link}
               onClick={() => setShowDropdown(false)}
-              className={`flex items-center gap-2 p-2 rounded-2xl transition-all duration-300 hover:cursor-pointer sm:text-xs ${
+              className={`${baseStyle} ${
                 isActive
-                  ? "bg-blue-500 text-white animate-none"
+                  ? "text-white"
                   : scrolled
-                  ? "text-blue-200 rounded-full border hover:bg-slate-500"
-                  : "text-blue-200 p-2 hover:bg-blue-500 hover:text-white"
+                  ? "text-blue-200 border hover:bg-slate-500"
+                  : "text-blue-200 hover:bg-blue-500 hover:text-white"
               }`}
             >
-              {option.icon}
-              {windowDimensions.width > 420 && option.text}
+              {isActive && (
+                <motion.div
+                  layoutId="active-tab"
+                  className="absolute inset-0 bg-blue-500/20 rounded-xl z-0"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              )}
+              <div className="relative z-10 flex items-center gap-2">
+                {item.icon}
+                {windowWidth > 420 && item.text}
+              </div>
             </Link>
           </Badge>
         );
@@ -92,19 +84,19 @@ const Navbar = () => {
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 p-4 ${
-        scrolled ? "bg-slate-100/20 rounded-3xl shadow-md" : "bg-transparent"
+        scrolled ? "bg-slate-100/20 dark:bg-slate-900/60 shadow-md rounded-3xl backdrop-blur" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <UserItems />
-          {loading && <Spinner />}
         </div>
-        {windowDimensions.width <= 620 ? (
+
+        {windowWidth <= 620 ? (
           <div className="relative w-full">
             <button
-              onClick={() => setShowDropdown(!showDropdown)}
-              className="flex items-center justify-end w-full  p-2 text-blue-700 border shadow-lg hover:bg-blue-500 hover:text-white rounded-md transition-colors"
+              onClick={() => setShowDropdown((prev) => !prev)}
+              className="flex items-center justify-end w-full p-2 text-blue-700 dark:text-yellow-300 border shadow-lg hover:bg-blue-500 hover:text-white rounded-md"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -115,11 +107,12 @@ const Navbar = () => {
             )}
           </div>
         ) : (
-          <div className="flex items-center gap-4">{renderMenuItems()}</div>
+          <div className="flex items-center gap-4">
+            {renderMenuItems()}
+            <ThemeToggle />
+          </div>
         )}
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

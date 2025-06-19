@@ -21,6 +21,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
+import { ClipboardCopy } from "lucide-react";
 
 interface TableProps {
   data: {
@@ -44,27 +47,23 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
     toast.success("Sudah Tersalin");
   };
 
-  // Filter data berdasarkan input pencarian (case-insensitive)
   const filteredData = data.filter((row) =>
     row.diagnosaKeperawatan.toLowerCase().includes(filterText.toLowerCase())
   );
 
   return (
-    <Card>
+    <Card className="p-4 shadow-xl dark:bg-slate-900">
       <ToastContainer />
-      {/* Search Input */}
-      <div className="p-4">
-        <input
-          type="text"
+      <div className="mb-4">
+        <Input
           placeholder="Cari Diagnosa..."
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}
-          className="mb-4 p-2 border rounded w-full"
+          className="w-full border-blue-300 focus:ring-blue-500"
         />
       </div>
-      {/* Table Responsive */}
       <div className="overflow-x-auto">
-        <Table>
+        <Table className="min-w-full text-sm">
           <TableHeader>
             <TableRow>
               <TableHead>Diagnosa Keperawatan</TableHead>
@@ -74,16 +73,20 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
           </TableHeader>
           <TableBody>
             {filteredData.map((row, index) => (
-              <TableRow key={index}>
+              <TableRow key={index} className="hover:bg-muted/30">
                 <TableCell>
                   <Accordion type="single" collapsible>
                     <AccordionItem value={`diagnosa-${index}`}>
                       <AccordionTrigger>
                         {row.diagnosaKeperawatan}
                       </AccordionTrigger>
-                      <AccordionContent>
-                        <Button onClick={() => handleCopy(row.diagnosaKeperawatan)}>
-                          Copy Diagnosa
+                      <AccordionContent className="space-y-2">
+                        <Button
+                          variant="secondary"
+                          onClick={() => handleCopy(row.diagnosaKeperawatan)}
+                          className="gap-2"
+                        >
+                          <ClipboardCopy className="w-4 h-4" /> Copy Diagnosa
                         </Button>
                       </AccordionContent>
                     </AccordionItem>
@@ -92,17 +95,19 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                 <TableCell>
                   <Accordion type="single" collapsible>
                     <AccordionItem value={`luaran-${index}`}>
-                      <AccordionTrigger>
-                        Luaran Keperawatan
-                      </AccordionTrigger>
-                      <AccordionContent>
+                      <AccordionTrigger>Luaran</AccordionTrigger>
+                      <AccordionContent className="space-y-2">
                         <ul className="list-disc ml-5">
                           {row.luaranKeperawatan.map((item, idx) => (
                             <li key={idx}>{item}</li>
                           ))}
                         </ul>
-                        <Button onClick={() => handleCopyList(row.luaranKeperawatan)}>
-                          Copy Luaran
+                        <Button
+                          variant="secondary"
+                          onClick={() => handleCopyList(row.luaranKeperawatan)}
+                          className="gap-2"
+                        >
+                          <ClipboardCopy className="w-4 h-4" /> Copy Luaran
                         </Button>
                       </AccordionContent>
                     </AccordionItem>
@@ -111,17 +116,19 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
                 <TableCell>
                   <Accordion type="single" collapsible>
                     <AccordionItem value={`intervensi-${index}`}>
-                      <AccordionTrigger>
-                        Intervensi Keperawatan
-                      </AccordionTrigger>
-                      <AccordionContent>
+                      <AccordionTrigger>Intervensi</AccordionTrigger>
+                      <AccordionContent className="space-y-2">
                         <ul className="list-disc ml-5">
                           {row.intervensiKeperawatan.map((item, idx) => (
                             <li key={idx}>{item}</li>
                           ))}
                         </ul>
-                        <Button onClick={() => handleCopyList(row.intervensiKeperawatan)}>
-                          Copy Intervensi
+                        <Button
+                          variant="secondary"
+                          onClick={() => handleCopyList(row.intervensiKeperawatan)}
+                          className="gap-2"
+                        >
+                          <ClipboardCopy className="w-4 h-4" /> Copy Intervensi
                         </Button>
                       </AccordionContent>
                     </AccordionItem>
@@ -136,7 +143,7 @@ const NursingCareTable: React.FC<TableProps> = ({ data }) => {
   );
 };
 
-const data = MockData; // Pastikan data dari data.json sesuai dengan struktur TableProps
+const data = MockData;
 
 const NursingCareApp: React.FC = () => {
   return <NursingCareTable data={data} />;

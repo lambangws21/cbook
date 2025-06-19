@@ -10,7 +10,6 @@ interface InputFieldProps {
   value: string;
   placeholder?: string;
   required?: boolean;
-  // Tambahkan id (opsional). Jika tidak ada, kita pakai 'name'.
   id?: string;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }
@@ -26,32 +25,35 @@ export default function InputField({
   onChange,
 }: InputFieldProps) {
   const [isFocused, setIsFocused] = useState(false);
-
-  // Jika prop id tidak disediakan, gunakan name agar tetap unik
   const inputId = id || name;
 
   return (
     <div className="w-full">
-      <label htmlFor={inputId} className="block text-md font-medium text-gray-200 mb-1">
+      <label
+        htmlFor={inputId}
+        className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-200"
+      >
         {label}
       </label>
+
       <motion.input
         id={inputId}
         type={type}
         name={name}
         value={value}
-        onChange={onChange}
         placeholder={placeholder}
         required={required}
+        onChange={onChange}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        className="w-full p-2 border rounded-lg focus:ring-2"
+        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         animate={{
-          outlineColor: isFocused ? ["#FF5733", "#33FF57", "#3357FF"] : "#FF5733",
-          outlineWidth: isFocused ? "17px" : "9px",
-          scale: value ? 1.05 : 1,
+          boxShadow: isFocused
+            ? "0 0 0 3px rgba(59, 130, 246, 0.5)"
+            : "0 0 0 0px rgba(59, 130, 246, 0)",
+          scale: isFocused ? 1.02 : 1,
         }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
       />
     </div>
   );

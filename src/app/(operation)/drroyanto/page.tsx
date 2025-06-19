@@ -1,52 +1,58 @@
-"use client"
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FOTO from "../../../../public/images/drroyanto.webp";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const menuList = [
   {
-    dokter: "dr.Royanto",
+    dokter: "dr. Royanto",
     spesialis: "Obstetri",
     items: [
-      {
-        link: "/drroyanto/histerektomi",
-        text: "Laparatomi Histerektomi",
-      },
-
+      { link: "/drroyanto/histerektomi", text: "Laparatomi Histerektomi" },
     ],
   },
 ];
 
 const Page = () => {
+  const data = menuList[0];
+
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-    <div className="flex justify-start items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
-        <div className="w-16 h-16 sm:12 sm:12 mr-2 flex justify-center items-center">
-          <Image
-            src={FOTO}
-            alt="FOTO"
-            className="rounded-full sm:w-12 sm:h-12 bg-cover"
-            width={64}
-            height={64}
-          />
-        </div>
-          <div className="flex flex-col text-xl font-semibold sm:text-[13px]">
-            {menuList[0].dokter}
-            <div className="text-gray-500 sm:text-xs">
-              {menuList[0].spesialis}
-            </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-md mx-auto rounded-2xl shadow-xl p-6 bg-white dark:bg-slate-900"
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <Image
+          src={FOTO}
+          alt="Foto dr. Royanto"
+          className="rounded-full object-cover border"
+          width={64}
+          height={64}
+        />
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+            {data.dokter}
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-300">{data.spesialis}</p>
         </div>
       </div>
-      <div className="list">
-        {menuList[0].items.map((item, index) => (
-          <div key={index} className="mb-2">
-            <Link href={item.link}>
-              <div className="text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white sm:text-[10px]">{item.text}</div>
-            </Link>
-          </div>
+
+      <div className="space-y-2">
+        {data.items.map((item, index) => (
+          <Link key={index} href={item.link}>
+            <div className="block text-blue-600 p-3 border rounded-xl hover:bg-blue-500 hover:text-white text-sm font-medium transition-colors dark:text-blue-300">
+              {item.text}
+            </div>
+          </Link>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

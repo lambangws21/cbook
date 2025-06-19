@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SheetSelector from "./JadwalOperasiUi/SheetSelector";
+import { X } from "lucide-react"; // Pastikan kamu sudah install lucide-react
 
 interface MyModalProps {
   isOpen: boolean;
@@ -14,28 +15,31 @@ const MyModal: React.FC<MyModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={onClose} // Klik di luar modal untuk menutup
+          onClick={onClose}
         >
-          <motion.div 
-            className="relative bg-white rounded-lg p-6 w-full max-w-6xl max-h-[90vh] overflow-y-auto"
-            initial={{ scale: 0.8, opacity: 0 }}
+          <motion.div
+            className="relative bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-xl p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-lg"
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
+            exit={{ scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            onClick={(e) => e.stopPropagation()} // Mencegah klik dalam konten modal menutup modal
+            onClick={(e) => e.stopPropagation()}
           >
-            {children}
-            <button 
+            {/* Tombol Close */}
+            <button
               onClick={onClose}
-              className="absolute top-2 right-2 text-gray-700 text-2xl font-bold"
+              className="absolute top-3 right-3 text-gray-500 dark:text-gray-300 hover:text-red-500"
+              aria-label="Tutup modal"
             >
-              &times;
+              <X size={20} />
             </button>
+
+            {children}
           </motion.div>
         </motion.div>
       )}
@@ -50,12 +54,12 @@ const ExampleComponent: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="p-4">
-      <button 
+    <div className="p-4 text-center">
+      <button
         onClick={openModal}
-        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-full"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow transition duration-300"
       >
-        Edit Operasi
+        Edit Jadwal Operasi
       </button>
 
       <MyModal isOpen={isModalOpen} onClose={closeModal}>

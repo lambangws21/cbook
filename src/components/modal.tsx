@@ -2,6 +2,7 @@
 
 import React from "react";
 import Modal from "react-modal";
+import { X } from "lucide-react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -13,11 +14,11 @@ interface ModalProps {
 }
 
 const defaultModalClass =
-  "modal-content border-2 border-white shadow-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-slate-300/20 p-5 rounded-lg w-auto";
-const defaultOverlayClass =
-  "modal-overlay flex justify-center items-center bg-black bg-opacity-50";
+  "relative border border-white shadow-xl bg-white dark:bg-gray-800 text-black dark:text-white rounded-xl p-6 w-full max-w-2xl mx-auto max-h-[90vh] overflow-y-auto";
 
-// Komponen CustomModal dengan tampilan yang clean dan opsi kustomisasi kelas
+const defaultOverlayClass =
+  "fixed inset-0 bg-black/50 flex items-center justify-center px-4 z-50";
+
 const CustomModal: React.FC<ModalProps> = ({
   isOpen,
   onRequestClose,
@@ -28,17 +29,23 @@ const CustomModal: React.FC<ModalProps> = ({
 }) => {
   return (
     <Modal
-      ariaHideApp={false}
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel={contentLabel}
+      ariaHideApp={false}
       className={className || defaultModalClass}
       overlayClassName={overlayClassName || defaultOverlayClass}
     >
-      {/* Elemen dekoratif background (opsional) */}
-      <div className="absolute inset-0 -z-10">
-        <div className="w-full h-full bg-slate-300/55 blur-3xl p-5 rounded-lg"></div>
-      </div>
+      {/* Tombol keluar (kanan atas) */}
+      <button
+        onClick={onRequestClose}
+        className="absolute top-3 right-3 text-gray-500 dark:text-gray-300 hover:text-red-500 transition-colors"
+        aria-label="Close modal"
+      >
+        <X size={20} />
+      </button>
+
+      {/* Konten modal */}
       {children}
     </Modal>
   );

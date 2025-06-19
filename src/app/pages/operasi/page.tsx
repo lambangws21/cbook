@@ -13,6 +13,8 @@ import PersiapanAnestesi from "@/app/(operation)/persiapan-anestesi/page";
 import AndrewJackson from "@/app/(operation)/andrewJackson/page";
 import Iskandar from "@/app/(operation)/iskandar/page";
 import Felix from "@/app/(operation)/felix/page";
+import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
 
 const operations = [
   { id: 1, name: "Persiapan Anestesi", component: <PersiapanAnestesi /> },
@@ -37,37 +39,37 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">Daftar Operasi</h1>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-blue-700 dark:text-blue-300">
+        Daftar Operasi
+      </h1>
 
       {/* Input Pencarian */}
-      <div className="mb-6">
-        <input
-          type="text"
+      <div className="mb-6 max-w-md mx-auto">
+        <Input
           placeholder="Cari operasi..."
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="text-base"
         />
       </div>
 
       {/* Grid Responsif */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredOperations.map((op) => (
           <motion.div
             key={op.id}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="border rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-xl font-semibold mb-2 text-center">
+            <Card className="p-4 rounded-2xl shadow-md border hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+              <h2 className="text-lg sm:text-xl font-semibold text-center text-primary mb-2">
                 {op.name}
               </h2>
-              {/* Konten di dalam container dengan tinggi lebih besar dan scroll */}
-              <div className="h-64 overflow-y-auto">
+              <div className="flex-1 overflow-y-auto max-h-64 scrollbar-thin scrollbar-thumb-blue-300 dark:scrollbar-thumb-blue-700 scrollbar-track-transparent">
                 {op.component}
               </div>
-            </div>
+            </Card>
           </motion.div>
         ))}
       </div>

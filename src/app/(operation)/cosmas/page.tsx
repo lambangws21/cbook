@@ -1,52 +1,66 @@
-"use client"
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import FOTO from "../../../../public/images/cosmas.webp";
+import { motion } from "framer-motion";
 
 const menuList = [
   {
-    dokter: "dr.Cosmas",
-    spesialis: "Digestive",
+    dokter: "dr. Cosmas",
+    spesialis: "Digestive Surgeon",
     items: [
       {
         link: "/cosmas/laparoskopi-chole",
-        text: "Laparoskopi Cholesystectomie",
+        text: "Laparoskopi Cholecystectomie",
       },
-
     ],
   },
 ];
 
 const Page = () => {
+  const data = menuList[0];
+
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-      <div className="flex justify-start items-center mb-4 border p-4 sm:p-0 rounded-2xl bg-gray-50">
-        <div className="w-16 h-16 mr-4 flex justify-center items-center">
-          <Image
-            src={FOTO}
-            alt="dr. Erica"
-            className="rounded-full sm:w-12 sm:h-12 bg-cover"
-            width={64}
-            height={64}
-          />
-        </div>
-          <div className="flex flex-col text-xl font-semibold sm:text-sm">
-            {menuList[0].dokter}
-            <div className="text-gray-500 sm:text-xs">
-              {menuList[0].spesialis}
-            </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-md mx-auto rounded-2xl shadow-xl p-6 bg-white dark:bg-slate-900"
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <Image
+          src={FOTO}
+          alt="Foto Dokter"
+          className="rounded-full object-cover border"
+          width={64}
+          height={64}
+        />
+        <div>
+          <h2 className="text-lg font-bold flex items-center text-gray-800 dark:text-white">
+            {data.dokter}
+          </h2>
+          <p className="text-xs text-gray-500 dark:text-gray-300">{data.spesialis}</p>
         </div>
       </div>
-      <div className="list">
-        {menuList[0].items.map((item, index) => (
-          <div key={index} className="mb-2">
+
+      <div className="space-y-3">
+        {data.items.map((item, index) => (
+          <motion.div
+            key={item.link}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.2, delay: index * 0.1 }}
+          >
             <Link href={item.link}>
-              <div className="text-blue-500 p-2 border sm:text-[10px] rounded-xl hover:bg-blue-500 hover:text-white">{item.text}</div>
+              <div className="block p-3 rounded-xl border text-blue-600 hover:bg-blue-500 hover:text-white text-sm font-medium transition-colors">
+                {item.text}
+              </div>
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

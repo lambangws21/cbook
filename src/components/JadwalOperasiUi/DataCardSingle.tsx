@@ -23,43 +23,37 @@ const formatDate = (dateString: string): string => {
 
 const DataCardSingle: React.FC<DataCardSingleProps> = ({ sheetName, records }) => {
   return (
-    <div className="w-full p-4">
-      <h2 className="text-2xl font-bold mb-4 text-gray-700">Data dari {sheetName}</h2>
+    <div className="w-full px-4 py-6">
+      <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-6">
+        Data dari {sheetName}
+      </h2>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {records.map((item, index) => (
           <motion.div
             key={`${sheetName}-${item.no}-${index}`}
-            className="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-lg transition duration-300 mb-2"
+            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm p-5 hover:shadow-lg transition duration-300"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.1, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <Badge text={`Tanggal: ${formatDate(item.date)}`} color="bg-green-500" className="mb-2" />
-            <p className="text-sm text-gray-500">
-              Nama Pasien: <span className="font-semibold">{item.namaPasien}</span>
-            </p>
-            <p className="text-sm text-gray-500">
-              Nomor Rekam Medis: <span className="font-semibold">{item.nomorRekamMedis}</span>
-            </p>
-            <p className="text-sm text-gray-500">
-              Dokter: <span className="font-semibold">{item.namaDokter}</span>
-            </p>
-            <p className="text-sm text-gray-500">
-              Jenis Bius: <span className="font-semibold">{item.jenisBius}</span>
-            </p>
-            <p className="text-sm text-gray-500">
-              Tindakan Operasi: <span className="font-semibold">{item.tindakanOperasi}</span>
-            </p>
-            <p className="text-sm text-gray-500">
-              Perawat: <span className="font-semibold">{item.teamOperasi}</span>
-            </p>
+            <Badge text={`Tanggal: ${formatDate(item.date)}`} color="bg-green-500" className="mb-3" />
+
+            <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+              <p><span className="font-semibold">Pasien:</span> {item.namaPasien}</p>
+              <p><span className="font-semibold">Rekam Medis:</span> {item.nomorRekamMedis}</p>
+              <p><span className="font-semibold">Dokter:</span> {item.namaDokter}</p>
+              <p><span className="font-semibold">Bius:</span> {item.jenisBius}</p>
+              <p><span className="font-semibold">Tindakan:</span> {item.tindakanOperasi}</p>
+              <p><span className="font-semibold">Perawat:</span> {item.teamOperasi}</p>
+            </div>
           </motion.div>
         ))}
       </motion.div>

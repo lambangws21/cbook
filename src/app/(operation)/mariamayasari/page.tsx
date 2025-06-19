@@ -3,85 +3,66 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import FOTO from "../../../../public/images/mariamayasari.webp";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 const menuList = [
   {
     dokter: "dr. Maria Mayasari",
     spesialis: "Digestive",
     items: [
-      {
-        link: "/mariamayasari/laparoskopi-app",
-        text: "LAPAROSKOPI APPENDIKTOMI",
-      },
-      {
-        link: "/mariamayasari/laparatomireseksiusus",
-        text: "LAPARATOMI RESEKSI USUS",
-      },
-      {
-        link: "/mariamayasari/laparoskopiHernia",
-        text: "LAPAROSKOPI HERNIA",
-      },
-      {
-        link: "/mariamayasari/laparoskopireseksihepar",
-        text: "Laparoskpi Reseksi Hepar",
-      },
+      { link: "/mariamayasari/laparoskopi-app", text: "LAPAROSKOPI APPENDIKTOMI" },
+      { link: "/mariamayasari/laparatomireseksiusus", text: "LAPARATOMI RESEKSI USUS" },
+      { link: "/mariamayasari/laparoskopiHernia", text: "LAPAROSKOPI HERNIA" },
+      { link: "/mariamayasari/laparoskopireseksihepar", text: "LAPAROSKPI RESEKSI HEPAR" },
     ],
   },
 ];
 
-const Page: React.FC = () => {
+const Page = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const toggleCollapse = () => {
-    setIsCollapsed((prev) => !prev);
-  };
-
-  // Tampilkan item pertama secara default, sisanya hanya muncul jika isCollapsed false
-  const alwaysShowItems = menuList[0].items.slice(0, 1);
-  const collapsibleItems = menuList[0].items.slice(1);
+  const toggleCollapse = () => setIsCollapsed((prev) => !prev);
+  const data = menuList[0];
+  const alwaysShowItems = data.items.slice(0, 1);
+  const collapsibleItems = data.items.slice(1);
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white mx-auto">
-      {/* Header Card */}
-      <div className="flex items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
-        <div className="w-16 h-16 mr-2 flex justify-center items-center">
-          <Image
-            src={FOTO}
-            alt="dr. Maria Mayasari"
-            className="rounded-full sm:w-11 sm:h-11 bg-cover"
-            width={62}
-            height={62}
-          />
-        </div>
-        <div className="flex flex-col text-xl font-semibold sm:text-[13px]">
-          {menuList[0].dokter}
-          <div className="text-gray-500 sm:text-xs">
-            {menuList[0].spesialis}
-          </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-md mx-auto rounded-2xl shadow-xl p-6 bg-white dark:bg-slate-900"
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <Image
+          src={FOTO}
+          alt="Foto dr. Maria Mayasari"
+          className="rounded-full object-cover border"
+          width={64}
+          height={64}
+        />
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+            {data.dokter}
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-300">{data.spesialis}</p>
         </div>
       </div>
 
-      {/* List Menu */}
-      <div className="list">
-        {/* Always visible item */}
+      <div className="space-y-2">
         {alwaysShowItems.map((item, index) => (
-          <div key={index} className="mb-2">
-            <Link href={item.link}>
-              <motion.div
-                className="block text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white sm:text-[10px] cursor-pointer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {item.text}
-              </motion.div>
-            </Link>
-          </div>
+          <Link key={index} href={item.link}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="block text-blue-600 p-3 border rounded-xl hover:bg-blue-500 hover:text-white text-sm font-medium transition-colors dark:text-blue-300"
+            >
+              {item.text}
+            </motion.div>
+          </Link>
         ))}
 
-        {/* Animasi untuk item tambahan */}
         <AnimatePresence>
           {!isCollapsed &&
             collapsibleItems.map((item, index) => (
@@ -91,10 +72,9 @@ const Page: React.FC = () => {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="mb-2"
               >
                 <Link href={item.link}>
-                  <div className="block text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white transition duration-300 sm:text-[10px]">
+                  <div className="block text-blue-600 p-3 border rounded-xl hover:bg-blue-500 hover:text-white text-sm font-medium transition-colors dark:text-blue-300">
                     {item.text}
                   </div>
                 </Link>
@@ -103,14 +83,13 @@ const Page: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Tombol Show More/Show Less */}
       <Button
         onClick={toggleCollapse}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-300 sm:px-2 sm:py-2 sm:text-[10px]"
+        className="mt-6 w-full bg-blue-600 text-white hover:bg-blue-700 text-sm rounded-xl py-2"
       >
-        {isCollapsed ? "Show More" : "Show Less"}
+        {isCollapsed ? "Tampilkan Semua" : "Sembunyikan"}
       </Button>
-    </div>
+    </motion.div>
   );
 };
 

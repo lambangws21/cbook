@@ -1,77 +1,79 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FOTO from "../../../../public/images/andrejackson.webp";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 const menuList = [
   {
-    dokter: "dr.Adrew J",
-    spesialis: "Digestive",
+    dokter: "dr. Andrew",
+    spesialis: "Vaskular",
     items: [
-      {
-        link: "/andrewJackson/cdlTunneling",
-        text: "Cdl Tunneling",
-      },
-      {
-        link: "/andrewJackson/cimino",
-        text: "Av Shunt atau Cimino",
-      },
-      {
-        link: "/andrewJackson/evlt",
-        text: "EVLT",
-      },
+      { link: "/andrewJackson/cdlTunneling", text: "CDL Tunneling" },
+      { link: "/andrewJackson/cimino", text: "AV Shunt / Cimino" },
+      { link: "/andrewJackson/evlt", text: "EVLT" },
     ],
   },
 ];
 
 const Page = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+  const toggleCollapse = () => setIsCollapsed(!isCollapsed);
+  const data = menuList[0];
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
-      <div className="flex justify-start items-center mb-4 border p-4 sm:p-[1px] rounded-2xl bg-gray-50">
-        <div className="w-16 h-16 sm:w-12 sm:h-12 mr-2 flex justify-center items-center">
-          <Image
-            src={FOTO}
-            alt="FOTO"
-            className="rounded-full sm:w-11 sm:h-11 bg-cover"
-            width={62}
-            height={62}
-          />
-        </div>
-        <div className="flex flex-col text-xl font-semibold sm:text-[13px]">
-          {menuList[0].dokter}
-          <div className="text-gray-500 sm:text-xs">
-            {menuList[0].spesialis}
-          </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-md mx-auto rounded-2xl shadow-xl p-6 bg-white dark:bg-slate-900"
+    >
+      <div className="flex items-center gap-4 mb-6">
+        <Image
+          src={FOTO}
+          alt="Foto Dokter"
+          className="rounded-full object-cover border"
+          width={64}
+          height={64}
+        />
+        <div>
+          <h2 className="text-sm font-bold text-gray-800 flex items-center dark:text-white">
+            {data.dokter}
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-300">{data.spesialis}</p>
         </div>
       </div>
-      <div className="list">
-        {menuList[0].items
-          .slice(0, isCollapsed ? 1 : menuList[0].items.length)
-          .map((item, index) => (
-            <div key={index} className="mb-2">
+
+      <div className="space-y-3">
+        <AnimatePresence>
+          {(isCollapsed ? data.items.slice(0, 1) : data.items).map((item, index) => (
+            <motion.div
+              key={item.link}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              transition={{ duration: 0.2, delay: index * 0.1 }}
+            >
               <Link href={item.link}>
-                <div className="text-blue-500 p-2 border rounded-xl hover:bg-blue-500 hover:text-white sm:text-[10px]">
+                <div className="block p-3 rounded-xl border text-blue-600 hover:bg-blue-500 hover:text-white text-sm font-medium transition-colors">
                   {item.text}
                 </div>
               </Link>
-            </div>
+            </motion.div>
           ))}
+        </AnimatePresence>
       </div>
+
       <Button
         onClick={toggleCollapse}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-300 sm:px-2 sm:py-2 sm:text-[10px] sm:mt-0"
+        className="mt-6 w-full bg-blue-600 text-white hover:bg-blue-700 text-sm rounded-xl py-2"
       >
-        {isCollapsed ? "Show More" : "Show Less"}
+        {isCollapsed ? "Tampilkan Semua" : "Sembunyikan"}
       </Button>
-    </div>
+    </motion.div>
   );
 };
 
